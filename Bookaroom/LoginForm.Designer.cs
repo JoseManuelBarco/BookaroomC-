@@ -1,6 +1,6 @@
 ﻿namespace Bookaroom
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
