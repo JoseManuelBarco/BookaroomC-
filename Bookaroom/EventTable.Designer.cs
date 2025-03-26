@@ -1,6 +1,6 @@
 ﻿namespace Bookaroom
 {
-    partial class UserTable
+    partial class EventTable
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,7 +59,7 @@
             this.label4.Location = new System.Drawing.Point(706, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(207, 41);
-            this.label4.TabIndex = 41;
+            this.label4.TabIndex = 28;
             this.label4.Text = "FILTRO 3";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -71,7 +70,7 @@
             this.label3.Location = new System.Drawing.Point(706, 197);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(207, 44);
-            this.label3.TabIndex = 40;
+            this.label3.TabIndex = 27;
             this.label3.Text = "FILTRO 2";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -82,7 +81,7 @@
             this.label2.Location = new System.Drawing.Point(702, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(211, 47);
-            this.label2.TabIndex = 39;
+            this.label2.TabIndex = 26;
             this.label2.Text = "FILTRO 1";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -94,7 +93,7 @@
             this.label1.Location = new System.Drawing.Point(768, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 22);
-            this.label1.TabIndex = 38;
+            this.label1.TabIndex = 25;
             this.label1.Text = "FILTROS";
             // 
             // pictureBox5
@@ -104,7 +103,7 @@
             this.pictureBox5.Location = new System.Drawing.Point(702, 91);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(211, 204);
-            this.pictureBox5.TabIndex = 37;
+            this.pictureBox5.TabIndex = 24;
             this.pictureBox5.TabStop = false;
             // 
             // button3
@@ -114,7 +113,7 @@
             this.button3.Location = new System.Drawing.Point(722, 447);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(175, 50);
-            this.button3.TabIndex = 36;
+            this.button3.TabIndex = 23;
             this.button3.Text = "EDITAR USUARIO";
             this.button3.UseVisualStyleBackColor = false;
             // 
@@ -125,7 +124,7 @@
             this.button2.Location = new System.Drawing.Point(722, 382);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 50);
-            this.button2.TabIndex = 35;
+            this.button2.TabIndex = 22;
             this.button2.Text = "DESACTIVAR USUARIO";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -137,7 +136,7 @@
             this.button1.Location = new System.Drawing.Point(722, 317);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 50);
-            this.button1.TabIndex = 34;
+            this.button1.TabIndex = 21;
             this.button1.Text = "CREAR USUARIO";
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -149,14 +148,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(36, 76);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(579, 443);
-            this.dataGridView1.TabIndex = 33;
+            this.dataGridView1.TabIndex = 20;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(25, 64);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(601, 466);
-            this.pictureBox3.TabIndex = 32;
+            this.pictureBox3.TabIndex = 19;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
@@ -164,7 +163,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(665, 64);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(282, 466);
-            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
             // toolStrip1
@@ -179,7 +178,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(9, 10);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(966, 35);
-            this.toolStrip1.TabIndex = 29;
+            this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel1
@@ -205,10 +204,10 @@
             this.pictureBox2.Location = new System.Drawing.Point(9, 31);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(963, 519);
-            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
-            // UserTable
+            // EventTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,8 +226,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox2);
-            this.Name = "UserTable";
-            this.Text = "UserTable";
+            this.Name = "EventTable";
+            this.Text = "EventTable";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -242,7 +241,7 @@
         }
 
         #endregion
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

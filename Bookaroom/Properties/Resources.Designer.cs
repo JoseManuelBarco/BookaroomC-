@@ -63,6 +63,26 @@ namespace Bookaroom.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Create_Background {
+            get {
+                object obj = ResourceManager.GetObject("Create_Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filtros_background {
+            get {
+                object obj = ResourceManager.GetObject("filtros_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_ic {
             get {
                 object obj = ResourceManager.GetObject("logo_ic", resourceCulture);
@@ -96,6 +116,16 @@ namespace Bookaroom.Properties {
         internal static System.Drawing.Bitmap manage_users_button {
             get {
                 object obj = ResourceManager.GetObject("manage_users_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Title_create {
+            get {
+                object obj = ResourceManager.GetObject("Title_create", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
