@@ -170,6 +170,15 @@
     <EmbeddedResource Include="UserTable.resx">
       <DependentUpon>UserTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Outfit-Black.ttf" />
+    <None Include="Outfit-Bold.ttf" />
+    <None Include="Outfit-ExtraBold.ttf" />
+    <None Include="Outfit-ExtraLight.ttf" />
+    <None Include="Outfit-Light.ttf" />
+    <None Include="Outfit-Medium.ttf" />
+    <None Include="Outfit-Regular.ttf" />
+    <None Include="Outfit-SemiBold.ttf" />
+    <None Include="Outfit-Thin.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
