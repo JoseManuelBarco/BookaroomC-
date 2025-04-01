@@ -15,6 +15,23 @@ namespace Bookaroom
         public LoginForm()
         {
             InitializeComponent();
+
+
+
+        }
+
+
+        private void login_button_Click(object sender, EventArgs e)
+        {
+             if (!String.IsNullOrEmpty(emailtextbox.Text) || !String.IsNullOrEmpty(passwordtextbox.Text))
+            {
+                StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+                staticFormmainForm.OpenForm(new EventOrganizerContent()); 
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

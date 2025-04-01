@@ -21,5 +21,11 @@ namespace Bookaroom
         {
 
         }
+
+        private void manageUsersImg_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new UserTable());
+        }
     }
 }

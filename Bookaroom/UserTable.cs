@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bookaroom.Models;
 
 namespace Bookaroom
 {
@@ -15,6 +16,43 @@ namespace Bookaroom
         public UserTable()
         {
             InitializeComponent();
+            LoadDataIntoPreExistingColumns();
+            userdataGridView.RowHeadersVisible = false;
+            userdataGridView.EnableHeadersVisualStyles = false;
+            userdataGridView.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            userdataGridView.DefaultCellStyle.ForeColor = Color.Black;
+            userdataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            userdataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+        }
+        private void LoadDataIntoPreExistingColumns()
+        {
+            try
+            {
+                userdataGridView.Rows.Clear();
+
+                DataTable usersTable = Users.GetUsers();
+                foreach (DataRow row in usersTable.Rows)
+                {
+                    int rowIndex = userdataGridView.Rows.Add();
+                    userdataGridView.Rows[rowIndex].Cells["Id_usuari"].Value = row["id_usuari"];
+                    userdataGridView.Rows[rowIndex].Cells["Nom"].Value = row["nom"];
+                    userdataGridView.Rows[rowIndex].Cells["Cognom"].Value = row["cognom"];
+                    userdataGridView.Rows[rowIndex].Cells["Email"].Value = row["email"];
+                    userdataGridView.Rows[rowIndex].Cells["Rol"].Value = row["rol"];
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}");
+            }
+        }
+
+        private void closesessionLabel_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new LoginForm());
         }
     }
 }
