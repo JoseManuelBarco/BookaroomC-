@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.manageEventImg = new System.Windows.Forms.PictureBox();
             this.manageUsersImg = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageEventImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageUsersImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,15 +54,16 @@
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox4
+            // manageEventImg
             // 
-            this.pictureBox4.Image = global::Bookaroom.Properties.Resources.manage_events_button;
-            this.pictureBox4.Location = new System.Drawing.Point(342, 159);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(295, 375);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
+            this.manageEventImg.Image = global::Bookaroom.Properties.Resources.manage_events_button;
+            this.manageEventImg.Location = new System.Drawing.Point(342, 159);
+            this.manageEventImg.Name = "manageEventImg";
+            this.manageEventImg.Size = new System.Drawing.Size(295, 375);
+            this.manageEventImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.manageEventImg.TabIndex = 4;
+            this.manageEventImg.TabStop = false;
+            this.manageEventImg.Click += new System.EventHandler(this.manageEventImg_Click);
             // 
             // manageUsersImg
             // 
@@ -155,14 +156,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.manageEventImg);
             this.Controls.Add(this.manageUsersImg);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "SuperadminSelection";
             this.Text = "Selecciona una opció...";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageEventImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageUsersImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -176,7 +177,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox manageUsersImg;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox manageEventImg;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

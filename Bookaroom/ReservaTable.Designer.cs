@@ -35,7 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eventDataGridView = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,7 +44,16 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.id_esdeveniment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aforament = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_inici = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_fi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.eventDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -130,15 +139,25 @@
             this.button1.Text = "CREAR USUARIO";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // eventDataGridView
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.dataGridView1.Location = new System.Drawing.Point(36, 76);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(579, 443);
-            this.dataGridView1.TabIndex = 33;
+            this.eventDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
+            this.eventDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.eventDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_esdeveniment,
+            this.id_sala,
+            this.id_usuari,
+            this.nom,
+            this.descripcio,
+            this.aforament,
+            this.data_inici,
+            this.data_fi,
+            this.preu});
+            this.eventDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.eventDataGridView.Location = new System.Drawing.Point(36, 76);
+            this.eventDataGridView.Name = "eventDataGridView";
+            this.eventDataGridView.Size = new System.Drawing.Size(579, 443);
+            this.eventDataGridView.TabIndex = 33;
             // 
             // toolStrip1
             // 
@@ -207,6 +226,61 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
+            // id_esdeveniment
+            // 
+            this.id_esdeveniment.HeaderText = "ID_esdeveniment";
+            this.id_esdeveniment.Name = "id_esdeveniment";
+            this.id_esdeveniment.ReadOnly = true;
+            this.id_esdeveniment.Visible = false;
+            // 
+            // id_sala
+            // 
+            this.id_sala.HeaderText = "Numero Sala";
+            this.id_sala.Name = "id_sala";
+            this.id_sala.ReadOnly = true;
+            // 
+            // id_usuari
+            // 
+            this.id_usuari.HeaderText = "Usuari Assignat";
+            this.id_usuari.Name = "id_usuari";
+            this.id_usuari.ReadOnly = true;
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nom";
+            this.nom.Name = "nom";
+            this.nom.ReadOnly = true;
+            // 
+            // descripcio
+            // 
+            this.descripcio.HeaderText = "Descripció";
+            this.descripcio.Name = "descripcio";
+            this.descripcio.ReadOnly = true;
+            // 
+            // aforament
+            // 
+            this.aforament.HeaderText = "Aforament";
+            this.aforament.Name = "aforament";
+            this.aforament.ReadOnly = true;
+            // 
+            // data_inici
+            // 
+            this.data_inici.HeaderText = "Data Inici";
+            this.data_inici.Name = "data_inici";
+            this.data_inici.ReadOnly = true;
+            // 
+            // data_fi
+            // 
+            this.data_fi.HeaderText = "Data Fi";
+            this.data_fi.Name = "data_fi";
+            this.data_fi.ReadOnly = true;
+            // 
+            // preu
+            // 
+            this.preu.HeaderText = "Preu";
+            this.preu.Name = "preu";
+            this.preu.ReadOnly = true;
+            // 
             // ReservaTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,14 +295,14 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.eventDataGridView);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "ReservaTable";
             this.Text = "ReservaTable";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventDataGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -250,7 +324,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView eventDataGridView;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -258,5 +332,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_esdeveniment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_sala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuari;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aforament;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_inici;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_fi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preu;
     }
 }

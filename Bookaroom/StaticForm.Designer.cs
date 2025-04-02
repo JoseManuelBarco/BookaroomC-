@@ -46,7 +46,7 @@
             this.ClientSize = new System.Drawing.Size(1034, 611);
             this.Controls.Add(this.ContainerPanel);
             this.Name = "StaticForm";
-            this.Text = "StaticForm";
+            this.Text = "BOOKAROOM";
             this.ResumeLayout(false);
 
         }

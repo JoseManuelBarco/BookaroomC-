@@ -31,7 +31,8 @@ namespace Bookaroom.Models
 
                 string passwordEncrypted = users.GetString(4);
 
-                if (BCrypt.Net.BCrypt.EnhancedVerify(password, passwordEncrypted, BCrypt.Net.HashType.SHA512))
+                //if (BCrypt.Net.BCrypt.EnhancedVerify(password, passwordEncrypted, BCrypt.Net.HashType.SHA512))
+                if(password == passwordEncrypted)
                 {
 
                     MessageBox.Show("Usuari trobat. Benvigut");
@@ -50,6 +51,35 @@ namespace Bookaroom.Models
             Bd.connexioJose.Close();
             users.Close();
             return valid;
+        }
+        public static string checkRol(string email)
+        {
+            string role = null; // Valor predeterminado si el usuario no tiene rol
+
+            SqlCommand sentence = new SqlCommand();
+            SqlDataReader users;
+            sentence.Connection = Bd.connexioJose;
+            sentence.CommandText = "SELECT rol FROM Usuaris WHERE email = @Email";
+            sentence.Parameters.AddWithValue("@Email", email);
+
+            Bd.connexioJose.Open();
+
+            users = sentence.ExecuteReader();
+
+            if (users.HasRows)
+            {
+                users.Read();
+                role = users.GetString(0);  // Obtiene el valor del rol (suponiendo que 'role' es la primera columna)
+            }
+            else
+            {
+                MessageBox.Show("Usuari no trobat");
+            }
+
+            Bd.connexioJose.Close();
+            users.Close();
+
+            return role; 
         }
         public static DataTable GetUsers()
         {

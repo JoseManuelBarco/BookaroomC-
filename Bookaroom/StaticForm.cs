@@ -26,7 +26,7 @@ namespace Bookaroom
         public void OpenForm(Form childForm)
         {
             if (activeForm != null)
-                activeForm.Close(); // Cierra el formulario anterior
+                activeForm.Close();
 
             activeForm = childForm;
             childForm.TopLevel = false;

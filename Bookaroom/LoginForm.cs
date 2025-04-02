@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bookaroom.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Bookaroom
 {
@@ -25,8 +27,25 @@ namespace Bookaroom
         {
              if (!String.IsNullOrEmpty(emailtextbox.Text) || !String.IsNullOrEmpty(passwordtextbox.Text))
             {
-                StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-                staticFormmainForm.OpenForm(new EventOrganizerContent()); 
+
+                string email = emailtextbox.Text;
+                string password = passwordtextbox.Text;
+                bool check = Users.checkUserBD(email, password);
+
+                if (check)
+                {
+                    string rol = Users.checkRol(email);
+                    if (rol == "Superadmin") {
+                        StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+                        staticFormmainForm.OpenForm(new SuperadminSelection());
+                    }
+                    else if(rol == "Event Organizer")
+                    {
+                        StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+                        staticFormmainForm.OpenForm(new EventOrganizerContent());
+                    }
+
+                }        
             }
             else
             {
