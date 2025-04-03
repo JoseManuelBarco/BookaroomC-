@@ -34,9 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.edituserbutton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.createuserButton = new System.Windows.Forms.Button();
             this.userdataGridView = new System.Windows.Forms.DataGridView();
             this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,16 +112,17 @@
             this.pictureBox5.TabIndex = 37;
             this.pictureBox5.TabStop = false;
             // 
-            // button3
+            // edituserbutton
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(722, 447);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 50);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "EDITAR USUARIO";
-            this.button3.UseVisualStyleBackColor = false;
+            this.edituserbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.edituserbutton.ForeColor = System.Drawing.Color.White;
+            this.edituserbutton.Location = new System.Drawing.Point(722, 447);
+            this.edituserbutton.Name = "edituserbutton";
+            this.edituserbutton.Size = new System.Drawing.Size(175, 50);
+            this.edituserbutton.TabIndex = 36;
+            this.edituserbutton.Text = "EDITAR USUARIO";
+            this.edituserbutton.UseVisualStyleBackColor = false;
+            this.edituserbutton.Click += new System.EventHandler(this.edituserbutton_Click);
             // 
             // button2
             // 
@@ -134,17 +135,18 @@
             this.button2.Text = "DESACTIVAR USUARIO";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // createuserButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(722, 317);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 50);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "CREAR USUARIO";
-            this.button1.UseVisualStyleBackColor = false;
+            this.createuserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.createuserButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.createuserButton.ForeColor = System.Drawing.Color.White;
+            this.createuserButton.Location = new System.Drawing.Point(722, 317);
+            this.createuserButton.Name = "createuserButton";
+            this.createuserButton.Size = new System.Drawing.Size(175, 50);
+            this.createuserButton.TabIndex = 34;
+            this.createuserButton.Text = "CREAR USUARIO";
+            this.createuserButton.UseVisualStyleBackColor = false;
+            this.createuserButton.Click += new System.EventHandler(this.createuserButton_Click);
             // 
             // userdataGridView
             // 
@@ -267,9 +269,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.edituserbutton);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.createuserButton);
             this.Controls.Add(this.userdataGridView);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
@@ -296,9 +298,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button edituserbutton;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button createuserButton;
         private System.Windows.Forms.DataGridView userdataGridView;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;

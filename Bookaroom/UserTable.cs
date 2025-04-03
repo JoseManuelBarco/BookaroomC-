@@ -54,5 +54,31 @@ namespace Bookaroom
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
             staticFormmainForm.OpenForm(new LoginForm());
         }
+
+        private void createuserButton_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new EventOrganizerContent());
+        }
+
+        private void edituserbutton_Click(object sender, EventArgs e)
+        {
+            if (userdataGridView.SelectedRows.Count > 0)
+            {
+                int userId = Convert.ToInt32(userdataGridView.SelectedRows[0].Cells["Id_usuario"].Value);
+
+                var result = MessageBox.Show("Seguro que quieres deshabilitar el usuario?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+   
+                    LoadDataIntoPreExistingColumns();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Porfavor selecione un usuario.");
+            }
+        }
     }
 }

@@ -17,29 +17,31 @@ namespace Bookaroom
         {
             InitializeComponent();
             LoadDataIntoPreExistingColumns();
+            reservationDataGridView.RowHeadersVisible = false;
+            reservationDataGridView.EnableHeadersVisualStyles = false;
+            reservationDataGridView.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            reservationDataGridView.DefaultCellStyle.ForeColor = Color.Black;
+            reservationDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            reservationDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
         }
+        
         private void LoadDataIntoPreExistingColumns()
         {
             try
             {
-                eventDataGridView.Rows.Clear();
+                reservationDataGridView.Rows.Clear();
 
-                DataTable usersTable = EventsBD.GetEvents();
+                DataTable usersTable = ReserveBD.GetTickets();
                 foreach (DataRow row in usersTable.Rows)
                 {
-                    int rowIndex = eventDataGridView.Rows.Add();
-                    eventDataGridView.Rows[rowIndex].Cells["Id_esdeveniment"].Value = row["id_esdeveniment"];
-                    eventDataGridView.Rows[rowIndex].Cells["id_sala"].Value = row["id_sala"];
-                    eventDataGridView.Rows[rowIndex].Cells["id_usuari"].Value = row["nom_usuari"];
-                    eventDataGridView.Rows[rowIndex].Cells["Nom"].Value = row["nombre"];
-                    eventDataGridView.Rows[rowIndex].Cells["descripcio"].Value = row["descripcio"];
-                    eventDataGridView.Rows[rowIndex].Cells["aforament"].Value = row["aforament"];
-                    eventDataGridView.Rows[rowIndex].Cells["Data_Inici"].Value = row["data_inici"];
-                    eventDataGridView.Rows[rowIndex].Cells["Data_fi"].Value = row["data_fi"];
-                    eventDataGridView.Rows[rowIndex].Cells["Preu"].Value = row["preu"];
-
-
-
+                    int rowIndex = reservationDataGridView.Rows.Add();
+                    reservationDataGridView.Rows[rowIndex].Cells["id_entrada"].Value = row["id_entrada"];
+                    reservationDataGridView.Rows[rowIndex].Cells["id_usuari"].Value = row["nom_usuari"];
+                    reservationDataGridView.Rows[rowIndex].Cells["numero_butaca"].Value = row["numero_butaca"];
+                    reservationDataGridView.Rows[rowIndex].Cells["numero_fila"].Value = row["numero_fila"];
+                    reservationDataGridView.Rows[rowIndex].Cells["id_esdeveniment"].Value = row["nom_event"];
+                    reservationDataGridView.Rows[rowIndex].Cells["email"].Value = row["email"];
 
                 }
             }
@@ -48,5 +50,21 @@ namespace Bookaroom
                 MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
+
+        private void filterdateinilabel_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void filterdateendlabel_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void capacityfilterlabel_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
-}
+    }
+

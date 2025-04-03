@@ -100,5 +100,35 @@ namespace Bookaroom.Models
 
             return dt;
         }
+        public static bool AddUser(string email, string name, string surnames, string password, int roleid, int actiu)
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = Bd.connexioJose;
+            command.CommandText = "INSERT INTO Usuaris (email, nom, cognom, pass,rols) VALUES (@Email, @Name, @Surnames, @Password,@Active,@Role)";
+
+            command.Parameters.AddWithValue("@Email", email);
+            command.Parameters.AddWithValue("@Name", name);
+            command.Parameters.AddWithValue("@Surnames", surnames);
+            command.Parameters.AddWithValue("@Password", password);// BCrypt.Net.BCrypt.EnhancedHashPassword(password, BCrypt.Net.HashType.SHA512));
+            command.Parameters.AddWithValue("@Active", actiu);
+            command.Parameters.AddWithValue("@Role", roleid);
+
+            try
+            {
+                Bd.connexioJose.Open();
+                int result = command.ExecuteNonQuery();
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding user: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                Bd.connexioJose.Close();
+            }
+        }
+
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.managereservesimg = new System.Windows.Forms.PictureBox();
             this.manageEventImg = new System.Windows.Forms.PictureBox();
             this.manageUsersImg = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -37,22 +37,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managereservesimg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageEventImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageUsersImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox5
+            // managereservesimg
             // 
-            this.pictureBox5.Image = global::Bookaroom.Properties.Resources.manage_tickets_button;
-            this.pictureBox5.Location = new System.Drawing.Point(655, 159);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(295, 375);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
+            this.managereservesimg.Image = global::Bookaroom.Properties.Resources.manage_tickets_button;
+            this.managereservesimg.Location = new System.Drawing.Point(655, 159);
+            this.managereservesimg.Name = "managereservesimg";
+            this.managereservesimg.Size = new System.Drawing.Size(295, 375);
+            this.managereservesimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.managereservesimg.TabIndex = 5;
+            this.managereservesimg.TabStop = false;
+            this.managereservesimg.Click += new System.EventHandler(this.managereservesimg_Click);
             // 
             // manageEventImg
             // 
@@ -155,14 +156,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.managereservesimg);
             this.Controls.Add(this.manageEventImg);
             this.Controls.Add(this.manageUsersImg);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "SuperadminSelection";
             this.Text = "Selecciona una opció...";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managereservesimg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageEventImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageUsersImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -178,7 +179,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox manageUsersImg;
         private System.Windows.Forms.PictureBox manageEventImg;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox managereservesimg;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

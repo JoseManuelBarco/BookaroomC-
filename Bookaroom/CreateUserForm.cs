@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bookaroom.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Bookaroom
 {
@@ -16,5 +18,60 @@ namespace Bookaroom
         {
             InitializeComponent();
         }
+
+        private void createuserbutton_Click(object sender, EventArgs e)
+        {
+        
+            string email = emailtextBox.Text.Trim();
+            string name = nomtextBox.Text.Trim();
+            string surnames = cognomstextBox.Text.Trim();
+            string password = passwordtextBox.Text;
+            string confirmPassword = passwordtextBox.Text;
+            int actiu = 0;
+
+            if (activecheckBox.Checked)
+            {
+                actiu = 1;
+
+            }
+            if (rolcombobox.SelectedIndex != -1)
+            {
+                int idrole = rolcombobox.SelectedIndex + 1;
+
+                if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(surnames) ||
+                    string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
+                {
+                    MessageBox.Show("All fields are required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (password != confirmPassword)
+                {
+                    MessageBox.Show("Passwords do not match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                if (Users.AddUser(email, name, surnames, password, idrole, actiu))
+                {
+                    MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+                    staticFormmainForm.OpenForm(new UserTable());
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add user. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cancelbutton_Click(object sender, EventArgs e)
+        {
+
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new UserTable());
+        }
     }
 }
+

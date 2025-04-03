@@ -31,6 +31,12 @@ namespace Bookaroom
         private void manageEventImg_Click(object sender, EventArgs e)
         {
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new EventTable());
+        }
+
+        private void managereservesimg_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
             staticFormmainForm.OpenForm(new ReservaTable());
         }
     }

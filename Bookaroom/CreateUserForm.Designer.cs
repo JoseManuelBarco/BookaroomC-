@@ -32,15 +32,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nomtextBox = new System.Windows.Forms.TextBox();
+            this.cognomstextBox = new System.Windows.Forms.TextBox();
+            this.passwordtextBox = new System.Windows.Forms.TextBox();
+            this.emailtextBox = new System.Windows.Forms.TextBox();
+            this.createuserbutton = new System.Windows.Forms.Button();
+            this.cancelbutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rolcombobox = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.activecheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,62 +88,64 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Correu Electrónic";
             // 
-            // textBox1
+            // nomtextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(40, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(358, 20);
-            this.textBox1.TabIndex = 5;
+            this.nomtextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.nomtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nomtextBox.Location = new System.Drawing.Point(40, 112);
+            this.nomtextBox.Name = "nomtextBox";
+            this.nomtextBox.Size = new System.Drawing.Size(358, 20);
+            this.nomtextBox.TabIndex = 5;
             // 
-            // textBox2
+            // cognomstextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(40, 171);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(358, 20);
-            this.textBox2.TabIndex = 6;
+            this.cognomstextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.cognomstextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cognomstextBox.Location = new System.Drawing.Point(40, 171);
+            this.cognomstextBox.Name = "cognomstextBox";
+            this.cognomstextBox.Size = new System.Drawing.Size(358, 20);
+            this.cognomstextBox.TabIndex = 6;
             // 
-            // textBox3
+            // passwordtextBox
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(40, 235);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(358, 20);
-            this.textBox3.TabIndex = 7;
+            this.passwordtextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.passwordtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordtextBox.Location = new System.Drawing.Point(41, 235);
+            this.passwordtextBox.Name = "passwordtextBox";
+            this.passwordtextBox.Size = new System.Drawing.Size(357, 20);
+            this.passwordtextBox.TabIndex = 7;
             // 
-            // textBox4
+            // emailtextBox
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(40, 296);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(358, 20);
-            this.textBox4.TabIndex = 8;
+            this.emailtextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.emailtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.emailtextBox.Location = new System.Drawing.Point(40, 296);
+            this.emailtextBox.Name = "emailtextBox";
+            this.emailtextBox.Size = new System.Drawing.Size(358, 20);
+            this.emailtextBox.TabIndex = 8;
             // 
-            // button1
+            // createuserbutton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(51, 350);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 51);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "CREAR USUARIO";
-            this.button1.UseVisualStyleBackColor = false;
+            this.createuserbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.createuserbutton.Location = new System.Drawing.Point(38, 412);
+            this.createuserbutton.Name = "createuserbutton";
+            this.createuserbutton.Size = new System.Drawing.Size(159, 51);
+            this.createuserbutton.TabIndex = 9;
+            this.createuserbutton.Text = "CREAR USUARIO";
+            this.createuserbutton.UseVisualStyleBackColor = false;
+            this.createuserbutton.Click += new System.EventHandler(this.createuserbutton_Click);
             // 
-            // button2
+            // cancelbutton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Location = new System.Drawing.Point(222, 350);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 51);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "CANCELAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.cancelbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.cancelbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelbutton.Location = new System.Drawing.Point(238, 412);
+            this.cancelbutton.Name = "cancelbutton";
+            this.cancelbutton.Size = new System.Drawing.Size(159, 51);
+            this.cancelbutton.TabIndex = 10;
+            this.cancelbutton.Text = "CANCELAR";
+            this.cancelbutton.UseVisualStyleBackColor = false;
+            this.cancelbutton.Click += new System.EventHandler(this.cancelbutton_Click);
             // 
             // label5
             // 
@@ -171,9 +176,42 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(12, 26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(410, 452);
+            this.pictureBox1.Size = new System.Drawing.Size(410, 473);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // rolcombobox
+            // 
+            this.rolcombobox.FormattingEnabled = true;
+            this.rolcombobox.Items.AddRange(new object[] {
+            "SuperAdmin",
+            "Event Organizer",
+            "Normal User"});
+            this.rolcombobox.Location = new System.Drawing.Point(41, 352);
+            this.rolcombobox.Name = "rolcombobox";
+            this.rolcombobox.Size = new System.Drawing.Size(356, 21);
+            this.rolcombobox.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.label6.Location = new System.Drawing.Point(38, 336);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Rol";
+            // 
+            // activecheckBox
+            // 
+            this.activecheckBox.AutoSize = true;
+            this.activecheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.activecheckBox.Location = new System.Drawing.Point(38, 389);
+            this.activecheckBox.Name = "activecheckBox";
+            this.activecheckBox.Size = new System.Drawing.Size(50, 17);
+            this.activecheckBox.TabIndex = 17;
+            this.activecheckBox.Text = "Actiu";
+            this.activecheckBox.UseVisualStyleBackColor = false;
             // 
             // CreateUserForm
             // 
@@ -181,14 +219,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(434, 511);
+            this.Controls.Add(this.activecheckBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.rolcombobox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cancelbutton);
+            this.Controls.Add(this.createuserbutton);
+            this.Controls.Add(this.emailtextBox);
+            this.Controls.Add(this.passwordtextBox);
+            this.Controls.Add(this.cognomstextBox);
+            this.Controls.Add(this.nomtextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -210,13 +251,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox nomtextBox;
+        private System.Windows.Forms.TextBox cognomstextBox;
+        private System.Windows.Forms.TextBox passwordtextBox;
+        private System.Windows.Forms.TextBox emailtextBox;
+        private System.Windows.Forms.Button createuserbutton;
+        private System.Windows.Forms.Button cancelbutton;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox rolcombobox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox activecheckBox;
     }
 }

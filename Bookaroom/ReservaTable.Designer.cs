@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.capacityfilterlabel = new System.Windows.Forms.Label();
+            this.filterdateendlabel = new System.Windows.Forms.Label();
+            this.filterdateinilabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.eventDataGridView = new System.Windows.Forms.DataGridView();
+            this.reservationDataGridView = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,16 +44,13 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.id_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_esdeveniment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aforament = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_inici = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_fi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.eventDataGridView)).BeginInit();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero_fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero_butaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -61,38 +58,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label4
+            // capacityfilterlabel
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.label4.Location = new System.Drawing.Point(706, 247);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(207, 41);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "FILTRO 3";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.capacityfilterlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
+            this.capacityfilterlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.capacityfilterlabel.Location = new System.Drawing.Point(706, 247);
+            this.capacityfilterlabel.Name = "capacityfilterlabel";
+            this.capacityfilterlabel.Size = new System.Drawing.Size(207, 41);
+            this.capacityfilterlabel.TabIndex = 41;
+            this.capacityfilterlabel.Text = "VER/QUITAR AFORAMENT";
+            this.capacityfilterlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.capacityfilterlabel.Click += new System.EventHandler(this.capacityfilterlabel_Click);
             // 
-            // label3
+            // filterdateendlabel
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.label3.Location = new System.Drawing.Point(706, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(207, 44);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "FILTRO 2";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.filterdateendlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
+            this.filterdateendlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.filterdateendlabel.Location = new System.Drawing.Point(706, 197);
+            this.filterdateendlabel.Name = "filterdateendlabel";
+            this.filterdateendlabel.Size = new System.Drawing.Size(207, 44);
+            this.filterdateendlabel.TabIndex = 40;
+            this.filterdateendlabel.Text = "VER/QUITAR FECHA FIN";
+            this.filterdateendlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.filterdateendlabel.Click += new System.EventHandler(this.filterdateendlabel_Click);
             // 
-            // label2
+            // filterdateinilabel
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.label2.Location = new System.Drawing.Point(702, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 47);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "FILTRO 1";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.filterdateinilabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
+            this.filterdateinilabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.filterdateinilabel.Location = new System.Drawing.Point(702, 144);
+            this.filterdateinilabel.Name = "filterdateinilabel";
+            this.filterdateinilabel.Size = new System.Drawing.Size(211, 47);
+            this.filterdateinilabel.TabIndex = 39;
+            this.filterdateinilabel.Text = "VER/QUITAR FECHA INICIO";
+            this.filterdateinilabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.filterdateinilabel.Click += new System.EventHandler(this.filterdateinilabel_Click);
             // 
             // label1
             // 
@@ -139,25 +139,25 @@
             this.button1.Text = "CREAR USUARIO";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // eventDataGridView
+            // reservationDataGridView
             // 
-            this.eventDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
-            this.eventDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.reservationDataGridView.AllowUserToAddRows = false;
+            this.reservationDataGridView.AllowUserToDeleteRows = false;
+            this.reservationDataGridView.AllowUserToOrderColumns = true;
+            this.reservationDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
+            this.reservationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reservationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_entrada,
             this.id_esdeveniment,
-            this.id_sala,
             this.id_usuari,
-            this.nom,
-            this.descripcio,
-            this.aforament,
-            this.data_inici,
-            this.data_fi,
-            this.preu});
-            this.eventDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.eventDataGridView.Location = new System.Drawing.Point(36, 76);
-            this.eventDataGridView.Name = "eventDataGridView";
-            this.eventDataGridView.Size = new System.Drawing.Size(579, 443);
-            this.eventDataGridView.TabIndex = 33;
+            this.email,
+            this.numero_fila,
+            this.numero_butaca});
+            this.reservationDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.reservationDataGridView.Location = new System.Drawing.Point(36, 76);
+            this.reservationDataGridView.Name = "reservationDataGridView";
+            this.reservationDataGridView.Size = new System.Drawing.Size(579, 443);
+            this.reservationDataGridView.TabIndex = 33;
             // 
             // toolStrip1
             // 
@@ -226,18 +226,18 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
+            // id_entrada
+            // 
+            this.id_entrada.HeaderText = "ID_entrada";
+            this.id_entrada.Name = "id_entrada";
+            this.id_entrada.ReadOnly = true;
+            this.id_entrada.Visible = false;
+            // 
             // id_esdeveniment
             // 
-            this.id_esdeveniment.HeaderText = "ID_esdeveniment";
+            this.id_esdeveniment.HeaderText = "Nom Esdeveniment";
             this.id_esdeveniment.Name = "id_esdeveniment";
             this.id_esdeveniment.ReadOnly = true;
-            this.id_esdeveniment.Visible = false;
-            // 
-            // id_sala
-            // 
-            this.id_sala.HeaderText = "Numero Sala";
-            this.id_sala.Name = "id_sala";
-            this.id_sala.ReadOnly = true;
             // 
             // id_usuari
             // 
@@ -245,41 +245,23 @@
             this.id_usuari.Name = "id_usuari";
             this.id_usuari.ReadOnly = true;
             // 
-            // nom
+            // email
             // 
-            this.nom.HeaderText = "Nom";
-            this.nom.Name = "nom";
-            this.nom.ReadOnly = true;
+            this.email.HeaderText = "Correu";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
-            // descripcio
+            // numero_fila
             // 
-            this.descripcio.HeaderText = "Descripció";
-            this.descripcio.Name = "descripcio";
-            this.descripcio.ReadOnly = true;
+            this.numero_fila.HeaderText = "Numero Fila";
+            this.numero_fila.Name = "numero_fila";
+            this.numero_fila.ReadOnly = true;
             // 
-            // aforament
+            // numero_butaca
             // 
-            this.aforament.HeaderText = "Aforament";
-            this.aforament.Name = "aforament";
-            this.aforament.ReadOnly = true;
-            // 
-            // data_inici
-            // 
-            this.data_inici.HeaderText = "Data Inici";
-            this.data_inici.Name = "data_inici";
-            this.data_inici.ReadOnly = true;
-            // 
-            // data_fi
-            // 
-            this.data_fi.HeaderText = "Data Fi";
-            this.data_fi.Name = "data_fi";
-            this.data_fi.ReadOnly = true;
-            // 
-            // preu
-            // 
-            this.preu.HeaderText = "Preu";
-            this.preu.Name = "preu";
-            this.preu.ReadOnly = true;
+            this.numero_butaca.HeaderText = "Numero Butaca";
+            this.numero_butaca.Name = "numero_butaca";
+            this.numero_butaca.ReadOnly = true;
             // 
             // ReservaTable
             // 
@@ -287,22 +269,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.capacityfilterlabel);
+            this.Controls.Add(this.filterdateendlabel);
+            this.Controls.Add(this.filterdateinilabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.eventDataGridView);
+            this.Controls.Add(this.reservationDataGridView);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "ReservaTable";
             this.Text = "ReservaTable";
-            ((System.ComponentModel.ISupportInitialize)(this.eventDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -316,15 +298,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label capacityfilterlabel;
+        private System.Windows.Forms.Label filterdateendlabel;
+        private System.Windows.Forms.Label filterdateinilabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView eventDataGridView;
+        private System.Windows.Forms.DataGridView reservationDataGridView;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -332,14 +314,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_esdeveniment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_sala;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_usuari;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aforament;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_inici;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_fi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero_fila;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero_butaca;
     }
 }
