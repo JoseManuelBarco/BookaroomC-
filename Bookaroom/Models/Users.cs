@@ -129,6 +129,50 @@ namespace Bookaroom.Models
                 Bd.connexioJose.Close();
             }
         }
+        public static bool DeleteUser(int userId)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE usuaris SET ACTIU = @actiu WHERE id = @id", Bd.connexioJose);
+            try
+            {
+                bool actiu = false;
+                cmd.Parameters.AddWithValue("@id", userId);
+                cmd.Parameters.AddWithValue("@actiu",1); 
 
+                Bd.connexioJose.Open();
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                return rowsAffected > 0;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                cmd.Dispose();
+                Bd.connexioJose.Close();
+            }
+        }
+        public static DataTable GetUser(int userID)
+        {
+            DataTable dt = new DataTable();
+
+            SqlCommand command = new SqlCommand(@"
+            SELECT u.id_usuari,u.nom, u.cognom, u.email FROM Usuaris u where id_usuari=@id", Bd.connexioJose);
+
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                command.Parameters.AddWithValue("@id", userID);
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading users: {ex.Message}");
+            }
+
+            return dt;
+        }
     }
 }

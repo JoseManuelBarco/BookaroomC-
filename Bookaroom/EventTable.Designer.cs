@@ -33,17 +33,10 @@
             this.dateinifilterlabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.editeventbutton = new System.Windows.Forms.Button();
+            this.desactivateeventbutton = new System.Windows.Forms.Button();
+            this.createeventbutton = new System.Windows.Forms.Button();
             this.eventdatagridview = new System.Windows.Forms.DataGridView();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.id_event = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +46,13 @@
             this.data_inici = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_fi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventdatagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -118,39 +118,42 @@
             this.pictureBox5.TabIndex = 24;
             this.pictureBox5.TabStop = false;
             // 
-            // button3
+            // editeventbutton
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(722, 447);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 50);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "EDITAR USUARIO";
-            this.button3.UseVisualStyleBackColor = false;
+            this.editeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.editeventbutton.ForeColor = System.Drawing.Color.White;
+            this.editeventbutton.Location = new System.Drawing.Point(722, 447);
+            this.editeventbutton.Name = "editeventbutton";
+            this.editeventbutton.Size = new System.Drawing.Size(175, 50);
+            this.editeventbutton.TabIndex = 23;
+            this.editeventbutton.Text = "EDITAR USUARIO";
+            this.editeventbutton.UseVisualStyleBackColor = false;
+            this.editeventbutton.Click += new System.EventHandler(this.editeventbutton_Click);
             // 
-            // button2
+            // desactivateeventbutton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(722, 382);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 50);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "DESACTIVAR USUARIO";
-            this.button2.UseVisualStyleBackColor = false;
+            this.desactivateeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.desactivateeventbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.desactivateeventbutton.Location = new System.Drawing.Point(722, 382);
+            this.desactivateeventbutton.Name = "desactivateeventbutton";
+            this.desactivateeventbutton.Size = new System.Drawing.Size(175, 50);
+            this.desactivateeventbutton.TabIndex = 22;
+            this.desactivateeventbutton.Text = "DESACTIVAR EVENT";
+            this.desactivateeventbutton.UseVisualStyleBackColor = false;
+            this.desactivateeventbutton.Click += new System.EventHandler(this.desactivateeventbutton_Click);
             // 
-            // button1
+            // createeventbutton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(722, 317);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 50);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "CREAR USUARIO";
-            this.button1.UseVisualStyleBackColor = false;
+            this.createeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.createeventbutton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.createeventbutton.ForeColor = System.Drawing.Color.White;
+            this.createeventbutton.Location = new System.Drawing.Point(722, 317);
+            this.createeventbutton.Name = "createeventbutton";
+            this.createeventbutton.Size = new System.Drawing.Size(175, 50);
+            this.createeventbutton.TabIndex = 21;
+            this.createeventbutton.Text = "CREAR EVENT";
+            this.createeventbutton.UseVisualStyleBackColor = false;
+            this.createeventbutton.Click += new System.EventHandler(this.createeventbutton_Click);
             // 
             // eventdatagridview
             // 
@@ -171,65 +174,9 @@
             this.eventdatagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.eventdatagridview.Location = new System.Drawing.Point(36, 76);
             this.eventdatagridview.Name = "eventdatagridview";
+            this.eventdatagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.eventdatagridview.Size = new System.Drawing.Size(579, 443);
             this.eventdatagridview.TabIndex = 20;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(25, 64);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(601, 466);
-            this.pictureBox3.TabIndex = 19;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(665, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 466);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripSeparator1,
-            this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(9, 10);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(966, 35);
-            this.toolStrip1.TabIndex = 16;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(64, 32);
-            this.toolStripLabel1.Text = "ACCIONES";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(92, 32);
-            this.toolStripLabel2.Text = "CERRAR SESIÓN";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
-            this.pictureBox2.Location = new System.Drawing.Point(9, 31);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(963, 519);
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
             // 
             // id_event
             // 
@@ -288,6 +235,63 @@
             this.preu.Name = "preu";
             this.preu.ReadOnly = true;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(25, 64);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(601, 466);
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(665, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(282, 466);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripSeparator1,
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(9, 10);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(966, 35);
+            this.toolStrip1.TabIndex = 16;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(64, 32);
+            this.toolStripLabel1.Text = "ACCIONES";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(92, 32);
+            this.toolStripLabel2.Text = "CERRAR SESIÓN";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.pictureBox2.Location = new System.Drawing.Point(9, 31);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(963, 519);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
             // EventTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,9 +303,9 @@
             this.Controls.Add(this.dateinifilterlabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.editeventbutton);
+            this.Controls.Add(this.desactivateeventbutton);
+            this.Controls.Add(this.createeventbutton);
             this.Controls.Add(this.eventdatagridview);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
@@ -328,9 +332,9 @@
         private System.Windows.Forms.Label dateinifilterlabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button editeventbutton;
+        private System.Windows.Forms.Button desactivateeventbutton;
+        private System.Windows.Forms.Button createeventbutton;
         private System.Windows.Forms.DataGridView eventdatagridview;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;

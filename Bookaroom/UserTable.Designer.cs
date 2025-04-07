@@ -35,14 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.edituserbutton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.desactivateuserbutton = new System.Windows.Forms.Button();
             this.createuserButton = new System.Windows.Forms.Button();
             this.userdataGridView = new System.Windows.Forms.DataGridView();
-            this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cognom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -50,6 +45,12 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closesessionLabel = new System.Windows.Forms.ToolStripLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cognom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actiu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -124,16 +125,17 @@
             this.edituserbutton.UseVisualStyleBackColor = false;
             this.edituserbutton.Click += new System.EventHandler(this.edituserbutton_Click);
             // 
-            // button2
+            // desactivateuserbutton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(722, 382);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 50);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "DESACTIVAR USUARIO";
-            this.button2.UseVisualStyleBackColor = false;
+            this.desactivateuserbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.desactivateuserbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.desactivateuserbutton.Location = new System.Drawing.Point(722, 382);
+            this.desactivateuserbutton.Name = "desactivateuserbutton";
+            this.desactivateuserbutton.Size = new System.Drawing.Size(175, 50);
+            this.desactivateuserbutton.TabIndex = 35;
+            this.desactivateuserbutton.Text = "DESACTIVAR USUARIO";
+            this.desactivateuserbutton.UseVisualStyleBackColor = false;
+            this.desactivateuserbutton.Click += new System.EventHandler(this.desactivateuserbutton_Click);
             // 
             // createuserButton
             // 
@@ -159,7 +161,8 @@
             this.nom,
             this.cognom,
             this.email,
-            this.rol});
+            this.rol,
+            this.actiu});
             this.userdataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.userdataGridView.Location = new System.Drawing.Point(36, 76);
             this.userdataGridView.MultiSelect = false;
@@ -168,37 +171,6 @@
             this.userdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.userdataGridView.Size = new System.Drawing.Size(579, 443);
             this.userdataGridView.TabIndex = 33;
-            // 
-            // id_usuari
-            // 
-            this.id_usuari.HeaderText = "Id_usuari";
-            this.id_usuari.Name = "id_usuari";
-            this.id_usuari.ReadOnly = true;
-            this.id_usuari.Visible = false;
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nom";
-            this.nom.Name = "nom";
-            this.nom.ReadOnly = true;
-            // 
-            // cognom
-            // 
-            this.cognom.HeaderText = "Cognom";
-            this.cognom.Name = "cognom";
-            this.cognom.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "Rol";
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
             // 
             // pictureBox3
             // 
@@ -258,6 +230,43 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
+            // id_usuari
+            // 
+            this.id_usuari.HeaderText = "Id_usuari";
+            this.id_usuari.Name = "id_usuari";
+            this.id_usuari.ReadOnly = true;
+            this.id_usuari.Visible = false;
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nom";
+            this.nom.Name = "nom";
+            this.nom.ReadOnly = true;
+            // 
+            // cognom
+            // 
+            this.cognom.HeaderText = "Cognom";
+            this.cognom.Name = "cognom";
+            this.cognom.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // rol
+            // 
+            this.rol.HeaderText = "Rol";
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            // 
+            // actiu
+            // 
+            this.actiu.HeaderText = "Actiu";
+            this.actiu.Name = "actiu";
+            this.actiu.ReadOnly = true;
+            // 
             // UserTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,7 +279,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.edituserbutton);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.desactivateuserbutton);
             this.Controls.Add(this.createuserButton);
             this.Controls.Add(this.userdataGridView);
             this.Controls.Add(this.pictureBox3);
@@ -299,7 +308,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button edituserbutton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button desactivateuserbutton;
         private System.Windows.Forms.Button createuserButton;
         private System.Windows.Forms.DataGridView userdataGridView;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -314,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cognom;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn actiu;
     }
 }

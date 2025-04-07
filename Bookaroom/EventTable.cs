@@ -40,7 +40,7 @@ namespace Bookaroom
                 foreach (DataRow row in usersTable.Rows)
                 {
                     int rowIndex = eventdatagridview.Rows.Add();
-                    eventdatagridview.Rows[rowIndex].Cells["Id_esdeveniment"].Value = row["id_esdeveniment"];
+                    eventdatagridview.Rows[rowIndex].Cells["id_event"].Value = row["id_esdeveniment"];
                     eventdatagridview.Rows[rowIndex].Cells["id_sala"].Value = row["id_sala"];
                     eventdatagridview.Rows[rowIndex].Cells["id_usuari"].Value = row["nom_usuari"];
                     eventdatagridview.Rows[rowIndex].Cells["Nom"].Value = row["nombre"];
@@ -76,6 +76,51 @@ namespace Bookaroom
         {
             this.eventdatagridview.Columns["Data_Inici"].Visible =
                   !this.eventdatagridview.Columns["Data_Inici"].Visible;
+        }
+
+        private void createeventbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void desactivateeventbutton_Click(object sender, EventArgs e)
+        {
+            if (eventdatagridview.SelectedRows.Count > 0)
+            {
+
+
+                int eventId = Convert.ToInt32(eventdatagridview.SelectedRows[0].Cells["Id_esdeveniment"].Value);
+
+                var result = MessageBox.Show("Vols desactivar aquest esdeveniment?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    EventsBD.DeleteEvent(eventId);
+
+
+                    LoadDataIntoPreExistingColumns();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Siusplau selecionni un esdeveniment.");
+            }
+        }
+
+        private void editeventbutton_Click(object sender, EventArgs e)
+        {
+            if (eventdatagridview.SelectedRows.Count > 0)
+            {
+                int eventID = Convert.ToInt32(eventdatagridview.SelectedRows[0].Cells["id_event"].Value);
+
+                EditEventForm f = new EditEventForm(eventID);
+                f.ShowDialog();
+            }
+
+            else
+            {
+                MessageBox.Show("Porfavor selecione un usuario.");
+            }
         }
     }
 }

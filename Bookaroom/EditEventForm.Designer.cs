@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataenddateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.datainidateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.savechangesbutton = new System.Windows.Forms.Button();
+            this.pricetextBox = new System.Windows.Forms.TextBox();
+            this.capacitytextBox = new System.Windows.Forms.TextBox();
+            this.nomtextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,23 +47,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker2
+            // dataenddateTimePicker
             // 
-            this.dateTimePicker2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(222, 246);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(178, 20);
-            this.dateTimePicker2.TabIndex = 45;
+            this.dataenddateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dataenddateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataenddateTimePicker.Location = new System.Drawing.Point(222, 246);
+            this.dataenddateTimePicker.Name = "dataenddateTimePicker";
+            this.dataenddateTimePicker.Size = new System.Drawing.Size(178, 20);
+            this.dataenddateTimePicker.TabIndex = 45;
             // 
-            // dateTimePicker1
+            // datainidateTimePicker
             // 
-            this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(40, 246);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(178, 20);
-            this.dateTimePicker1.TabIndex = 44;
+            this.datainidateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.datainidateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datainidateTimePicker.Location = new System.Drawing.Point(40, 246);
+            this.datainidateTimePicker.Name = "datainidateTimePicker";
+            this.datainidateTimePicker.Size = new System.Drawing.Size(178, 20);
+            this.datainidateTimePicker.TabIndex = 44;
             // 
             // label6
             // 
@@ -108,43 +108,44 @@
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // savechangesbutton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(40, 373);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 51);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "EDITAR EVENT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.savechangesbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.savechangesbutton.ForeColor = System.Drawing.Color.White;
+            this.savechangesbutton.Location = new System.Drawing.Point(40, 373);
+            this.savechangesbutton.Name = "savechangesbutton";
+            this.savechangesbutton.Size = new System.Drawing.Size(159, 51);
+            this.savechangesbutton.TabIndex = 38;
+            this.savechangesbutton.Text = "EDITAR EVENT";
+            this.savechangesbutton.UseVisualStyleBackColor = false;
+            this.savechangesbutton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox4
+            // pricetextBox
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(40, 302);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(358, 20);
-            this.textBox4.TabIndex = 37;
+            this.pricetextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.pricetextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pricetextBox.Location = new System.Drawing.Point(40, 302);
+            this.pricetextBox.Name = "pricetextBox";
+            this.pricetextBox.Size = new System.Drawing.Size(358, 20);
+            this.pricetextBox.TabIndex = 37;
             // 
-            // textBox2
+            // capacitytextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(40, 177);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(358, 20);
-            this.textBox2.TabIndex = 36;
+            this.capacitytextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.capacitytextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.capacitytextBox.Location = new System.Drawing.Point(40, 177);
+            this.capacitytextBox.Name = "capacitytextBox";
+            this.capacitytextBox.Size = new System.Drawing.Size(358, 20);
+            this.capacitytextBox.TabIndex = 36;
             // 
-            // textBox1
+            // nomtextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(40, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(358, 20);
-            this.textBox1.TabIndex = 35;
+            this.nomtextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.nomtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nomtextBox.Location = new System.Drawing.Point(40, 118);
+            this.nomtextBox.Name = "nomtextBox";
+            this.nomtextBox.Size = new System.Drawing.Size(358, 20);
+            this.nomtextBox.TabIndex = 35;
             // 
             // label4
             // 
@@ -204,17 +205,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(434, 511);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dataenddateTimePicker);
+            this.Controls.Add(this.datainidateTimePicker);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.savechangesbutton);
+            this.Controls.Add(this.pricetextBox);
+            this.Controls.Add(this.capacitytextBox);
+            this.Controls.Add(this.nomtextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -230,17 +231,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dataenddateTimePicker;
+        private System.Windows.Forms.DateTimePicker datainidateTimePicker;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button savechangesbutton;
+        private System.Windows.Forms.TextBox pricetextBox;
+        private System.Windows.Forms.TextBox capacitytextBox;
+        private System.Windows.Forms.TextBox nomtextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

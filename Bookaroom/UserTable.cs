@@ -40,6 +40,7 @@ namespace Bookaroom
                     userdataGridView.Rows[rowIndex].Cells["Cognom"].Value = row["cognom"];
                     userdataGridView.Rows[rowIndex].Cells["Email"].Value = row["email"];
                     userdataGridView.Rows[rowIndex].Cells["Rol"].Value = row["rol"];
+                   //userdataGridView.Rows[rowIndex].Cells["Actiu"].Value = row["actiu"];
 
                 }
             }
@@ -57,21 +58,40 @@ namespace Bookaroom
 
         private void createuserButton_Click(object sender, EventArgs e)
         {
-            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-            staticFormmainForm.OpenForm(new EventOrganizerContent());
+            CreateUserForm f = new CreateUserForm();
+            f.ShowDialog();
         }
 
         private void edituserbutton_Click(object sender, EventArgs e)
         {
             if (userdataGridView.SelectedRows.Count > 0)
             {
-                int userId = Convert.ToInt32(userdataGridView.SelectedRows[0].Cells["Id_usuario"].Value);
+                int userId = Convert.ToInt32(userdataGridView.SelectedRows[0].Cells["Id_usuari"].Value);
 
-                var result = MessageBox.Show("Seguro que quieres deshabilitar el usuario?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                EditUserForm f = new EditUserForm(userId);
+                f.ShowDialog();
+            }
+
+            else {
+                MessageBox.Show("Porfavor selecione un usuario.");
+            }
+        }
+
+        private void desactivateuserbutton_Click(object sender, EventArgs e)
+        {
+            if (userdataGridView.SelectedRows.Count > 0)
+            {
+
+
+                int userId = Convert.ToInt32(userdataGridView.SelectedRows[0].Cells["Id_usuari"].Value);
+
+                var result = MessageBox.Show("Quieres desactivar este usuario?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
-   
+                    Users.DeleteUser(userId);
+
+
                     LoadDataIntoPreExistingColumns();
                 }
             }

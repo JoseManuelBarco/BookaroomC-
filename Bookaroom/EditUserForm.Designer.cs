@@ -32,9 +32,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.emailtextBox = new System.Windows.Forms.TextBox();
+            this.surnametextBox = new System.Windows.Forms.TextBox();
+            this.nomtextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -90,32 +90,32 @@
             this.button1.Text = "CONFIRMACION EDICIÓN";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // emailtextBox
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(40, 235);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(358, 20);
-            this.textBox3.TabIndex = 20;
+            this.emailtextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.emailtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.emailtextBox.Location = new System.Drawing.Point(40, 235);
+            this.emailtextBox.Name = "emailtextBox";
+            this.emailtextBox.Size = new System.Drawing.Size(358, 20);
+            this.emailtextBox.TabIndex = 20;
             // 
-            // textBox2
+            // surnametextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(40, 171);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(358, 20);
-            this.textBox2.TabIndex = 19;
+            this.surnametextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.surnametextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.surnametextBox.Location = new System.Drawing.Point(40, 171);
+            this.surnametextBox.Name = "surnametextBox";
+            this.surnametextBox.Size = new System.Drawing.Size(358, 20);
+            this.surnametextBox.TabIndex = 19;
             // 
-            // textBox1
+            // nomtextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(40, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(358, 20);
-            this.textBox1.TabIndex = 18;
+            this.nomtextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.nomtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nomtextBox.Location = new System.Drawing.Point(40, 112);
+            this.nomtextBox.Name = "nomtextBox";
+            this.nomtextBox.Size = new System.Drawing.Size(358, 20);
+            this.nomtextBox.TabIndex = 18;
             // 
             // label3
             // 
@@ -180,15 +180,18 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.emailtextBox);
+            this.Controls.Add(this.surnametextBox);
+            this.Controls.Add(this.nomtextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(450, 550);
+            this.MinimumSize = new System.Drawing.Size(450, 550);
             this.Name = "EditUserForm";
-            this.Text = "EditUserForm";
+            this.Text = "Editar Usuari";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -202,9 +205,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox emailtextBox;
+        private System.Windows.Forms.TextBox surnametextBox;
+        private System.Windows.Forms.TextBox nomtextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -41,27 +41,21 @@ namespace Bookaroom
                 if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(surnames) ||
                     string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
                 {
-                    MessageBox.Show("All fields are required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Todos los campos son necesarios.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                if (password != confirmPassword)
-                {
-                    MessageBox.Show("Passwords do not match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-
+             
                 if (Users.AddUser(email, name, surnames, password, idrole, actiu))
                 {
-                    MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuari afegit correctament", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
                     staticFormmainForm.OpenForm(new UserTable());
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add user. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al añadir el usuario. Por favor vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
