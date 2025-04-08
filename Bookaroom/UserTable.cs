@@ -100,5 +100,35 @@ namespace Bookaroom
                 MessageBox.Show("Porfavor selecione un usuario.");
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.userdataGridView.Rows)
+            {
+                if (row.Cells["Actiu"].Value != null && row.Cells["Actiu"].Value.ToString() == "No")
+                {
+                    row.Visible = false;
+                }
+            }
+        }
+
+        private void seeNotActives_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.userdataGridView.Rows)
+            {
+                if (row.Cells["Actiu"].Value != null && row.Cells["Actiu"].Value.ToString() == "Si")
+                {
+                    row.Visible = false;
+                }
+            }
+        }
+
+        private void makeAllVisible_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.userdataGridView.Rows)
+            {
+                row.Visible = true;
+            }
+        }
     }
 }

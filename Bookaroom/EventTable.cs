@@ -50,9 +50,6 @@ namespace Bookaroom
                     eventdatagridview.Rows[rowIndex].Cells["Data_fi"].Value = row["data_fi"];
                     eventdatagridview.Rows[rowIndex].Cells["Preu"].Value = row["preu"];
 
-
-
-
                 }
             }
             catch (Exception ex)
@@ -80,7 +77,9 @@ namespace Bookaroom
 
         private void createeventbutton_Click(object sender, EventArgs e)
         {
-
+            CreateEventForm f = new CreateEventForm();
+            f.ShowDialog();
+            LoadDataIntoPreExistingColumns();
         }
 
         private void desactivateeventbutton_Click(object sender, EventArgs e)
@@ -115,6 +114,7 @@ namespace Bookaroom
 
                 EditEventForm f = new EditEventForm(eventID);
                 f.ShowDialog();
+                LoadDataIntoPreExistingColumns();
             }
 
             else

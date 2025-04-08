@@ -136,6 +136,9 @@
   <data name="manage_users_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage_users_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="reiniciar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reiniciar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Title_create" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\v (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

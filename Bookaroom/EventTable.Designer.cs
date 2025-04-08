@@ -32,7 +32,6 @@
             this.dateendfilterlabel = new System.Windows.Forms.Label();
             this.dateinifilterlabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.editeventbutton = new System.Windows.Forms.Button();
             this.desactivateeventbutton = new System.Windows.Forms.Button();
             this.createeventbutton = new System.Windows.Forms.Button();
@@ -46,30 +45,31 @@
             this.data_inici = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_fi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventdatagridview)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // capacityfilterlabel
             // 
             this.capacityfilterlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.capacityfilterlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.capacityfilterlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.capacityfilterlabel.Location = new System.Drawing.Point(706, 247);
             this.capacityfilterlabel.Name = "capacityfilterlabel";
             this.capacityfilterlabel.Size = new System.Drawing.Size(207, 41);
             this.capacityfilterlabel.TabIndex = 28;
-            this.capacityfilterlabel.Text = "VEURE/TREURE AFORO";
+            this.capacityfilterlabel.Text = "VEURE/TREURE AFOR.";
             this.capacityfilterlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.capacityfilterlabel.Click += new System.EventHandler(this.capacityfilterlabel_Click_1);
             // 
@@ -108,16 +108,6 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "FILTROS";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.BackgroundImage = global::Bookaroom.Properties.Resources.filtros_background;
-            this.pictureBox5.Location = new System.Drawing.Point(702, 91);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(211, 204);
-            this.pictureBox5.TabIndex = 24;
-            this.pictureBox5.TabStop = false;
-            // 
             // editeventbutton
             // 
             this.editeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
@@ -126,7 +116,7 @@
             this.editeventbutton.Name = "editeventbutton";
             this.editeventbutton.Size = new System.Drawing.Size(175, 50);
             this.editeventbutton.TabIndex = 23;
-            this.editeventbutton.Text = "EDITAR USUARIO";
+            this.editeventbutton.Text = "EDITAR ESDEVENIMENT";
             this.editeventbutton.UseVisualStyleBackColor = false;
             this.editeventbutton.Click += new System.EventHandler(this.editeventbutton_Click);
             // 
@@ -138,7 +128,7 @@
             this.desactivateeventbutton.Name = "desactivateeventbutton";
             this.desactivateeventbutton.Size = new System.Drawing.Size(175, 50);
             this.desactivateeventbutton.TabIndex = 22;
-            this.desactivateeventbutton.Text = "DESACTIVAR EVENT";
+            this.desactivateeventbutton.Text = "DESACTIVAR ESDEVENIMENT";
             this.desactivateeventbutton.UseVisualStyleBackColor = false;
             this.desactivateeventbutton.Click += new System.EventHandler(this.desactivateeventbutton_Click);
             // 
@@ -151,7 +141,7 @@
             this.createeventbutton.Name = "createeventbutton";
             this.createeventbutton.Size = new System.Drawing.Size(175, 50);
             this.createeventbutton.TabIndex = 21;
-            this.createeventbutton.Text = "CREAR EVENT";
+            this.createeventbutton.Text = "CREAR ESDEVENIMENT";
             this.createeventbutton.UseVisualStyleBackColor = false;
             this.createeventbutton.Click += new System.EventHandler(this.createeventbutton_Click);
             // 
@@ -235,22 +225,6 @@
             this.preu.Name = "preu";
             this.preu.ReadOnly = true;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(25, 64);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(601, 466);
-            this.pictureBox3.TabIndex = 19;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(665, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 466);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
@@ -283,6 +257,32 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(92, 32);
             this.toolStripLabel2.Text = "CERRAR SESIÓN";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.BackgroundImage = global::Bookaroom.Properties.Resources.filtros_background;
+            this.pictureBox5.Location = new System.Drawing.Point(702, 91);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(211, 204);
+            this.pictureBox5.TabIndex = 24;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(25, 64);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(601, 466);
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(665, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(282, 466);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
@@ -313,12 +313,12 @@
             this.Controls.Add(this.pictureBox2);
             this.Name = "EventTable";
             this.Text = "EventTable";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventdatagridview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

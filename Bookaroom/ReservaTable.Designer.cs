@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.capacityfilterlabel = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
             this.filterdateendlabel = new System.Windows.Forms.Label();
             this.filterdateinilabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,61 +36,53 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.reservationDataGridView = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.id_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_esdeveniment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_butaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.userfilterbox = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.seeUserFilterButton = new System.Windows.Forms.Button();
+            this.resetpictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resetpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // capacityfilterlabel
-            // 
-            this.capacityfilterlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.capacityfilterlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.capacityfilterlabel.Location = new System.Drawing.Point(706, 247);
-            this.capacityfilterlabel.Name = "capacityfilterlabel";
-            this.capacityfilterlabel.Size = new System.Drawing.Size(207, 41);
-            this.capacityfilterlabel.TabIndex = 41;
-            this.capacityfilterlabel.Text = "VER/QUITAR AFORAMENT";
-            this.capacityfilterlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.capacityfilterlabel.Click += new System.EventHandler(this.capacityfilterlabel_Click);
-            // 
             // filterdateendlabel
             // 
             this.filterdateendlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.filterdateendlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.filterdateendlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.filterdateendlabel.Location = new System.Drawing.Point(706, 197);
             this.filterdateendlabel.Name = "filterdateendlabel";
             this.filterdateendlabel.Size = new System.Drawing.Size(207, 44);
             this.filterdateendlabel.TabIndex = 40;
-            this.filterdateendlabel.Text = "VER/QUITAR FECHA FIN";
+            this.filterdateendlabel.Text = "VER USUARIO ESPECIFICO";
             this.filterdateendlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.filterdateendlabel.Click += new System.EventHandler(this.filterdateendlabel_Click);
             // 
             // filterdateinilabel
             // 
             this.filterdateinilabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.filterdateinilabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.filterdateinilabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.filterdateinilabel.Location = new System.Drawing.Point(702, 144);
             this.filterdateinilabel.Name = "filterdateinilabel";
             this.filterdateinilabel.Size = new System.Drawing.Size(211, 47);
             this.filterdateinilabel.TabIndex = 39;
-            this.filterdateinilabel.Text = "VER/QUITAR FECHA INICIO";
+            this.filterdateinilabel.Text = "VER/QUITAR DATOS BUTACA";
             this.filterdateinilabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.filterdateinilabel.Click += new System.EventHandler(this.filterdateinilabel_Click);
             // 
@@ -99,7 +91,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(171)))), ((int)(((byte)(86)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.label1.Location = new System.Drawing.Point(768, 107);
+            this.label1.Location = new System.Drawing.Point(741, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 22);
             this.label1.TabIndex = 38;
@@ -159,73 +151,6 @@
             this.reservationDataGridView.Size = new System.Drawing.Size(579, 443);
             this.reservationDataGridView.TabIndex = 33;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripSeparator1,
-            this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(9, 10);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(966, 35);
-            this.toolStrip1.TabIndex = 29;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(64, 32);
-            this.toolStripLabel1.Text = "ACCIONES";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(92, 32);
-            this.toolStripLabel2.Text = "CERRAR SESIÓN";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.BackgroundImage = global::Bookaroom.Properties.Resources.filtros_background;
-            this.pictureBox5.Location = new System.Drawing.Point(702, 91);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(211, 204);
-            this.pictureBox5.TabIndex = 37;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(25, 64);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(601, 466);
-            this.pictureBox3.TabIndex = 32;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(665, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 466);
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
-            this.pictureBox2.Location = new System.Drawing.Point(9, 31);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(963, 519);
-            this.pictureBox2.TabIndex = 30;
-            this.pictureBox2.TabStop = false;
-            // 
             // id_entrada
             // 
             this.id_entrada.HeaderText = "ID_entrada";
@@ -263,13 +188,116 @@
             this.numero_butaca.Name = "numero_butaca";
             this.numero_butaca.ReadOnly = true;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripSeparator1,
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(9, 10);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(966, 35);
+            this.toolStrip1.TabIndex = 29;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(64, 32);
+            this.toolStripLabel1.Text = "ACCIONES";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(92, 32);
+            this.toolStripLabel2.Text = "CERRAR SESIÓN";
+            // 
+            // userfilterbox
+            // 
+            this.userfilterbox.Location = new System.Drawing.Point(709, 260);
+            this.userfilterbox.Name = "userfilterbox";
+            this.userfilterbox.Size = new System.Drawing.Size(132, 20);
+            this.userfilterbox.TabIndex = 41;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // seeUserFilterButton
+            // 
+            this.seeUserFilterButton.Location = new System.Drawing.Point(847, 257);
+            this.seeUserFilterButton.Name = "seeUserFilterButton";
+            this.seeUserFilterButton.Size = new System.Drawing.Size(50, 23);
+            this.seeUserFilterButton.TabIndex = 43;
+            this.seeUserFilterButton.Text = "Ver";
+            this.seeUserFilterButton.UseVisualStyleBackColor = true;
+            this.seeUserFilterButton.Click += new System.EventHandler(this.seeUserFilterButton_Click);
+            // 
+            // resetpictureBox
+            // 
+            this.resetpictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(171)))), ((int)(((byte)(86)))));
+            this.resetpictureBox.BackgroundImage = global::Bookaroom.Properties.Resources.reiniciar;
+            this.resetpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.resetpictureBox.Location = new System.Drawing.Point(836, 99);
+            this.resetpictureBox.Name = "resetpictureBox";
+            this.resetpictureBox.Size = new System.Drawing.Size(39, 37);
+            this.resetpictureBox.TabIndex = 44;
+            this.resetpictureBox.TabStop = false;
+            this.resetpictureBox.Click += new System.EventHandler(this.resetpictureBox_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.BackgroundImage = global::Bookaroom.Properties.Resources.filtros_background;
+            this.pictureBox5.Location = new System.Drawing.Point(702, 91);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(211, 204);
+            this.pictureBox5.TabIndex = 37;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(25, 64);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(601, 466);
+            this.pictureBox3.TabIndex = 32;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(665, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(282, 466);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.pictureBox2.Location = new System.Drawing.Point(9, 31);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(963, 519);
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            // 
             // ReservaTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.capacityfilterlabel);
+            this.Controls.Add(this.resetpictureBox);
+            this.Controls.Add(this.seeUserFilterButton);
+            this.Controls.Add(this.userfilterbox);
             this.Controls.Add(this.filterdateendlabel);
             this.Controls.Add(this.filterdateinilabel);
             this.Controls.Add(this.label1);
@@ -287,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.reservationDataGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resetpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -297,8 +326,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label capacityfilterlabel;
         private System.Windows.Forms.Label filterdateendlabel;
         private System.Windows.Forms.Label filterdateinilabel;
         private System.Windows.Forms.Label label1;
@@ -320,5 +347,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero_fila;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero_butaca;
+        private System.Windows.Forms.TextBox userfilterbox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button seeUserFilterButton;
+        private System.Windows.Forms.PictureBox resetpictureBox;
     }
 }

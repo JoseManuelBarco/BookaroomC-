@@ -53,18 +53,34 @@ namespace Bookaroom
 
         private void filterdateinilabel_Click(object sender, EventArgs e)
         {
-           
+            this.reservationDataGridView.Columns["numero_fila"].Visible =
+                 !this.reservationDataGridView.Columns["numero_fila"].Visible;
+
+            this.reservationDataGridView.Columns["numero_butaca"].Visible =
+                !this.reservationDataGridView.Columns["numero_butaca"].Visible;
         }
 
-        private void filterdateendlabel_Click(object sender, EventArgs e)
+
+        private void seeUserFilterButton_Click(object sender, EventArgs e)
         {
-           
+            string userName = userfilterbox.Text;
+
+            foreach (DataGridViewRow row in this.reservationDataGridView.Rows)
+            {
+                if (row.Cells["id_usuari"].Value != null && !row.Cells["id_usuari"].Value.ToString().ToLower().Contains(userName.ToLower()))
+                {
+                    row.Visible = false;
+                }
+            }
         }
 
-        private void capacityfilterlabel_Click(object sender, EventArgs e)
+        private void resetpictureBox_Click(object sender, EventArgs e)
         {
-          
+            foreach (DataGridViewRow row in this.reservationDataGridView.Rows)
+            {
+                row.Visible = true;
+            }
         }
     }
-    }
+}
 

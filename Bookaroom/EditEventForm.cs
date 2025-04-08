@@ -25,11 +25,9 @@ namespace Bookaroom
             DataTable eventData = EventsBD.GetEvent(eventID);
             DataRow row = eventData.Rows[0];
 
-            
+
             nomtextBox.Text = row["nombre"].ToString();
-
             capacitytextBox.Text = row["aforament"].ToString();  
-
             datainidateTimePicker.Value = Convert.ToDateTime(row["data_inici"]);  
             dataenddateTimePicker.Value = Convert.ToDateTime(row["data_fi"]); 
             pricetextBox.Text = row["preu"].ToString();
@@ -38,7 +36,7 @@ namespace Bookaroom
         
         private void button1_Click(object sender, EventArgs e)
         {
-            int eventID;
+            int eventIDSend = eventID;
             string name = nomtextBox.Text.Trim();
             DateTime dataini = datainidateTimePicker.Value;
             DateTime dataend = dataenddateTimePicker.Value;            
@@ -47,7 +45,7 @@ namespace Bookaroom
 
           
 
-            if (EventsBD.ModifyEvent(eventID,capacity, name, dataini, dataend, price))
+            if (EventsBD.ModifyEvent(eventIDSend, capacity, name, dataini, dataend, price))
                 {
                     MessageBox.Show("Event modificat correctament", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

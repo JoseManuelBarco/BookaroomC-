@@ -63,8 +63,7 @@ namespace Bookaroom
         private void cancelbutton_Click(object sender, EventArgs e)
         {
 
-            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-            staticFormmainForm.OpenForm(new UserTable());
+           this.Close();
         }
     }
 }

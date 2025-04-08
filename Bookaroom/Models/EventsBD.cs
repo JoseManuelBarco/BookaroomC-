@@ -60,26 +60,31 @@ namespace Bookaroom.Models
             }
         }
 
-        public static bool AddEvent(string email, string name, string surnames, string password, int roleid, int actiu)
+        public static bool AddEvent(string name,int price, string description, int capacity, DateTime datetimeini, DateTime datetimeend)
         {
             SqlCommand command = new SqlCommand();
             command.Connection = Bd.connexioJose;
-            command.CommandText = "INSERT INTO Usuaris (email, nom, cognom, pass,rols) VALUES (@Email, @Name, @Surnames, @Password,@Active,@Role)";
-            command.Parameters.AddWithValue("@Email", email);
+
+            // Ya no necesitas calcular el nuevo ID
+            command.CommandText = "INSERT INTO Esdeveniments (nombre, descripcio, data_inici, data_fi, preu, aforament) " +
+                                  "VALUES (@Name, @Description, @DataIni, @DataEnd, @Price, @Capacity)";
+
             command.Parameters.AddWithValue("@Name", name);
-           command.Parameters.AddWithValue("@Surnames", surnames);
-           command.Parameters.AddWithValue("@Active", actiu);
-            command.Parameters.AddWithValue("@Role", roleid);
+            command.Parameters.AddWithValue("@DataIni", datetimeini);
+            command.Parameters.AddWithValue("@DataEnd", datetimeend);
+            command.Parameters.AddWithValue("@Price", price);
+            command.Parameters.AddWithValue("@Description", description);
+            command.Parameters.AddWithValue("@Capacity", capacity);
 
             try
             {
                 Bd.connexioJose.Open();
-                int result = command.ExecuteNonQuery();
-                return result > 0;
+                int resultInsert = command.ExecuteNonQuery();
+                return resultInsert > 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error adding user: {ex.Message}");
+                MessageBox.Show($"Error adding event: {ex.Message}");
                 return false;
             }
             finally
@@ -92,12 +97,14 @@ namespace Bookaroom.Models
 
             SqlCommand command = new SqlCommand();
             command.Connection = Bd.connexioJose;
-            command.CommandText = "UPDATE Esdeveniments (capacity, name, dataini, dataend, price) VALUES (@capacity, @Name, @dataini, @dataend,@price) where id_esdeveniment = @eventid";
             command.Parameters.AddWithValue("@capacity", capacity);
             command.Parameters.AddWithValue("@Name", name);
             command.Parameters.AddWithValue("@dataini", dataini);
             command.Parameters.AddWithValue("@dataend", dateend);
             command.Parameters.AddWithValue("@price", price);
+            command.Parameters.AddWithValue("@eventid", eventID);
+
+            command.CommandText = "UPDATE Esdeveniments SET aforament = @capacity,nombre = @Name, data_inici = @dataini, data_fi = @dataend,   preu = @price WHERE id_esdeveniment = @eventid;";
 
             try
             {
