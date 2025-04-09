@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventTable));
             this.capacityfilterlabel = new System.Windows.Forms.Label();
             this.dateendfilterlabel = new System.Windows.Forms.Label();
             this.dateinifilterlabel = new System.Windows.Forms.Label();
@@ -46,13 +47,15 @@
             this.data_fi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.closesessiontoolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.gestionarUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.eventdatagridview)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -231,31 +234,26 @@
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
+            this.toolStripDropDownButton1,
             this.toolStripSeparator1,
-            this.toolStripLabel2});
+            this.closesessiontoolStripLabel});
             this.toolStrip1.Location = new System.Drawing.Point(9, 10);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(966, 35);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(64, 32);
-            this.toolStripLabel1.Text = "ACCIONES";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
             // 
-            // toolStripLabel2
+            // closesessiontoolStripLabel
             // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(92, 32);
-            this.toolStripLabel2.Text = "CERRAR SESIÓN";
+            this.closesessiontoolStripLabel.Name = "closesessiontoolStripLabel";
+            this.closesessiontoolStripLabel.Size = new System.Drawing.Size(92, 32);
+            this.closesessiontoolStripLabel.Text = "CERRAR SESIÓN";
+            this.closesessiontoolStripLabel.Click += new System.EventHandler(this.closesessiontoolStripLabel_Click);
             // 
             // pictureBox5
             // 
@@ -291,6 +289,32 @@
             this.pictureBox2.Size = new System.Drawing.Size(963, 519);
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionarUserToolStripMenuItem,
+            this.gestionarReservasToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // gestionarUserToolStripMenuItem
+            // 
+            this.gestionarUserToolStripMenuItem.Name = "gestionarUserToolStripMenuItem";
+            this.gestionarUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarUserToolStripMenuItem.Text = "Gestionar Usuaris";
+            this.gestionarUserToolStripMenuItem.Click += new System.EventHandler(this.gestionarUserToolStripMenuItem_Click);
+            // 
+            // gestionarReservasToolStripMenuItem
+            // 
+            this.gestionarReservasToolStripMenuItem.Name = "gestionarReservasToolStripMenuItem";
+            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarReservasToolStripMenuItem.Text = "Gestionar Reservas";
+            this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
             // 
             // EventTable
             // 
@@ -339,9 +363,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel closesessiontoolStripLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_event;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_sala;
@@ -352,5 +375,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn data_inici;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_fi;
         private System.Windows.Forms.DataGridViewTextBoxColumn preu;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem gestionarUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarReservasToolStripMenuItem;
     }
 }

@@ -23,7 +23,14 @@ namespace Bookaroom
             reservationDataGridView.DefaultCellStyle.ForeColor = Color.Black;
             reservationDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
             reservationDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-
+            if (Session.Rol == "Event Organizer")
+            {
+                gestionarUsuarisToolStripMenuItem.Visible = false;
+            }
+            else if (Session.Rol == "SuperAdmin")
+            {
+                gestionarUsuarisToolStripMenuItem.Visible = true;
+            }
         }
         
         private void LoadDataIntoPreExistingColumns()
@@ -80,6 +87,30 @@ namespace Bookaroom
             {
                 row.Visible = true;
             }
+        }
+
+        private void gestionarUsuarisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new UserTable());
+        }
+
+        private void gestionarEventsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new EventOrganizerContent());
+        }
+
+        private void closesessiontoolStripLabel_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new LoginForm());
+        }
+
+        private void createreservationbutton_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new CreateReservationForm());
         }
     }
 }

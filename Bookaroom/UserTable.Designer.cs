@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserTable));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.makeAllVisible = new System.Windows.Forms.Label();
             this.seeNotActives = new System.Windows.Forms.Label();
@@ -47,10 +48,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closesessionLabel = new System.Windows.Forms.ToolStripLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.gestionarEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -234,7 +237,7 @@
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
+            this.toolStripDropDownButton1,
             this.toolStripSeparator1,
             this.closesessionLabel});
             this.toolStrip1.Location = new System.Drawing.Point(9, 10);
@@ -242,12 +245,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(966, 35);
             this.toolStrip1.TabIndex = 29;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(64, 32);
-            this.toolStripLabel1.Text = "ACCIONES";
             // 
             // toolStripSeparator1
             // 
@@ -269,6 +266,32 @@
             this.pictureBox2.Size = new System.Drawing.Size(963, 519);
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionarEventsToolStripMenuItem,
+            this.gestionarReservasToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // gestionarEventsToolStripMenuItem
+            // 
+            this.gestionarEventsToolStripMenuItem.Name = "gestionarEventsToolStripMenuItem";
+            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarEventsToolStripMenuItem.Text = "Gestionar Events";
+            this.gestionarEventsToolStripMenuItem.Click += new System.EventHandler(this.gestionarEventsToolStripMenuItem_Click);
+            // 
+            // gestionarReservasToolStripMenuItem
+            // 
+            this.gestionarReservasToolStripMenuItem.Name = "gestionarReservasToolStripMenuItem";
+            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarReservasToolStripMenuItem.Text = "Gestionar Reservas";
+            this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
             // 
             // UserTable
             // 
@@ -317,7 +340,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel closesessionLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -327,5 +349,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn actiu;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem gestionarEventsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarReservasToolStripMenuItem;
     }
 }

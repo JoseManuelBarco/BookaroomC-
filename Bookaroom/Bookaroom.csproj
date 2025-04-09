@@ -119,6 +119,7 @@
     <Compile Include="Models\Bd.cs" />
     <Compile Include="Models\EventsBD.cs" />
     <Compile Include="Models\ReservationBD.cs" />
+    <Compile Include="Models\Rooms.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="ReservaTable.Designer.cs">
       <DependentUpon>ReservaTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Session.cs" />
     <Compile Include="StaticForm.cs">
       <SubType>Form</SubType>
     </Compile>

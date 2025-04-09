@@ -18,19 +18,71 @@ namespace Bookaroom
             InitializeComponent();
             dateinidateTimePicker.Value = DateTime.Now;
             dataenddateTimePicker.Value = DateTime.Now;
+            LoadUsersComboBox();
+            LoadRoomsComboBox();
         }
+        private void LoadUsersComboBox()
+        {
+            DataTable users = Users.GetUsers();
 
+            if (users.Rows.Count > 0)
+            {
+                userscomboBox.DataSource = users;
+                userscomboBox.DisplayMember = "nom";
+                userscomboBox.ValueMember = "id_usuari";
+
+                AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+                foreach (DataRow row in users.Rows)
+                {
+                    string fullName = $"{row["nom"]}";
+                    autoComplete.Add(fullName);
+                }
+
+                userscomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                userscomboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                userscomboBox.AutoCompleteCustomSource = autoComplete;
+            }
+        }
+        private void LoadRoomsComboBox()
+        {
+            DataTable rooms = Rooms.GetRooms();
+
+            if (rooms.Rows.Count > 0)
+            {
+              
+                }
+                roomcomboBox.DataSource = rooms;
+                roomcomboBox.DisplayMember = "id_sala";
+                roomcomboBox.ValueMember = "id_sala";
+
+                AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+                foreach (DataRow row in rooms.Rows)
+                {
+                    autoComplete.Add(row["id_sala"].ToString());
+                }
+
+                roomcomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                roomcomboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                roomcomboBox.AutoCompleteCustomSource = autoComplete;
+            }
+        
         private void savebutton_Click(object sender, EventArgs e)
         {
             string name = nametextBox.Text.Trim();
             string description = descriptiontextBox.Text;
             DateTime dateTimeini = dateinidateTimePicker.Value;
             DateTime dateTimeend = dataenddateTimePicker.Value;
+            int id_user;
+            int id_room;
             int actiu = 0;
             int price = 0;
             int capacity = 0;
 
-            if (int.TryParse(pricetextBox.Text, out price)||int.TryParse(capacitytextBox.Text, out capacity))
+            if (userscomboBox.SelectedValue != null &&  roomcomboBox.SelectedValue !=null &&
+                 int.TryParse(userscomboBox.SelectedValue.ToString(), out id_user) &&
+                 int.TryParse(pricetextBox.Text, out price) &&
+                 int.TryParse(capacitytextBox.Text, out capacity)&&
+                 int.TryParse(roomcomboBox.Text, out id_room))
             {
                 if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(description))
                 {
@@ -38,11 +90,9 @@ namespace Bookaroom
                     return;
                 }
 
-
-                if (EventsBD.AddEvent(name, price, description, capacity, dateTimeini, dateTimeend))
+                if (EventsBD.AddEvent(name, price, description, capacity, dateTimeini, dateTimeend, id_user, id_room))
                 {
                     MessageBox.Show("Usuari afegit correctament", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     this.Close();
                 }
                 else
@@ -52,9 +102,8 @@ namespace Bookaroom
             }
             else
             {
-                MessageBox.Show("El valor introduït no és un número vàlid.");
+                MessageBox.Show("Datos inválidos. Verifica que todos los valores sean correctos.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-                      
         }
     }
 }

@@ -60,14 +60,14 @@ namespace Bookaroom.Models
             }
         }
 
-        public static bool AddEvent(string name,int price, string description, int capacity, DateTime datetimeini, DateTime datetimeend)
+        public static bool AddEvent(string name,int price, string description, int capacity, DateTime datetimeini, DateTime datetimeend,int id_user,int id_room)
         {
             SqlCommand command = new SqlCommand();
             command.Connection = Bd.connexioJose;
 
             // Ya no necesitas calcular el nuevo ID
-            command.CommandText = "INSERT INTO Esdeveniments (nombre, descripcio, data_inici, data_fi, preu, aforament) " +
-                                  "VALUES (@Name, @Description, @DataIni, @DataEnd, @Price, @Capacity)";
+            command.CommandText = "INSERT INTO Esdeveniments (nombre, descripcio, data_inici, data_fi, preu, aforament,id_sala,id_usuari) " +
+                                  "VALUES (@Name, @Description, @DataIni, @DataEnd, @Price, @Capacity, @Id_room, @Id_user)";
 
             command.Parameters.AddWithValue("@Name", name);
             command.Parameters.AddWithValue("@DataIni", datetimeini);
@@ -75,6 +75,8 @@ namespace Bookaroom.Models
             command.Parameters.AddWithValue("@Price", price);
             command.Parameters.AddWithValue("@Description", description);
             command.Parameters.AddWithValue("@Capacity", capacity);
+            command.Parameters.AddWithValue("@Id_room", id_room);
+            command.Parameters.AddWithValue("@Id_user", id_user);
 
             try
             {

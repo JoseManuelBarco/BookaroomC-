@@ -13,6 +13,8 @@ namespace Bookaroom
 {
     public partial class EventTable : Form
     {
+        string rolUsuario = Session.Rol;
+
         public EventTable()
         {
             InitializeComponent();
@@ -23,7 +25,16 @@ namespace Bookaroom
             eventdatagridview.DefaultCellStyle.ForeColor = Color.Black;
             eventdatagridview.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
             eventdatagridview.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-       }
+
+            if (Session.Rol == "Event Organizer")
+            {
+                gestionarUserToolStripMenuItem.Visible = false;
+            }
+            else if(Session.Rol == "SuperAdmin")
+            {
+                gestionarUserToolStripMenuItem.Visible = true;
+            }
+        }
             
 
 
@@ -121,6 +132,24 @@ namespace Bookaroom
             {
                 MessageBox.Show("Porfavor selecione un usuario.");
             }
+        }
+
+        private void gestionarUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new UserTable());
+        }
+
+        private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new ReservaTable());
+        }
+
+        private void closesessiontoolStripLabel_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new LoginForm());
         }
     }
 }

@@ -130,5 +130,17 @@ namespace Bookaroom
                 row.Visible = true;
             }
         }
+
+        private void gestionarEventsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new EventTable());
+        }
+
+        private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new ReservaTable());
+        }
     }
 }

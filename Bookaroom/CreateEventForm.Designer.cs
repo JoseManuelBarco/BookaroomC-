@@ -47,6 +47,10 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.descriptiontextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.userscomboBox = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.roomcomboBox = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,9 +114,9 @@
             // 
             this.capacitytextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.capacitytextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.capacitytextBox.Location = new System.Drawing.Point(44, 315);
+            this.capacitytextBox.Location = new System.Drawing.Point(42, 340);
             this.capacitytextBox.Name = "capacitytextBox";
-            this.capacitytextBox.Size = new System.Drawing.Size(358, 20);
+            this.capacitytextBox.Size = new System.Drawing.Size(354, 20);
             this.capacitytextBox.TabIndex = 18;
             // 
             // nametextBox
@@ -138,7 +142,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(221, 363);
+            this.label3.Location = new System.Drawing.Point(221, 377);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 15;
@@ -148,7 +152,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(39, 299);
+            this.label2.Location = new System.Drawing.Point(37, 324);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 14;
@@ -179,7 +183,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(37, 363);
+            this.label6.Location = new System.Drawing.Point(37, 377);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 28;
@@ -189,7 +193,7 @@
             // 
             this.dateinidateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateinidateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateinidateTimePicker.Location = new System.Drawing.Point(40, 379);
+            this.dateinidateTimePicker.Location = new System.Drawing.Point(40, 393);
             this.dateinidateTimePicker.Name = "dateinidateTimePicker";
             this.dateinidateTimePicker.Size = new System.Drawing.Size(178, 20);
             this.dateinidateTimePicker.TabIndex = 29;
@@ -198,7 +202,7 @@
             // 
             this.dataenddateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dataenddateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataenddateTimePicker.Location = new System.Drawing.Point(224, 379);
+            this.dataenddateTimePicker.Location = new System.Drawing.Point(224, 393);
             this.dataenddateTimePicker.Name = "dataenddateTimePicker";
             this.dataenddateTimePicker.Size = new System.Drawing.Size(178, 20);
             this.dataenddateTimePicker.TabIndex = 30;
@@ -232,12 +236,52 @@
             this.label7.TabIndex = 33;
             this.label7.Text = "Descripcio";
             // 
+            // userscomboBox
+            // 
+            this.userscomboBox.FormattingEnabled = true;
+            this.userscomboBox.Location = new System.Drawing.Point(38, 224);
+            this.userscomboBox.Name = "userscomboBox";
+            this.userscomboBox.Size = new System.Drawing.Size(358, 21);
+            this.userscomboBox.TabIndex = 34;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.label8.Location = new System.Drawing.Point(39, 270);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(28, 13);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Sala";
+            // 
+            // roomcomboBox
+            // 
+            this.roomcomboBox.FormattingEnabled = true;
+            this.roomcomboBox.Location = new System.Drawing.Point(42, 286);
+            this.roomcomboBox.Name = "roomcomboBox";
+            this.roomcomboBox.Size = new System.Drawing.Size(358, 21);
+            this.roomcomboBox.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.label9.Location = new System.Drawing.Point(39, 208);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Usuari ";
+            // 
             // CreateEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(434, 599);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.roomcomboBox);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.userscomboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.descriptiontextBox);
             this.Controls.Add(this.checkBox1);
@@ -285,5 +329,9 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox descriptiontextBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox userscomboBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox roomcomboBox;
+        private System.Windows.Forms.Label label9;
     }
 }
