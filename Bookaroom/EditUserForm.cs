@@ -26,9 +26,26 @@ namespace Bookaroom
         {
                 DataTable userData = Users.GetUser(userId); 
                 DataRow row = userData.Rows[0];
-                nomtextBox.Text = row["nom"].ToString(); 
-                surnametextBox.Text = row["cognom"].ToString();  
+                nomtextBox.Text = row["name"].ToString(); 
+                surnametextBox.Text = row["surname"].ToString();  
                 emailtextBox.Text = row["email"].ToString();            
+        }
+
+        private void resetpasswordbutton_Click(object sender, EventArgs e)
+        {
+           
+
+            // Llamar al método para restablecer la contraseña
+            bool result = Users.ResetPassword(userId);
+
+            if (result)
+            {
+                MessageBox.Show("Contraseña restablecida correctamente a 'reset123'.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error al restablecer la contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

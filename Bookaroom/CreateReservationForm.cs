@@ -98,10 +98,11 @@ namespace Bookaroom
 
             if (seats.Rows.Count > 0)
             {
-                seatcomboBox.DataSource = seats;
-                seatcomboBox.DisplayMember = "numero_butaca";
-                seatcomboBox.ValueMember = "id_butaca";
-            }
+                    seatcomboBox.DataSource = seats;
+                    seatcomboBox.DisplayMember = "numero_butaca";
+                    seatcomboBox.ValueMember = "id_butaca";
+                
+                }
             else
             {
                 seatcomboBox.DataSource = null;

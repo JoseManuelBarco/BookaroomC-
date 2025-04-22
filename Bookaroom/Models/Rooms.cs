@@ -16,7 +16,7 @@ namespace Bookaroom.Models
             DataTable dt = new DataTable();
 
             SqlCommand command = new SqlCommand(@"
-            SELECT id_sala FROM Sales ", Bd.connexioJose);
+            SELECT room_id FROM Sales ", Bd.connexioJose);
 
             try
             {
@@ -37,7 +37,7 @@ namespace Bookaroom.Models
 
             SqlCommand command = new SqlCommand(@"
         SELECT id_butaca 
-        FROM Butaca WHERE id_sala = @SalaId", Bd.connexioJose);
+        FROM Butaca WHERE id_sala = @SalaId and stat=0", Bd.connexioJose);
 
             command.Parameters.AddWithValue("@SalaId", salaId);
 

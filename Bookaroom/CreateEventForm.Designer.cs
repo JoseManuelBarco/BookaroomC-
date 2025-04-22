@@ -44,7 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateinidateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dataenddateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.activecheckbox = new System.Windows.Forms.CheckBox();
             this.descriptiontextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.userscomboBox = new System.Windows.Forms.ComboBox();
@@ -207,15 +207,16 @@
             this.dataenddateTimePicker.Size = new System.Drawing.Size(178, 20);
             this.dataenddateTimePicker.TabIndex = 30;
             // 
-            // checkBox1
+            // activecheckbox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(42, 472);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 31;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.activecheckbox.AutoSize = true;
+            this.activecheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.activecheckbox.Location = new System.Drawing.Point(42, 472);
+            this.activecheckbox.Name = "activecheckbox";
+            this.activecheckbox.Size = new System.Drawing.Size(50, 17);
+            this.activecheckbox.TabIndex = 31;
+            this.activecheckbox.Text = "Actiu";
+            this.activecheckbox.UseVisualStyleBackColor = false;
             // 
             // descriptiontextBox
             // 
@@ -284,7 +285,7 @@
             this.Controls.Add(this.userscomboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.descriptiontextBox);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.activecheckbox);
             this.Controls.Add(this.dataenddateTimePicker);
             this.Controls.Add(this.dateinidateTimePicker);
             this.Controls.Add(this.label6);
@@ -326,7 +327,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateinidateTimePicker;
         private System.Windows.Forms.DateTimePicker dataenddateTimePicker;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox activecheckbox;
         private System.Windows.Forms.TextBox descriptiontextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox userscomboBox;

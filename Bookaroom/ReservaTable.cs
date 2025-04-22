@@ -98,7 +98,7 @@ namespace Bookaroom
         private void gestionarEventsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-            staticFormmainForm.OpenForm(new EventOrganizerContent());
+            staticFormmainForm.OpenForm(new EventTable());
         }
 
         private void closesessiontoolStripLabel_Click(object sender, EventArgs e)
@@ -109,8 +109,9 @@ namespace Bookaroom
 
         private void createreservationbutton_Click(object sender, EventArgs e)
         {
-            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-            staticFormmainForm.OpenForm(new CreateReservationForm());
+            CreateReservationForm f = new CreateReservationForm();
+            f.ShowDialog();
+            LoadDataIntoPreExistingColumns();
         }
     }
 }

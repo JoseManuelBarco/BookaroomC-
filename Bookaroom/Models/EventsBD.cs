@@ -17,9 +17,9 @@ namespace Bookaroom.Models
             DataTable dt = new DataTable();
 
             SqlCommand command = new SqlCommand(@"
-            SELECT e.id_esdeveniment,e.id_sala,u.nom as nom_usuari,e.aforament,e.data_inici,e.data_fi,e.preu,e.nombre,e.descripcio
+            SELECT e.event_id,e.room_id ,u.name as nom_usuari,e.capacity,e.start_date,e.end_date,e.price,e.name,e.description
             FROM Esdeveniments e
-            JOIN Usuaris u ON e.id_usuari = u.id_usuari", Bd.connexioJose);
+            JOIN Usuaris u ON e.user_id = u.user_id", Bd.connexioJose);
 
             try
             {
@@ -36,7 +36,7 @@ namespace Bookaroom.Models
 
         public static bool DeleteEvent(int eventId)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE Esdeveniments SET ACTIU = @actiu WHERE id_esdeveniment = @id", Bd.connexioJose);
+            SqlCommand cmd = new SqlCommand("UPDATE Esdeveniments SET active = @actiu WHERE event_id = @id", Bd.connexioJose);
             try
             {
                 bool actiu = false;
@@ -65,8 +65,7 @@ namespace Bookaroom.Models
             SqlCommand command = new SqlCommand();
             command.Connection = Bd.connexioJose;
 
-            // Ya no necesitas calcular el nuevo ID
-            command.CommandText = "INSERT INTO Esdeveniments (nombre, descripcio, data_inici, data_fi, preu, aforament,id_sala,id_usuari) " +
+            command.CommandText = "INSERT INTO Esdeveniments (name, description, start_date, end_date, price, size,room_id,user_id) " +
                                   "VALUES (@Name, @Description, @DataIni, @DataEnd, @Price, @Capacity, @Id_room, @Id_user)";
 
             command.Parameters.AddWithValue("@Name", name);
@@ -106,7 +105,7 @@ namespace Bookaroom.Models
             command.Parameters.AddWithValue("@price", price);
             command.Parameters.AddWithValue("@eventid", eventID);
 
-            command.CommandText = "UPDATE Esdeveniments SET aforament = @capacity,nombre = @Name, data_inici = @dataini, data_fi = @dataend,   preu = @price WHERE id_esdeveniment = @eventid;";
+            command.CommandText = "UPDATE Esdeveniments SET capacity = @capacity,name = @Name, start_date = @dataini, end_date = @dataend, price = @price WHERE event_id = @eventid;";
 
             try
             {
@@ -131,9 +130,9 @@ namespace Bookaroom.Models
             DataTable dt = new DataTable();
 
             SqlCommand command = new SqlCommand(@"
-                SELECT e.id_esdeveniment, e.nombre, e.aforament, e.data_inici, e.data_fi, e.preu
+                SELECT e.event_id, e.nane, e.capacity, e.start_date, e.end_date, e.price
                 FROM Esdeveniments e
-                WHERE e.id_esdeveniment = @id", Bd.connexioJose);
+                WHERE e.event_id = @id", Bd.connexioJose);
 
             try
             {

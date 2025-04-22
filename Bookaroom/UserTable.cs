@@ -35,14 +35,22 @@ namespace Bookaroom
                 foreach (DataRow row in usersTable.Rows)
                 {
                     int rowIndex = userdataGridView.Rows.Add();
-                    userdataGridView.Rows[rowIndex].Cells["Id_usuari"].Value = row["id_usuari"];
-                    userdataGridView.Rows[rowIndex].Cells["Nom"].Value = row["nom"];
-                    userdataGridView.Rows[rowIndex].Cells["Cognom"].Value = row["cognom"];
+                    userdataGridView.Rows[rowIndex].Cells["Id_usuari"].Value = row["user_id"];
+                    userdataGridView.Rows[rowIndex].Cells["Nom"].Value = row["name"];
+                    userdataGridView.Rows[rowIndex].Cells["Cognom"].Value = row["surname"];
                     userdataGridView.Rows[rowIndex].Cells["Email"].Value = row["email"];
-                    userdataGridView.Rows[rowIndex].Cells["Rol"].Value = row["rol"];
-                   //userdataGridView.Rows[rowIndex].Cells["Actiu"].Value = row["actiu"];
+                    userdataGridView.Rows[rowIndex].Cells["Rol"].Value = row["role"];
 
-                }
+                    if (row["status"].ToString() == "Activo")
+                    {
+                        userdataGridView.Rows[rowIndex].Cells["Actiu"].Value = "Activo";
+                    }
+                    else
+                    {
+                        userdataGridView.Rows[rowIndex].Cells["Actiu"].Value = "Inactivo";
+                    }
+                
+            }
             }
             catch (Exception ex)
             {
@@ -60,6 +68,8 @@ namespace Bookaroom
         {
             CreateUserForm f = new CreateUserForm();
             f.ShowDialog();
+            LoadDataIntoPreExistingColumns();
+
         }
 
         private void edituserbutton_Click(object sender, EventArgs e)
@@ -70,6 +80,8 @@ namespace Bookaroom
 
                 EditUserForm f = new EditUserForm(userId);
                 f.ShowDialog();
+                LoadDataIntoPreExistingColumns();
+
             }
 
             else {
@@ -105,9 +117,13 @@ namespace Bookaroom
         {
             foreach (DataGridViewRow row in this.userdataGridView.Rows)
             {
-                if (row.Cells["Actiu"].Value != null && row.Cells["Actiu"].Value.ToString() == "No")
+                if (row.Cells["Actiu"].Value != null && row.Cells["Actiu"].Value.ToString() == "Inactivo")
                 {
-                    row.Visible = false;
+                    row.Visible = false;  
+                }
+                else
+                {
+                    row.Visible = true; 
                 }
             }
         }
@@ -116,9 +132,13 @@ namespace Bookaroom
         {
             foreach (DataGridViewRow row in this.userdataGridView.Rows)
             {
-                if (row.Cells["Actiu"].Value != null && row.Cells["Actiu"].Value.ToString() == "Si")
+                if (row.Cells["Actiu"].Value != null && row.Cells["Actiu"].Value.ToString() == "Activo")
                 {
-                    row.Visible = false;
+                    row.Visible = false;  
+                }
+                else
+                {
+                    row.Visible = true;  
                 }
             }
         }

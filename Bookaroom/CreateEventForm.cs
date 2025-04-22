@@ -28,13 +28,13 @@ namespace Bookaroom
             if (users.Rows.Count > 0)
             {
                 userscomboBox.DataSource = users;
-                userscomboBox.DisplayMember = "nom";
-                userscomboBox.ValueMember = "id_usuari";
+                userscomboBox.DisplayMember = "name";
+                userscomboBox.ValueMember = "user_id";
 
                 AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
                 foreach (DataRow row in users.Rows)
                 {
-                    string fullName = $"{row["nom"]}";
+                    string fullName = $"{row["name"]}";
                     autoComplete.Add(fullName);
                 }
 
@@ -52,13 +52,13 @@ namespace Bookaroom
               
                 }
                 roomcomboBox.DataSource = rooms;
-                roomcomboBox.DisplayMember = "id_sala";
-                roomcomboBox.ValueMember = "id_sala";
+                roomcomboBox.DisplayMember = "room_id";
+                roomcomboBox.ValueMember = "room_id";
 
                 AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
                 foreach (DataRow row in rooms.Rows)
                 {
-                    autoComplete.Add(row["id_sala"].ToString());
+                    autoComplete.Add(row["room_id"].ToString());
                 }
 
                 roomcomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

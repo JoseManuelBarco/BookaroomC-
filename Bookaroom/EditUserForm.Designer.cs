@@ -39,7 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.resetpasswordbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -158,16 +158,17 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // button3
+            // resetpasswordbutton
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(41, 294);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(357, 51);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "CONFIRMAR CONTRASEÑA";
-            this.button3.UseVisualStyleBackColor = false;
+            this.resetpasswordbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.resetpasswordbutton.ForeColor = System.Drawing.Color.White;
+            this.resetpasswordbutton.Location = new System.Drawing.Point(41, 294);
+            this.resetpasswordbutton.Name = "resetpasswordbutton";
+            this.resetpasswordbutton.Size = new System.Drawing.Size(357, 51);
+            this.resetpasswordbutton.TabIndex = 26;
+            this.resetpasswordbutton.Text = "REINICIAR CONTRASEÑA";
+            this.resetpasswordbutton.UseVisualStyleBackColor = false;
+            this.resetpasswordbutton.Click += new System.EventHandler(this.resetpasswordbutton_Click);
             // 
             // EditUserForm
             // 
@@ -175,7 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(434, 511);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.resetpasswordbutton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
@@ -212,6 +213,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button resetpasswordbutton;
     }
 }

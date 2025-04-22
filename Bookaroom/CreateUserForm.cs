@@ -36,7 +36,7 @@ namespace Bookaroom
             }
             if (rolcombobox.SelectedIndex != -1)
             {
-                int idrole = rolcombobox.SelectedIndex + 1;
+                string role = rolcombobox.SelectedItem.ToString();
 
                 if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(surnames) ||
                     string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
@@ -46,12 +46,12 @@ namespace Bookaroom
                 }
 
              
-                if (Users.AddUser(email, name, surnames, password, idrole, actiu))
+                if (Users.AddUser(email, name, surnames, password, role, actiu))
                 {
                     MessageBox.Show("Usuari afegit correctament", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-                    staticFormmainForm.OpenForm(new UserTable());
+                   this.Close();
+
                 }
                 else
                 {

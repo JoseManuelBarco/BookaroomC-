@@ -51,15 +51,15 @@ namespace Bookaroom
                 foreach (DataRow row in usersTable.Rows)
                 {
                     int rowIndex = eventdatagridview.Rows.Add();
-                    eventdatagridview.Rows[rowIndex].Cells["id_event"].Value = row["id_esdeveniment"];
-                    eventdatagridview.Rows[rowIndex].Cells["id_sala"].Value = row["id_sala"];
+                    eventdatagridview.Rows[rowIndex].Cells["id_event"].Value = row["event_id"];
+                    eventdatagridview.Rows[rowIndex].Cells["id_sala"].Value = row["room_id"];
                     eventdatagridview.Rows[rowIndex].Cells["id_usuari"].Value = row["nom_usuari"];
-                    eventdatagridview.Rows[rowIndex].Cells["Nom"].Value = row["nombre"];
-                    eventdatagridview.Rows[rowIndex].Cells["descripcio"].Value = row["descripcio"];
-                    eventdatagridview.Rows[rowIndex].Cells["aforament"].Value = row["aforament"];
-                    eventdatagridview.Rows[rowIndex].Cells["Data_Inici"].Value = row["data_inici"];
-                    eventdatagridview.Rows[rowIndex].Cells["Data_fi"].Value = row["data_fi"];
-                    eventdatagridview.Rows[rowIndex].Cells["Preu"].Value = row["preu"];
+                    eventdatagridview.Rows[rowIndex].Cells["Nom"].Value = row["name"];
+                    eventdatagridview.Rows[rowIndex].Cells["descripcio"].Value = row["description"];
+                    eventdatagridview.Rows[rowIndex].Cells["aforament"].Value = row["capacity"];
+                    eventdatagridview.Rows[rowIndex].Cells["Data_Inici"].Value = row["start_date"];
+                    eventdatagridview.Rows[rowIndex].Cells["Data_fi"].Value = row["end_date"];
+                    eventdatagridview.Rows[rowIndex].Cells["Preu"].Value = row["price"];
 
                 }
             }
@@ -70,7 +70,6 @@ namespace Bookaroom
         }    
         private void capacityfilterlabel_Click_1(object sender, EventArgs e)
         {
-            
                 this.eventdatagridview.Columns["aforament"].Visible =
                    !this.eventdatagridview.Columns["aforament"].Visible;
         }
@@ -79,13 +78,11 @@ namespace Bookaroom
             this.eventdatagridview.Columns["Data_fi"].Visible =
                 !this.eventdatagridview.Columns["Data_fi"].Visible;
         }
-
         private void dateinifilterlabel_Click(object sender, EventArgs e)
         {
             this.eventdatagridview.Columns["Data_Inici"].Visible =
                   !this.eventdatagridview.Columns["Data_Inici"].Visible;
         }
-
         private void createeventbutton_Click(object sender, EventArgs e)
         {
             CreateEventForm f = new CreateEventForm();
@@ -97,8 +94,6 @@ namespace Bookaroom
         {
             if (eventdatagridview.SelectedRows.Count > 0)
             {
-
-
                 int eventId = Convert.ToInt32(eventdatagridview.SelectedRows[0].Cells["Id_esdeveniment"].Value);
 
                 var result = MessageBox.Show("Vols desactivar aquest esdeveniment?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
