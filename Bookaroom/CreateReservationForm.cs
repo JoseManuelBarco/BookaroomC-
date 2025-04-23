@@ -27,13 +27,13 @@ namespace Bookaroom
             if (events.Rows.Count > 0)
             {
                 eventcomboBox.DataSource = events;
-                eventcomboBox.DisplayMember = "nombre";
-                eventcomboBox.ValueMember = "id_esdeveniment";
+                eventcomboBox.DisplayMember = "name";
+                eventcomboBox.ValueMember = "event_id";
 
                 AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
                 foreach (DataRow row in events.Rows)
                 {
-                    string fullName = $"{row["nombre"]}";
+                    string fullName = $"{row["name"]}";
                     autoComplete.Add(fullName);
                 }
 
@@ -49,19 +49,44 @@ namespace Bookaroom
             if (users.Rows.Count > 0)
             {
                 usercomboBox.DataSource = users;
-                usercomboBox.DisplayMember = "nom";
-                usercomboBox.ValueMember = "id_usuari";
+                usercomboBox.DisplayMember = "name";
+                usercomboBox.ValueMember = "user_id";
 
                 AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
                 foreach (DataRow row in users.Rows)
                 {
-                    string fullName = $"{row["nom"]}";
+                    string fullName = $"{row["name"]}";
                     autoComplete.Add(fullName);
                 }
 
                 usercomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 usercomboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 usercomboBox.AutoCompleteCustomSource = autoComplete;
+            }
+        }
+        private void LoadSeatsComboBox(int salaId)
+        {
+            DataTable seats = Rooms.GetSeatsBySalaId(salaId);
+
+            if (seats.Rows.Count > 0)
+            {
+                seats.Columns.Add("DisplaySeat", typeof(string));
+
+                foreach (DataRow row in seats.Rows)
+                {
+                    string fila = row["row_number"].ToString();
+                    string asiento = row["seat_number"].ToString();
+                    row["DisplaySeat"] = $"Fila {fila} - Asiento {asiento}";
+                }
+
+                seatcomboBox.DataSource = seats;
+                seatcomboBox.DisplayMember = "DisplaySeat";
+                seatcomboBox.ValueMember = "seat_id";
+
+            }
+            else
+            {
+                seatcomboBox.DataSource = null;
             }
         }
 
@@ -74,11 +99,11 @@ namespace Bookaroom
         {
             if (eventcomboBox.SelectedItem is DataRowView selectedRow)
             {
-                if (selectedRow.Row.Table.Columns.Contains("id_sala"))
+                if (selectedRow.Row.Table.Columns.Contains("room_id"))
                 {
                     try
                     {
-                        int idSala = Convert.ToInt32(selectedRow["id_sala"]);
+                        int idSala = Convert.ToInt32(selectedRow["room_id"]);
                         LoadSeatsComboBox(idSala);
                     }
                     catch (Exception ex)
@@ -92,26 +117,23 @@ namespace Bookaroom
                 }
             }
         }
-        private void LoadSeatsComboBox(int salaId)
-        {
-            DataTable seats = Rooms.GetSeatsBySalaId(salaId);
-
-            if (seats.Rows.Count > 0)
-            {
-                    seatcomboBox.DataSource = seats;
-                    seatcomboBox.DisplayMember = "numero_butaca";
-                    seatcomboBox.ValueMember = "id_butaca";
-                
-                }
-            else
-            {
-                seatcomboBox.DataSource = null;
-            }
-        }
 
         private void savechangesbutton_Click(object sender, EventArgs e)
         {
+            int userId = Convert.ToInt32(usercomboBox.SelectedValue);  // ID del usuario
+            int eventId = Convert.ToInt32(eventcomboBox.SelectedValue); // ID del evento
+            int seatId = Convert.ToInt32(seatcomboBox.SelectedValue);
+            int status = 0;
 
+            if (activecheckbox.Checked)
+            {
+                status = 1;
+
+            }
+
+
+            bool result = ReserveBD.SaveReservation(userId, eventId, seatId,status);
+            this.Close();          
         }
     }
 }

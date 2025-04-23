@@ -33,7 +33,7 @@
             this.filterdateendlabel = new System.Windows.Forms.Label();
             this.filterdateinilabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.editreservationbutton = new System.Windows.Forms.Button();
             this.desactivatereservationbutton = new System.Windows.Forms.Button();
             this.createreservationbutton = new System.Windows.Forms.Button();
             this.reservationDataGridView = new System.Windows.Forms.DataGridView();
@@ -44,6 +44,9 @@
             this.numero_fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero_butaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.gestionarUsuarisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closesessiontoolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.userfilterbox = new System.Windows.Forms.TextBox();
@@ -54,9 +57,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.gestionarUsuarisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionarEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetpictureBox)).BeginInit();
@@ -100,16 +100,17 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "FILTROS";
             // 
-            // button3
+            // editreservationbutton
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(722, 447);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 50);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "EDITAR USUARIO";
-            this.button3.UseVisualStyleBackColor = false;
+            this.editreservationbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.editreservationbutton.ForeColor = System.Drawing.Color.White;
+            this.editreservationbutton.Location = new System.Drawing.Point(722, 447);
+            this.editreservationbutton.Name = "editreservationbutton";
+            this.editreservationbutton.Size = new System.Drawing.Size(175, 50);
+            this.editreservationbutton.TabIndex = 36;
+            this.editreservationbutton.Text = "EDITAR RESERVA";
+            this.editreservationbutton.UseVisualStyleBackColor = false;
+            this.editreservationbutton.Click += new System.EventHandler(this.editreservationbutton_Click);
             // 
             // desactivatereservationbutton
             // 
@@ -121,6 +122,7 @@
             this.desactivatereservationbutton.TabIndex = 35;
             this.desactivatereservationbutton.Text = "DESACTIVAR RESERVA";
             this.desactivatereservationbutton.UseVisualStyleBackColor = false;
+            this.desactivatereservationbutton.Click += new System.EventHandler(this.desactivatereservationbutton_Click);
             // 
             // createreservationbutton
             // 
@@ -152,6 +154,7 @@
             this.reservationDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.reservationDataGridView.Location = new System.Drawing.Point(36, 76);
             this.reservationDataGridView.Name = "reservationDataGridView";
+            this.reservationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.reservationDataGridView.Size = new System.Drawing.Size(579, 443);
             this.reservationDataGridView.TabIndex = 33;
             // 
@@ -206,6 +209,32 @@
             this.toolStrip1.Size = new System.Drawing.Size(966, 35);
             this.toolStrip1.TabIndex = 29;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionarUsuarisToolStripMenuItem,
+            this.gestionarEventsToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // gestionarUsuarisToolStripMenuItem
+            // 
+            this.gestionarUsuarisToolStripMenuItem.Name = "gestionarUsuarisToolStripMenuItem";
+            this.gestionarUsuarisToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gestionarUsuarisToolStripMenuItem.Text = "Gestionar Usuaris";
+            this.gestionarUsuarisToolStripMenuItem.Click += new System.EventHandler(this.gestionarUsuarisToolStripMenuItem_Click);
+            // 
+            // gestionarEventsToolStripMenuItem
+            // 
+            this.gestionarEventsToolStripMenuItem.Name = "gestionarEventsToolStripMenuItem";
+            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gestionarEventsToolStripMenuItem.Text = "Gestionar Events";
+            this.gestionarEventsToolStripMenuItem.Click += new System.EventHandler(this.gestionarEventsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -288,32 +317,6 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarUsuarisToolStripMenuItem,
-            this.gestionarEventsToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // gestionarUsuarisToolStripMenuItem
-            // 
-            this.gestionarUsuarisToolStripMenuItem.Name = "gestionarUsuarisToolStripMenuItem";
-            this.gestionarUsuarisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarUsuarisToolStripMenuItem.Text = "Gestionar Usuaris";
-            this.gestionarUsuarisToolStripMenuItem.Click += new System.EventHandler(this.gestionarUsuarisToolStripMenuItem_Click);
-            // 
-            // gestionarEventsToolStripMenuItem
-            // 
-            this.gestionarEventsToolStripMenuItem.Name = "gestionarEventsToolStripMenuItem";
-            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarEventsToolStripMenuItem.Text = "Gestionar Events";
-            this.gestionarEventsToolStripMenuItem.Click += new System.EventHandler(this.gestionarEventsToolStripMenuItem_Click);
-            // 
             // ReservaTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,7 +330,7 @@
             this.Controls.Add(this.filterdateinilabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.editreservationbutton);
             this.Controls.Add(this.desactivatereservationbutton);
             this.Controls.Add(this.createreservationbutton);
             this.Controls.Add(this.reservationDataGridView);
@@ -355,7 +358,7 @@
         private System.Windows.Forms.Label filterdateinilabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button editreservationbutton;
         private System.Windows.Forms.Button desactivatereservationbutton;
         private System.Windows.Forms.Button createreservationbutton;
         private System.Windows.Forms.DataGridView reservationDataGridView;

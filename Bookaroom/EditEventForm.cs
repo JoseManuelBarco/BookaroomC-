@@ -26,11 +26,11 @@ namespace Bookaroom
             DataRow row = eventData.Rows[0];
 
 
-            nomtextBox.Text = row["nombre"].ToString();
-            capacitytextBox.Text = row["aforament"].ToString();  
-            datainidateTimePicker.Value = Convert.ToDateTime(row["data_inici"]);  
-            dataenddateTimePicker.Value = Convert.ToDateTime(row["data_fi"]); 
-            pricetextBox.Text = row["preu"].ToString();
+            nomtextBox.Text = row["name"].ToString();
+            capacitytextBox.Text = row["capacity"].ToString();  
+            datainidateTimePicker.Value = Convert.ToDateTime(row["start_date"]);  
+            dataenddateTimePicker.Value = Convert.ToDateTime(row["end_date"]); 
+            pricetextBox.Text = row["price"].ToString();
         }
           
         
@@ -43,7 +43,12 @@ namespace Bookaroom
             int price = int.Parse(capacitytextBox.Text);
             int capacity = int.Parse(capacitytextBox.Text);
 
-          
+            if (capacity < 0 || capacity > 30)
+            {
+                MessageBox.Show("El aforo debe estar entre 0 y 30.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
 
             if (EventsBD.ModifyEvent(eventIDSend, capacity, name, dataini, dataend, price))
                 {

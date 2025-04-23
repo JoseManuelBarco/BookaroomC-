@@ -74,9 +74,15 @@ namespace Bookaroom
             DateTime dateTimeend = dataenddateTimePicker.Value;
             int id_user;
             int id_room;
-            int actiu = 0;
+            int active = 0;
             int price = 0;
             int capacity = 0;
+
+            if (activecheckbox.Checked)
+            {
+                active = 1;
+
+            }
 
             if (userscomboBox.SelectedValue != null &&  roomcomboBox.SelectedValue !=null &&
                  int.TryParse(userscomboBox.SelectedValue.ToString(), out id_user) &&
@@ -84,13 +90,19 @@ namespace Bookaroom
                  int.TryParse(capacitytextBox.Text, out capacity)&&
                  int.TryParse(roomcomboBox.Text, out id_room))
             {
+                if (capacity < 0 || capacity > 30)
+                {
+                    MessageBox.Show("El aforo debe estar entre 0 y 30.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(description))
                 {
                     MessageBox.Show("Todos los campos son necesarios.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                if (EventsBD.AddEvent(name, price, description, capacity, dateTimeini, dateTimeend, id_user, id_room))
+                if (EventsBD.AddEvent(name, price, description, capacity, dateTimeini, dateTimeend, id_user, id_room, active))
                 {
                     MessageBox.Show("Usuari afegit correctament", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

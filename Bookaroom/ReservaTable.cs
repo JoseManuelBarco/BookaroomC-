@@ -43,10 +43,10 @@ namespace Bookaroom
                 foreach (DataRow row in usersTable.Rows)
                 {
                     int rowIndex = reservationDataGridView.Rows.Add();
-                    reservationDataGridView.Rows[rowIndex].Cells["id_entrada"].Value = row["id_entrada"];
+                    reservationDataGridView.Rows[rowIndex].Cells["id_entrada"].Value = row["ticket_id"];
                     reservationDataGridView.Rows[rowIndex].Cells["id_usuari"].Value = row["nom_usuari"];
-                    reservationDataGridView.Rows[rowIndex].Cells["numero_butaca"].Value = row["numero_butaca"];
-                    reservationDataGridView.Rows[rowIndex].Cells["numero_fila"].Value = row["numero_fila"];
+                    reservationDataGridView.Rows[rowIndex].Cells["numero_butaca"].Value = row["row_number"];
+                    reservationDataGridView.Rows[rowIndex].Cells["numero_fila"].Value = row["seat_number"];
                     reservationDataGridView.Rows[rowIndex].Cells["id_esdeveniment"].Value = row["nom_event"];
                     reservationDataGridView.Rows[rowIndex].Cells["email"].Value = row["email"];
 
@@ -70,6 +70,10 @@ namespace Bookaroom
 
         private void seeUserFilterButton_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row in this.reservationDataGridView.Rows)
+            {
+                row.Visible = true;
+            }
             string userName = userfilterbox.Text;
 
             foreach (DataGridViewRow row in this.reservationDataGridView.Rows)
@@ -112,6 +116,49 @@ namespace Bookaroom
             CreateReservationForm f = new CreateReservationForm();
             f.ShowDialog();
             LoadDataIntoPreExistingColumns();
+        }
+
+        private void desactivatereservationbutton_Click(object sender, EventArgs e)
+        {
+            if (reservationDataGridView.SelectedRows.Count > 0)
+            {
+                int active = Convert.ToInt32(reservationDataGridView.SelectedRows[0].Cells["id_entrada"].Value);
+
+
+                int reservationid = Convert.ToInt32(reservationDataGridView.SelectedRows[0].Cells["id_entrada"].Value);
+
+                var result = MessageBox.Show("Quieres desactivar esta reserva?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    ReserveBD.DeleteReservation(reservationid);
+
+
+                    LoadDataIntoPreExistingColumns();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Porfavor selecione un usuario.");
+            }
+        }
+
+        private void editreservationbutton_Click(object sender, EventArgs e)
+        {
+            if (reservationDataGridView.SelectedRows.Count > 0)
+            {
+                int reservationID = Convert.ToInt32(reservationDataGridView.SelectedRows[0].Cells["id_entrada"].Value);
+              
+                EditReservationForm f = new EditReservationForm(reservationID);
+                f.ShowDialog();
+                LoadDataIntoPreExistingColumns();
+
+            }
+
+            else
+            {
+                MessageBox.Show("Porfavor selecione un usuario.");
+            }
         }
     }
 }

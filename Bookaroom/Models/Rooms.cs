@@ -36,8 +36,9 @@ namespace Bookaroom.Models
             DataTable dt = new DataTable();
 
             SqlCommand command = new SqlCommand(@"
-        SELECT id_butaca 
-        FROM Butaca WHERE id_sala = @SalaId and stat=0", Bd.connexioJose);
+        SELECT seat_id,seat_number,row_number
+        FROM Butaca 
+        WHERE room_id = @SalaId and status='Available'", Bd.connexioJose);
 
             command.Parameters.AddWithValue("@SalaId", salaId);
 
@@ -52,6 +53,34 @@ namespace Bookaroom.Models
             }
 
             return dt;
+
+        }
+
+        public static DataTable GetSeatsForEdit(int salaId, int seatid)
+        {
+            DataTable dt = new DataTable();
+
+            SqlCommand command = new SqlCommand(@"
+        SELECT seat_id, seat_number, row_number
+        FROM Butaca
+        WHERE room_id = @SalaId 
+        AND (status = 'Available' OR seat_id = @CurrentSeatId)", Bd.connexioJose);
+
+            command.Parameters.AddWithValue("@SalaId", salaId);
+            command.Parameters.AddWithValue("@CurrentSeatId", seatid);
+
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error cargando butacas: {ex.Message}");
+            }
+
+            return dt;
         }
     }
-}
+    }
+

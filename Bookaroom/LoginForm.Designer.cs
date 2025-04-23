@@ -56,20 +56,23 @@
             this.emailtextbox.Location = new System.Drawing.Point(302, 297);
             this.emailtextbox.Multiline = true;
             this.emailtextbox.Name = "emailtextbox";
+            this.emailtextbox.PasswordChar = '#';
             this.emailtextbox.Size = new System.Drawing.Size(380, 40);
             this.emailtextbox.TabIndex = 1;
+            this.emailtextbox.UseSystemPasswordChar = true;
             // 
             // passwordtextbox
             // 
             this.passwordtextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.passwordtextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordtextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.passwordtextbox.Location = new System.Drawing.Point(302, 358);
             this.passwordtextbox.Multiline = true;
             this.passwordtextbox.Name = "passwordtextbox";
-            this.passwordtextbox.PasswordChar = '#';
+            this.passwordtextbox.PasswordChar = '*';
+            this.passwordtextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.passwordtextbox.Size = new System.Drawing.Size(380, 40);
             this.passwordtextbox.TabIndex = 2;
-            this.passwordtextbox.UseSystemPasswordChar = true;
             // 
             // login_button
             // 

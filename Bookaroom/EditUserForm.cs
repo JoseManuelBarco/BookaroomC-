@@ -35,7 +35,6 @@ namespace Bookaroom
         {
            
 
-            // Llamar al método para restablecer la contraseña
             bool result = Users.ResetPassword(userId);
 
             if (result)

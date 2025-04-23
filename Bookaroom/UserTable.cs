@@ -93,6 +93,7 @@ namespace Bookaroom
         {
             if (userdataGridView.SelectedRows.Count > 0)
             {
+                int active=Convert.ToInt32(userdataGridView.SelectedRows[0].Cells["Id_usuari"].Value);
 
 
                 int userId = Convert.ToInt32(userdataGridView.SelectedRows[0].Cells["Id_usuari"].Value);

@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.eventscomboBox = new System.Windows.Forms.ComboBox();
+            this.seatcomboBox = new System.Windows.Forms.ComboBox();
+            this.usercomboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -45,48 +43,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox4
+            // eventscomboBox
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(39, 309);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(357, 21);
-            this.comboBox4.TabIndex = 75;
+            this.eventscomboBox.FormattingEnabled = true;
+            this.eventscomboBox.Location = new System.Drawing.Point(39, 245);
+            this.eventscomboBox.Name = "eventscomboBox";
+            this.eventscomboBox.Size = new System.Drawing.Size(357, 21);
+            this.eventscomboBox.TabIndex = 73;
+            this.eventscomboBox.SelectedIndexChanged += new System.EventHandler(this.eventscomboBox_SelectedIndexChanged);
             // 
-            // label3
+            // seatcomboBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.label3.Font = new System.Drawing.Font("Outfit", 9.749999F);
-            this.label3.Location = new System.Drawing.Point(36, 293);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 16);
-            this.label3.TabIndex = 74;
-            this.label3.Text = "Estat";
+            this.seatcomboBox.FormattingEnabled = true;
+            this.seatcomboBox.Location = new System.Drawing.Point(40, 182);
+            this.seatcomboBox.Name = "seatcomboBox";
+            this.seatcomboBox.Size = new System.Drawing.Size(357, 21);
+            this.seatcomboBox.TabIndex = 72;
             // 
-            // comboBox3
+            // usercomboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(39, 245);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(357, 21);
-            this.comboBox3.TabIndex = 73;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(40, 182);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(357, 21);
-            this.comboBox2.TabIndex = 72;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(40, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(358, 21);
-            this.comboBox1.TabIndex = 71;
+            this.usercomboBox.FormattingEnabled = true;
+            this.usercomboBox.Location = new System.Drawing.Point(40, 114);
+            this.usercomboBox.Name = "usercomboBox";
+            this.usercomboBox.Size = new System.Drawing.Size(358, 21);
+            this.usercomboBox.TabIndex = 71;
             // 
             // label1
             // 
@@ -115,7 +95,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(238, 369);
+            this.button2.Location = new System.Drawing.Point(239, 310);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 51);
             this.button2.TabIndex = 67;
@@ -126,7 +106,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(40, 369);
+            this.button1.Location = new System.Drawing.Point(40, 310);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 51);
             this.button1.TabIndex = 66;
@@ -173,7 +153,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(12, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(410, 452);
+            this.pictureBox1.Size = new System.Drawing.Size(410, 399);
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
@@ -182,12 +162,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(434, 511);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(434, 446);
+            this.Controls.Add(this.eventscomboBox);
+            this.Controls.Add(this.seatcomboBox);
+            this.Controls.Add(this.usercomboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox2);
@@ -206,12 +184,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox eventscomboBox;
+        private System.Windows.Forms.ComboBox seatcomboBox;
+        private System.Windows.Forms.ComboBox usercomboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox2;

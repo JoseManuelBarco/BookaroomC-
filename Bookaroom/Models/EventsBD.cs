@@ -19,7 +19,8 @@ namespace Bookaroom.Models
             SqlCommand command = new SqlCommand(@"
             SELECT e.event_id,e.room_id ,u.name as nom_usuari,e.capacity,e.start_date,e.end_date,e.price,e.name,e.description
             FROM Esdeveniments e
-            JOIN Usuaris u ON e.user_id = u.user_id", Bd.connexioJose);
+            JOIN Usuaris u ON e.user_id = u.user_id
+            WHERE e.active = 1", Bd.connexioJose);
 
             try
             {
@@ -39,9 +40,9 @@ namespace Bookaroom.Models
             SqlCommand cmd = new SqlCommand("UPDATE Esdeveniments SET active = @actiu WHERE event_id = @id", Bd.connexioJose);
             try
             {
-                bool actiu = false;
+                int actiu = 0;
                 cmd.Parameters.AddWithValue("@id", eventId);
-                cmd.Parameters.AddWithValue("@actiu", 1);
+                cmd.Parameters.AddWithValue("@actiu", actiu);
 
                 Bd.connexioJose.Open();
 
@@ -60,13 +61,13 @@ namespace Bookaroom.Models
             }
         }
 
-        public static bool AddEvent(string name,int price, string description, int capacity, DateTime datetimeini, DateTime datetimeend,int id_user,int id_room)
+        public static bool AddEvent(string name,int price, string description, int capacity, DateTime datetimeini, DateTime datetimeend,int id_user,int id_room, int active)
         {
             SqlCommand command = new SqlCommand();
             command.Connection = Bd.connexioJose;
 
-            command.CommandText = "INSERT INTO Esdeveniments (name, description, start_date, end_date, price, size,room_id,user_id) " +
-                                  "VALUES (@Name, @Description, @DataIni, @DataEnd, @Price, @Capacity, @Id_room, @Id_user)";
+            command.CommandText = "INSERT INTO Esdeveniments (name, description, start_date, end_date, price, capacity,room_id,user_id,active) " +
+                                  "VALUES (@Name, @Description, @DataIni, @DataEnd, @Price, @Capacity, @Id_room, @Id_user, @Active)";
 
             command.Parameters.AddWithValue("@Name", name);
             command.Parameters.AddWithValue("@DataIni", datetimeini);
@@ -76,6 +77,8 @@ namespace Bookaroom.Models
             command.Parameters.AddWithValue("@Capacity", capacity);
             command.Parameters.AddWithValue("@Id_room", id_room);
             command.Parameters.AddWithValue("@Id_user", id_user);
+            command.Parameters.AddWithValue("@Active", active);
+
 
             try
             {
@@ -130,7 +133,7 @@ namespace Bookaroom.Models
             DataTable dt = new DataTable();
 
             SqlCommand command = new SqlCommand(@"
-                SELECT e.event_id, e.nane, e.capacity, e.start_date, e.end_date, e.price
+                SELECT e.event_id, e.name, e.capacity, e.start_date, e.end_date, e.price
                 FROM Esdeveniments e
                 WHERE e.event_id = @id", Bd.connexioJose);
 
@@ -147,5 +150,8 @@ namespace Bookaroom.Models
 
             return dt;
         }
+
+
+        }
     }
-}
+

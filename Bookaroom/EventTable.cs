@@ -94,7 +94,7 @@ namespace Bookaroom
         {
             if (eventdatagridview.SelectedRows.Count > 0)
             {
-                int eventId = Convert.ToInt32(eventdatagridview.SelectedRows[0].Cells["Id_esdeveniment"].Value);
+                int eventId = Convert.ToInt32(eventdatagridview.SelectedRows[0].Cells["id_event"].Value);
 
                 var result = MessageBox.Show("Vols desactivar aquest esdeveniment?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -110,6 +110,7 @@ namespace Bookaroom
             {
                 MessageBox.Show("Siusplau selecionni un esdeveniment.");
             }
+
         }
 
         private void editeventbutton_Click(object sender, EventArgs e)
@@ -127,6 +128,7 @@ namespace Bookaroom
             {
                 MessageBox.Show("Porfavor selecione un usuario.");
             }
+
         }
 
         private void gestionarUserToolStripMenuItem_Click(object sender, EventArgs e)

@@ -39,8 +39,7 @@
             this.usercomboBox = new System.Windows.Forms.ComboBox();
             this.seatcomboBox = new System.Windows.Forms.ComboBox();
             this.eventcomboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.activecheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +70,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(238, 369);
+            this.button2.Location = new System.Drawing.Point(237, 337);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 51);
             this.button2.TabIndex = 54;
@@ -82,7 +81,7 @@
             // 
             this.savechangesbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.savechangesbutton.ForeColor = System.Drawing.Color.White;
-            this.savechangesbutton.Location = new System.Drawing.Point(40, 369);
+            this.savechangesbutton.Location = new System.Drawing.Point(39, 337);
             this.savechangesbutton.Name = "savechangesbutton";
             this.savechangesbutton.Size = new System.Drawing.Size(159, 51);
             this.savechangesbutton.TabIndex = 53;
@@ -104,7 +103,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(37, 233);
+            this.label2.Location = new System.Drawing.Point(37, 232);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 47;
@@ -128,7 +127,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(12, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(410, 452);
+            this.pictureBox1.Size = new System.Drawing.Size(410, 421);
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
             // 
@@ -143,7 +142,7 @@
             // seatcomboBox
             // 
             this.seatcomboBox.FormattingEnabled = true;
-            this.seatcomboBox.Location = new System.Drawing.Point(39, 249);
+            this.seatcomboBox.Location = new System.Drawing.Point(39, 248);
             this.seatcomboBox.Name = "seatcomboBox";
             this.seatcomboBox.Size = new System.Drawing.Size(357, 21);
             this.seatcomboBox.TabIndex = 59;
@@ -158,32 +157,24 @@
             this.eventcomboBox.TabIndex = 60;
             this.eventcomboBox.SelectedIndexChanged += new System.EventHandler(this.eventcomboBox_SelectedIndexChanged);
             // 
-            // label3
+            // activecheckbox
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(36, 293);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 61;
-            this.label3.Text = "Estat";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(39, 309);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(357, 21);
-            this.comboBox4.TabIndex = 62;
+            this.activecheckbox.AutoSize = true;
+            this.activecheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.activecheckbox.Location = new System.Drawing.Point(40, 301);
+            this.activecheckbox.Name = "activecheckbox";
+            this.activecheckbox.Size = new System.Drawing.Size(50, 17);
+            this.activecheckbox.TabIndex = 61;
+            this.activecheckbox.Text = "Actiu";
+            this.activecheckbox.UseVisualStyleBackColor = false;
             // 
             // CreateReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(434, 511);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(434, 464);
+            this.Controls.Add(this.activecheckbox);
             this.Controls.Add(this.eventcomboBox);
             this.Controls.Add(this.seatcomboBox);
             this.Controls.Add(this.usercomboBox);
@@ -216,7 +207,6 @@
         private System.Windows.Forms.ComboBox usercomboBox;
         private System.Windows.Forms.ComboBox seatcomboBox;
         private System.Windows.Forms.ComboBox eventcomboBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.CheckBox activecheckbox;
     }
 }

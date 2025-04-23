@@ -150,7 +150,6 @@ namespace Bookaroom.Models
             SqlCommand cmd = new SqlCommand("UPDATE Usuaris SET active = @actiu WHERE user_id = @id", Bd.connexioJose);
             try
             {
-                int actiu = 0;
                 cmd.Parameters.AddWithValue("@id", userId);
                 cmd.Parameters.AddWithValue("@actiu",0); 
 
