@@ -18,9 +18,10 @@ namespace Bookaroom
         {
             InitializeComponent();
             this.reservationID = reservationID;
+
             LoadEventsComboBox();
             LoadUsersComboBox();
-
+            LoadSeatsComboBox();
             LoadReservationData();
         }
 
@@ -68,9 +69,12 @@ namespace Bookaroom
                 usercomboBox.AutoCompleteCustomSource = autoComplete;
             }
         }
-        private void LoadSeatsComboBox(int salaId, int seatid)
+        private void LoadSeatsComboBox()
         {
-            DataTable seats = Rooms.GetSeatsForEdit(salaId,seatid);
+            int seatid = Rooms.GetSeatAssigned(reservationID);  // Asiento asignado
+            int salaid = Rooms.GetRoomAssigned(reservationID);  // Sala asignada
+
+            DataTable seats = Rooms.GetSeatsForEdit(salaid, seatid);
 
             if (seats.Rows.Count > 0)
             {
@@ -80,13 +84,13 @@ namespace Bookaroom
                 {
                     string fila = row["row_number"].ToString();
                     string asiento = row["seat_number"].ToString();
+
                     row["DisplaySeat"] = $"Fila {fila} - Asiento {asiento}";
                 }
 
                 seatcomboBox.DataSource = seats;
                 seatcomboBox.DisplayMember = "DisplaySeat";
                 seatcomboBox.ValueMember = "seat_id";
-
             }
             else
             {
@@ -104,36 +108,10 @@ namespace Bookaroom
                 usercomboBox.SelectedValue = Convert.ToInt32(row["user_id"]);
 
                 eventscomboBox.SelectedValue = Convert.ToInt32(row["event_id"]);
-
-       
-                seatcomboBox.SelectedValue = Convert.ToInt32(row["seat_id"]);
             }
             else
             {
                 MessageBox.Show("No se encontraron datos para esta reserva.");
-            }
-        }
-        private void eventscomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (eventscomboBox.SelectedItem is DataRowView selectedRow)
-            {
-                if (selectedRow.Row.Table.Columns.Contains("room_id"))
-                {
-                    try
-                    {
-                        int idSala = Convert.ToInt32(selectedRow["room_id"]);
-                        int seatid = Convert.ToInt32(selectedRow["seat_id"]);
-                        LoadSeatsComboBox(idSala,seatid);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al obtener la sala: " + ex.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("La columna 'id_sala' no está en el DataTable.");
-                }
             }
         }
     }

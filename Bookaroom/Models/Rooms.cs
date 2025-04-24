@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace Bookaroom.Models
 {
@@ -36,9 +37,10 @@ namespace Bookaroom.Models
             DataTable dt = new DataTable();
 
             SqlCommand command = new SqlCommand(@"
-        SELECT seat_id,seat_number,row_number
-        FROM Butaca 
-        WHERE room_id = @SalaId and status='Available'", Bd.connexioJose);
+        SELECT b.seat_id,b.seat_number,b.row_number
+        FROM Butaca as b
+        JOIN Entrades as e on b.seat_id = e.seat_id
+        WHERE e.room_id = @SalaId and status='Available'", Bd.connexioJose);
 
             command.Parameters.AddWithValue("@SalaId", salaId);
 
@@ -55,19 +57,85 @@ namespace Bookaroom.Models
             return dt;
 
         }
+        public static int GetSeatAssigned(int reservationid)
+        {
+            int seatid = 0;
+
+            SqlCommand command = new SqlCommand(@"
+        SELECT e.seat_id FROM Entrades as e
+        JOIN Esdeveniments as es on e.event_id=es.event_id
+        WHERE e.ticket_id = @Reservationid", Bd.connexioJose);
+
+            command.Parameters.AddWithValue("@Reservationid", reservationid);
+
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    seatid = Convert.ToInt32(dt.Rows[0]["seat_id"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error cargando butacas: {ex.Message}");
+            }
+
+            return seatid;
+        }
+        public static int GetRoomAssigned(int reservationid)
+        {
+            int seatid = 0;
+
+            SqlCommand command = new SqlCommand(@"
+        SELECT es.room_id FROM Esdeveniments as es
+        JOIN Entrades as e on e.event_id=es.event_id
+        WHERE e.ticket_id = @Reservationid", Bd.connexioJose);
+
+            command.Parameters.AddWithValue("@Reservationid", reservationid);
+
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    seatid = Convert.ToInt32(dt.Rows[0]["room_id"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error cargando butacas: {ex.Message}");
+            }
+
+            return seatid;
+        }
+
+
+
 
         public static DataTable GetSeatsForEdit(int salaId, int seatid)
         {
             DataTable dt = new DataTable();
 
-            SqlCommand command = new SqlCommand(@"
-        SELECT seat_id, seat_number, row_number
-        FROM Butaca
-        WHERE room_id = @SalaId 
-        AND (status = 'Available' OR seat_id = @CurrentSeatId)", Bd.connexioJose);
+                            SqlCommand command = new SqlCommand(@"
+                            SELECT 
+                        b.seat_id,
+                        b.seat_number,
+                        b.row_number,
+                        b.status
+                    FROM Butaca b
+                    WHERE b.room_id = @SalaID
+                    AND (
+                        b.status = 'Available'
+                        OR b.seat_id = @SeatID
+                    ) ", Bd.connexioJose);
 
-            command.Parameters.AddWithValue("@SalaId", salaId);
-            command.Parameters.AddWithValue("@CurrentSeatId", seatid);
+            command.Parameters.AddWithValue("@SalaID", salaId);
+            command.Parameters.AddWithValue("@SeatID", seatid);
 
             try
             {
@@ -82,5 +150,5 @@ namespace Bookaroom.Models
             return dt;
         }
     }
-    }
+}
 

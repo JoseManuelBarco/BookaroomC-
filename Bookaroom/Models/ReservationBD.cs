@@ -124,10 +124,10 @@ namespace Bookaroom.Models
             DataTable dt = new DataTable();
 
             SqlCommand command = new SqlCommand(@"
-        SELECT e.ticket_id, u.user_id, u.name AS user_name, u.email,
+              SELECT e.ticket_id, u.user_id, u.name AS user_name, u.email,e.seat_id,
                ev.event_id, ev.name AS event_name,
                b.seat_id, b.seat_number, b.row_number
-              FROM Entrades e
+             FROM Entrades e
              JOIN Usuaris u ON e.user_id = u.user_id
              JOIN Esdeveniments ev ON e.event_id = ev.event_id
              JOIN Butaca b ON e.seat_id = b.seat_id

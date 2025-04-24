@@ -50,7 +50,6 @@
             this.eventscomboBox.Name = "eventscomboBox";
             this.eventscomboBox.Size = new System.Drawing.Size(357, 21);
             this.eventscomboBox.TabIndex = 73;
-            this.eventscomboBox.SelectedIndexChanged += new System.EventHandler(this.eventscomboBox_SelectedIndexChanged);
             // 
             // seatcomboBox
             // 
