@@ -18,6 +18,11 @@ namespace Bookaroom
             InitializeComponent();
             dateinidateTimePicker.Value = DateTime.Now;
             dataenddateTimePicker.Value = DateTime.Now;
+            dateinidateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateinidateTimePicker.CustomFormat = "yyyy-MM-dd";
+
+            dataenddateTimePicker.Format = DateTimePickerFormat.Custom;
+            dataenddateTimePicker.CustomFormat = "yyyy-MM-dd";
             LoadUsersComboBox();
             LoadRoomsComboBox();
         }
@@ -70,8 +75,8 @@ namespace Bookaroom
         {
             string name = nametextBox.Text.Trim();
             string description = descriptiontextBox.Text;
-            DateTime dateTimeini = dateinidateTimePicker.Value;
-            DateTime dateTimeend = dataenddateTimePicker.Value;
+            DateTime dateTimeini = dateinidateTimePicker.Value.Date;
+            DateTime dateTimeend = dataenddateTimePicker.Value.Date;
             int id_user;
             int id_room;
             int active = 0;
@@ -99,6 +104,11 @@ namespace Bookaroom
                 if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(description))
                 {
                     MessageBox.Show("Todos los campos son necesarios.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (EventsBD.EventConflictExists(dateTimeini, dateTimeend, id_room))
+                {
+                    MessageBox.Show("Ya hay un evento registrado en esta sala durante este período.", "Conflicto de evento", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 

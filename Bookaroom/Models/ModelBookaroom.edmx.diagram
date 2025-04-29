@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b2b1892a46e74c8eaf7754bf0af91c22" Name="Diagram1">
+        <EntityTypeShape EntityType="bookaroomModel.Butaca" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookaroomModel.Entrades" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookaroomModel.Esdeveniments" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookaroomModel.Inventari" Width="1.5" PointX="1.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookaroomModel.Mensajes" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookaroomModel.Sales" Width="1.5" PointX="1.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookaroomModel.Usuaris" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="bookaroomModel.FK__Butaca__room_id__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="bookaroomModel.FK__Entrades__seat_i__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="bookaroomModel.FK__Entrades__event___4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="bookaroomModel.FK__Entrades__user_i__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="bookaroomModel.FK__Esdevenim__room___44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="bookaroomModel.FK__Esdevenim__user___45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="bookaroomModel.FK__Sales__inventory__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="bookaroomModel.FK__Mensajes__sent_i__4F7CD00D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

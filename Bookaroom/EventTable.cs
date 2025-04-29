@@ -18,7 +18,6 @@ namespace Bookaroom
         public EventTable()
         {
             InitializeComponent();
-            LoadDataIntoPreExistingColumns();
             eventdatagridview.RowHeadersVisible = false;
             eventdatagridview.EnableHeadersVisualStyles = false;
             eventdatagridview.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
@@ -36,7 +35,7 @@ namespace Bookaroom
             }
         }
             
-
+        
 
 
 
@@ -148,6 +147,13 @@ namespace Bookaroom
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
             staticFormmainForm.OpenForm(new LoginForm());
         }
+
+        private void EventTable_Load(object sender, EventArgs e)
+        {
+            bindingSource1.DataSource = EventsOrm.Select();
+
+        }
+   
     }
 }
 

@@ -71,8 +71,8 @@ namespace Bookaroom
         }
         private void LoadSeatsComboBox()
         {
-            int seatid = Rooms.GetSeatAssigned(reservationID);  // Asiento asignado
-            int salaid = Rooms.GetRoomAssigned(reservationID);  // Sala asignada
+            int seatid = Rooms.GetSeatAssigned(reservationID);
+            int salaid = Rooms.GetRoomAssigned(reservationID); 
 
             DataTable seats = Rooms.GetSeatsForEdit(salaid, seatid);
 

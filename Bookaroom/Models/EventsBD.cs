@@ -150,8 +150,41 @@ namespace Bookaroom.Models
 
             return dt;
         }
+        public static bool EventConflictExists(DateTime startDate, DateTime endDate, int roomId)
+        {
+            SqlCommand cmd = new SqlCommand(@"
+        SELECT COUNT(*) 
+        FROM Esdeveniments 
+        WHERE room_id = @RoomId AND active = 1
+        AND (
+            (@StartDate BETWEEN start_date AND end_date)
+            OR (@EndDate BETWEEN start_date AND end_date)
+            OR (start_date BETWEEN @StartDate AND @EndDate)
+            OR (end_date BETWEEN @StartDate AND @EndDate)
+        )", Bd.connexioJose);
 
+            cmd.Parameters.AddWithValue("@StartDate", startDate);
+            cmd.Parameters.AddWithValue("@EndDate", endDate);
+            cmd.Parameters.AddWithValue("@RoomId", roomId);
 
+            try
+            {
+                Bd.connexioJose.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error checking event conflict: {ex.Message}");
+                return true;
+            }
+            finally
+            {
+                Bd.connexioJose.Close();
+            }
         }
+
+
+    }
     }
 
