@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateEventForm));
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,8 +52,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.roomcomboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.bindingSourceUsers = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -239,6 +242,7 @@
             // 
             // userscomboBox
             // 
+            this.userscomboBox.DataSource = this.bindingSourceUsers;
             this.userscomboBox.FormattingEnabled = true;
             this.userscomboBox.Location = new System.Drawing.Point(38, 224);
             this.userscomboBox.Name = "userscomboBox";
@@ -273,6 +277,10 @@
             this.label9.TabIndex = 37;
             this.label9.Text = "Usuari ";
             // 
+            // bindingSourceUsers
+            // 
+            this.bindingSourceUsers.DataSource = typeof(Bookaroom.Models.Users);
+            // 
             // CreateEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,8 +311,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "CreateEventForm";
             this.Text = "CreateEventForm";
+            this.Load += new System.EventHandler(this.CreateEventForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +344,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox roomcomboBox;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.BindingSource bindingSourceUsers;
     }
 }

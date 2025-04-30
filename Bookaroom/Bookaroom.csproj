@@ -162,6 +162,7 @@
       <DependentUpon>ModelBookaroom.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\UsersOrm.cs" />
     <Compile Include="Models\Usuaris.cs">
       <DependentUpon>ModelBookaroom.tt</DependentUpon>
     </Compile>

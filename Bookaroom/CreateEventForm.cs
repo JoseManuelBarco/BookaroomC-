@@ -20,33 +20,8 @@ namespace Bookaroom
             dataenddateTimePicker.Value = DateTime.Now;
             dateinidateTimePicker.Format = DateTimePickerFormat.Custom;
             dateinidateTimePicker.CustomFormat = "yyyy-MM-dd";
-
             dataenddateTimePicker.Format = DateTimePickerFormat.Custom;
             dataenddateTimePicker.CustomFormat = "yyyy-MM-dd";
-            LoadUsersComboBox();
-            LoadRoomsComboBox();
-        }
-        private void LoadUsersComboBox()
-        {
-            DataTable users = Users.GetUsers();
-
-            if (users.Rows.Count > 0)
-            {
-                userscomboBox.DataSource = users;
-                userscomboBox.DisplayMember = "name";
-                userscomboBox.ValueMember = "user_id";
-
-                AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-                foreach (DataRow row in users.Rows)
-                {
-                    string fullName = $"{row["name"]}";
-                    autoComplete.Add(fullName);
-                }
-
-                userscomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                userscomboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                userscomboBox.AutoCompleteCustomSource = autoComplete;
-            }
         }
         private void LoadRoomsComboBox()
         {
@@ -126,6 +101,14 @@ namespace Bookaroom
             {
                 MessageBox.Show("Datos inválidos. Verifica que todos los valores sean correctos.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void CreateEventForm_Load(object sender, EventArgs e)
+        {
+            bindingSourceUsers.DataSource = UsersOrm.Select();
+            userscomboBox.DisplayMember = "name";
+            userscomboBox.ValueMember = "user_id";
+
         }
     }
 }

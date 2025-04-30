@@ -18,12 +18,12 @@ namespace Bookaroom
         public EventTable()
         {
             InitializeComponent();
-            eventdatagridview.RowHeadersVisible = false;
-            eventdatagridview.EnableHeadersVisualStyles = false;
-            eventdatagridview.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            eventdatagridview.DefaultCellStyle.ForeColor = Color.Black;
-            eventdatagridview.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            eventdatagridview.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
             if (Session.Rol == "Event Organizer")
             {
@@ -34,75 +34,40 @@ namespace Bookaroom
                 gestionarUserToolStripMenuItem.Visible = true;
             }
         }
-            
-        
-
-
-
-
-        private void LoadDataIntoPreExistingColumns()
-        {
-            try
-            {
-                eventdatagridview.Rows.Clear();
-
-                DataTable usersTable = EventsBD.GetEvents();
-                foreach (DataRow row in usersTable.Rows)
-                {
-                    int rowIndex = eventdatagridview.Rows.Add();
-                    eventdatagridview.Rows[rowIndex].Cells["id_event"].Value = row["event_id"];
-                    eventdatagridview.Rows[rowIndex].Cells["id_sala"].Value = row["room_id"];
-                    eventdatagridview.Rows[rowIndex].Cells["id_usuari"].Value = row["nom_usuari"];
-                    eventdatagridview.Rows[rowIndex].Cells["Nom"].Value = row["name"];
-                    eventdatagridview.Rows[rowIndex].Cells["descripcio"].Value = row["description"];
-                    eventdatagridview.Rows[rowIndex].Cells["aforament"].Value = row["capacity"];
-                    eventdatagridview.Rows[rowIndex].Cells["Data_Inici"].Value = row["start_date"];
-                    eventdatagridview.Rows[rowIndex].Cells["Data_fi"].Value = row["end_date"];
-                    eventdatagridview.Rows[rowIndex].Cells["Preu"].Value = row["price"];
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading data: {ex.Message}");
-            }
-        }    
         private void capacityfilterlabel_Click_1(object sender, EventArgs e)
         {
-                this.eventdatagridview.Columns["aforament"].Visible =
-                   !this.eventdatagridview.Columns["aforament"].Visible;
+                this.dataGridView1.Columns["capacity"].Visible =
+                   !this.dataGridView1.Columns["capacity"].Visible;
         }
         private void dateendfilterlabel_Click(object sender, EventArgs e)
         {
-            this.eventdatagridview.Columns["Data_fi"].Visible =
-                !this.eventdatagridview.Columns["Data_fi"].Visible;
+            this.dataGridView1.Columns["end_date"].Visible =
+                !this.dataGridView1.Columns["end_date"].Visible;
         }
         private void dateinifilterlabel_Click(object sender, EventArgs e)
         {
-            this.eventdatagridview.Columns["Data_Inici"].Visible =
-                  !this.eventdatagridview.Columns["Data_Inici"].Visible;
+            this.dataGridView1.Columns["start_date"].Visible =
+                  !this.dataGridView1.Columns["start_date"].Visible;
         }
         private void createeventbutton_Click(object sender, EventArgs e)
         {
             CreateEventForm f = new CreateEventForm();
             f.ShowDialog();
-            LoadDataIntoPreExistingColumns();
+            bindingSource1.DataSource = EventsOrm.Select();
         }
 
         private void desactivateeventbutton_Click(object sender, EventArgs e)
         {
-            if (eventdatagridview.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                int eventId = Convert.ToInt32(eventdatagridview.SelectedRows[0].Cells["id_event"].Value);
+                int eventId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["event_id"].Value);
 
                 var result = MessageBox.Show("Vols desactivar aquest esdeveniment?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
                     EventsBD.DeleteEvent(eventId);
-
-
-                    LoadDataIntoPreExistingColumns();
+                    bindingSource1.DataSource = EventsOrm.Select();
                 }
             }
             else
@@ -111,16 +76,15 @@ namespace Bookaroom
             }
 
         }
-
         private void editeventbutton_Click(object sender, EventArgs e)
         {
-            if (eventdatagridview.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                int eventID = Convert.ToInt32(eventdatagridview.SelectedRows[0].Cells["id_event"].Value);
+                int eventID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["event_id"].Value);
 
                 EditEventForm f = new EditEventForm(eventID);
                 f.ShowDialog();
-                LoadDataIntoPreExistingColumns();
+                bindingSource1.DataSource = EventsOrm.Select();
             }
 
             else
