@@ -46,7 +46,7 @@ namespace Bookaroom
                 }
 
              
-                if (Users.AddUser(email, name, surnames, password, role, actiu))
+                if (UsersOrm.InsertUser(email, name, surnames, password, role, actiu))
                 {
                     MessageBox.Show("Usuari afegit correctament", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
