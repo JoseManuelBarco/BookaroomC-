@@ -36,18 +36,12 @@ namespace Bookaroom.Models
                     int active = users.GetInt32(6);
                     if (active == 1)
                     {
-                        MessageBox.Show("Usuario encontrado. Bienvenido.");
                         valid = true;
                     }
                     else
                     {
                         MessageBox.Show("Tu cuenta está inactiva. Contacta con el administrador.", "Cuenta Inactiva", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                }
-
-                else
-                {
-                    MessageBox.Show("Contraseña incorrecta.");
                 }
             }
             else
@@ -61,7 +55,7 @@ namespace Bookaroom.Models
         }
         public static string checkRol(string email)
         {
-            string role = null; // Valor predeterminado si el usuario no tiene rol
+            string role = null;
 
             SqlCommand sentence = new SqlCommand();
             SqlDataReader users;
@@ -76,7 +70,7 @@ namespace Bookaroom.Models
             if (users.HasRows)
             {
                 users.Read();
-                role = users.GetString(0);  // Obtiene el valor del rol (suponiendo que 'role' es la primera columna)
+                role = users.GetString(0);  
             }
             else
             {
@@ -116,60 +110,7 @@ namespace Bookaroom.Models
 
             return dt;
         }
-        public static bool AddUser(string email, string name, string surnames, string password, string role, int actiu)
-        {
-            SqlCommand command = new SqlCommand();
-            command.Connection = Bd.connexioJose;
-            command.CommandText = "INSERT INTO Usuaris (email, name, surname, password, role, active) VALUES (@Email, @Name, @Surnames, @Password,@Role,@Active)";
-
-            command.Parameters.AddWithValue("@Email", email);
-            command.Parameters.AddWithValue("@Name", name);
-            command.Parameters.AddWithValue("@Surnames", surnames);
-            command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.EnhancedHashPassword(password, BCrypt.Net.HashType.SHA512));// BCrypt.Net.BCrypt.EnhancedHashPassword(password, BCrypt.Net.HashType.SHA512));
-            command.Parameters.AddWithValue("@Active", actiu);
-            command.Parameters.AddWithValue("@Role", role);
-
-            try
-            {
-                Bd.connexioJose.Open();
-                int result = command.ExecuteNonQuery();
-                return result > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error adding user: {ex.Message}");
-                return false;
-            }
-            finally
-            {
-                Bd.connexioJose.Close();
-            }
-        }
-        public static bool DeleteUser(int userId)
-        {
-            SqlCommand cmd = new SqlCommand("UPDATE Usuaris SET active = @actiu WHERE user_id = @id", Bd.connexioJose);
-            try
-            {
-                cmd.Parameters.AddWithValue("@id", userId);
-                cmd.Parameters.AddWithValue("@actiu",0); 
-
-                Bd.connexioJose.Open();
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected > 0;
-            }
-            catch
-            {
-                return false;
-            }
-            finally
-            {
-                cmd.Dispose();
-                Bd.connexioJose.Close();
-            }
-        }
-        public static DataTable GetUser(int userID)
+           public static DataTable GetUser(int userID)
         {
             DataTable dt = new DataTable();
 
@@ -190,32 +131,5 @@ namespace Bookaroom.Models
             return dt;
         }
 
-        public static bool ResetPassword(int userId)
-        {
-            SqlCommand command = new SqlCommand("UPDATE Usuaris SET password = @newPassword WHERE user_id = @userId", Bd.connexioJose);
-
-            string newPassword = "reset123";
-
-            string hashedPassword = BCrypt.Net.BCrypt.EnhancedHashPassword(newPassword, BCrypt.Net.HashType.SHA512);
-
-            command.Parameters.AddWithValue("@newPassword", hashedPassword);
-            command.Parameters.AddWithValue("@userId", userId);
-
-            try
-            {
-                Bd.connexioJose.Open();
-                int rowsAffected = command.ExecuteNonQuery();
-                return rowsAffected > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al restablecer la contraseña: {ex.Message}");
-                return false;
-            }
-            finally
-            {
-                Bd.connexioJose.Close();
-            }
-        }
     }
 }

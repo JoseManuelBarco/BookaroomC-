@@ -31,7 +31,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.confirmchangesbutton = new System.Windows.Forms.Button();
             this.emailtextBox = new System.Windows.Forms.TextBox();
             this.surnametextBox = new System.Windows.Forms.TextBox();
             this.nomtextBox = new System.Windows.Forms.TextBox();
@@ -79,16 +79,17 @@
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // confirmchangesbutton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(41, 381);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 51);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "CONFIRMACION EDICIÓN";
-            this.button1.UseVisualStyleBackColor = false;
+            this.confirmchangesbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.confirmchangesbutton.ForeColor = System.Drawing.Color.White;
+            this.confirmchangesbutton.Location = new System.Drawing.Point(41, 381);
+            this.confirmchangesbutton.Name = "confirmchangesbutton";
+            this.confirmchangesbutton.Size = new System.Drawing.Size(159, 51);
+            this.confirmchangesbutton.TabIndex = 22;
+            this.confirmchangesbutton.Text = "CONFIRMACION EDICIÓN";
+            this.confirmchangesbutton.UseVisualStyleBackColor = false;
+            this.confirmchangesbutton.Click += new System.EventHandler(this.confirmchangesbutton_Click);
             // 
             // emailtextBox
             // 
@@ -180,7 +181,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.confirmchangesbutton);
             this.Controls.Add(this.emailtextBox);
             this.Controls.Add(this.surnametextBox);
             this.Controls.Add(this.nomtextBox);
@@ -205,7 +206,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button confirmchangesbutton;
         private System.Windows.Forms.TextBox emailtextBox;
         private System.Windows.Forms.TextBox surnametextBox;
         private System.Windows.Forms.TextBox nomtextBox;

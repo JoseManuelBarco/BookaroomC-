@@ -227,7 +227,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservaTable.resx">
       <DependentUpon>ReservaTable.cs</DependentUpon>
@@ -241,7 +240,7 @@
     <EmbeddedResource Include="UserTable.resx">
       <DependentUpon>UserTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Outfit-Black.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Outfit-Black.ttf" />
     <EntityDeploy Include="Models\ModelBookaroom.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelBookaroom.Designer.cs</LastGenOutput>
@@ -249,14 +248,14 @@
     <None Include="Models\ModelBookaroom.edmx.diagram">
       <DependentUpon>ModelBookaroom.edmx</DependentUpon>
     </None>
-    <None Include="Outfit-Bold.ttf" />
-    <None Include="Outfit-ExtraBold.ttf" />
-    <None Include="Outfit-ExtraLight.ttf" />
-    <None Include="Outfit-Light.ttf" />
-    <None Include="Outfit-Medium.ttf" />
-    <None Include="Outfit-Regular.ttf" />
-    <None Include="Outfit-SemiBold.ttf" />
-    <None Include="Outfit-Thin.ttf" />
+    <None Include="Resources\Fonts\Outfit-Bold.ttf" />
+    <None Include="Resources\Fonts\Outfit-ExtraBold.ttf" />
+    <None Include="Resources\Fonts\Outfit-ExtraLight.ttf" />
+    <None Include="Resources\Fonts\Outfit-Light.ttf" />
+    <None Include="Resources\Fonts\Outfit-Medium.ttf" />
+    <None Include="Resources\Fonts\Outfit-Regular.ttf" />
+    <None Include="Resources\Fonts\Outfit-SemiBold.ttf" />
+    <None Include="Resources\Fonts\Outfit-Thin.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Bookaroom.Models.Bd.datasource" />
     <None Include="Properties\DataSources\Bookaroom.Models.bookaroomEntities.datasource" />
@@ -276,11 +275,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -334,6 +328,7 @@
       <DependentUpon>ModelBookaroom.edmx</DependentUpon>
       <LastGenOutput>ModelBookaroom.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\bookaroom_ic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

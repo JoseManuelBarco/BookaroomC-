@@ -33,9 +33,9 @@ namespace Bookaroom
 
         private void resetpasswordbutton_Click(object sender, EventArgs e)
         {
-           
 
-            bool result = Users.ResetPassword(userId);
+
+            bool result = UsersOrm.ResetPassword(userId);
 
             if (result)
             {
@@ -44,6 +44,31 @@ namespace Bookaroom
             else
             {
                 MessageBox.Show("Hubo un error al restablecer la contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void confirmchangesbutton_Click(object sender, EventArgs e)
+        {
+            string name = nomtextBox.Text.Trim();
+            string surname = surnametextBox.Text.Trim();
+            string email = emailtextBox.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Nombre y correo electrónico son obligatorios.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            bool result = UsersOrm.UpdateUser(userId, email, name, surname);
+
+            if (result)
+            {
+                MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

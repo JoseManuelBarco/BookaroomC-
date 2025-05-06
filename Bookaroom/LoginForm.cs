@@ -17,9 +17,6 @@ namespace Bookaroom
         public LoginForm()
         {
             InitializeComponent();
-
-
-
         }
 
 
