@@ -158,9 +158,12 @@
     </Compile>
     <Compile Include="Models\ReservationBD.cs" />
     <Compile Include="Models\Rooms.cs" />
+    <Compile Include="Models\RoomsOrm.cs" />
     <Compile Include="Models\Sales.cs">
       <DependentUpon>ModelBookaroom.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SeatsOrm.cs" />
+    <Compile Include="Models\TicketsOrm.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\UsersOrm.cs" />
     <Compile Include="Models\Usuaris.cs">

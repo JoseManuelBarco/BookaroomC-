@@ -49,13 +49,15 @@
             this.descriptiontextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.userscomboBox = new System.Windows.Forms.ComboBox();
+            this.bindingSourceUsers = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.roomcomboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.bindingSourceUsers = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceRooms = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRooms)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -249,6 +251,10 @@
             this.userscomboBox.Size = new System.Drawing.Size(358, 21);
             this.userscomboBox.TabIndex = 34;
             // 
+            // bindingSourceUsers
+            // 
+            this.bindingSourceUsers.DataSource = typeof(Bookaroom.Models.Users);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -261,6 +267,7 @@
             // 
             // roomcomboBox
             // 
+            this.roomcomboBox.DataSource = this.bindingSourceRooms;
             this.roomcomboBox.FormattingEnabled = true;
             this.roomcomboBox.Location = new System.Drawing.Point(42, 286);
             this.roomcomboBox.Name = "roomcomboBox";
@@ -277,9 +284,9 @@
             this.label9.TabIndex = 37;
             this.label9.Text = "Usuari ";
             // 
-            // bindingSourceUsers
+            // bindingSourceRooms
             // 
-            this.bindingSourceUsers.DataSource = typeof(Bookaroom.Models.Users);
+            this.bindingSourceRooms.DataSource = typeof(Bookaroom.Models.Rooms);
             // 
             // CreateEventForm
             // 
@@ -315,6 +322,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRooms)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +353,6 @@
         private System.Windows.Forms.ComboBox roomcomboBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.BindingSource bindingSourceUsers;
+        private System.Windows.Forms.BindingSource bindingSourceRooms;
     }
 }

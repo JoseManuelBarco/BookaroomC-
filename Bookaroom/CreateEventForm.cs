@@ -22,29 +22,17 @@ namespace Bookaroom
             dateinidateTimePicker.CustomFormat = "yyyy-MM-dd";
             dataenddateTimePicker.Format = DateTimePickerFormat.Custom;
             dataenddateTimePicker.CustomFormat = "yyyy-MM-dd";
+
+       //     AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+       //     roomcomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+       //     roomcomboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+       //     roomcomboBox.AutoCompleteCustomSource = autoComplete;
+
+
+       //     userscomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+       //     userscomboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+       //     userscomboBox.AutoCompleteCustomSource = autoComplete;
         }
-        private void LoadRoomsComboBox()
-        {
-            DataTable rooms = Rooms.GetRooms();
-
-            if (rooms.Rows.Count > 0)
-            {
-              
-                }
-                roomcomboBox.DataSource = rooms;
-                roomcomboBox.DisplayMember = "room_id";
-                roomcomboBox.ValueMember = "room_id";
-
-                AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-                foreach (DataRow row in rooms.Rows)
-                {
-                    autoComplete.Add(row["room_id"].ToString());
-                }
-
-                roomcomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                roomcomboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                roomcomboBox.AutoCompleteCustomSource = autoComplete;
-            }
         
         private void savebutton_Click(object sender, EventArgs e)
         {
@@ -109,6 +97,10 @@ namespace Bookaroom
             userscomboBox.DisplayMember = "name";
             userscomboBox.ValueMember = "user_id";
 
+            bindingSourceRooms.DataSource = RoomsOrm.Select();
+            roomcomboBox.DisplayMember = "room_id";
+            roomcomboBox.ValueMember = "room_id";   
+       
         }
     }
 }

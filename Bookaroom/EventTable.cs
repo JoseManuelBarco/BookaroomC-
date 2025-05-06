@@ -36,8 +36,8 @@ namespace Bookaroom
         }
         private void capacityfilterlabel_Click_1(object sender, EventArgs e)
         {
-                this.dataGridView1.Columns["capacity"].Visible =
-                   !this.dataGridView1.Columns["capacity"].Visible;
+                dataGridView1.Columns["capacity"].Visible =
+                   !dataGridView1.Columns["capacity"].Visible;
         }
         private void dateendfilterlabel_Click(object sender, EventArgs e)
         {
@@ -46,8 +46,17 @@ namespace Bookaroom
         }
         private void dateinifilterlabel_Click(object sender, EventArgs e)
         {
-            this.dataGridView1.Columns["start_date"].Visible =
-                  !this.dataGridView1.Columns["start_date"].Visible;
+            bindingSource1.DataSource = EventsOrm.Select();
+
+            if (dataGridView1.Columns.Contains("start_date"))
+            {
+                dataGridView1.Columns["start_date"].Visible =
+                    !dataGridView1.Columns["start_date"].Visible;
+            }
+            else
+            {
+                MessageBox.Show("La columna 'start_date' no existe en el DataGridView.");
+            }
         }
         private void createeventbutton_Click(object sender, EventArgs e)
         {
@@ -58,6 +67,8 @@ namespace Bookaroom
 
         private void desactivateeventbutton_Click(object sender, EventArgs e)
         {
+            bindingSource1.DataSource = EventsOrm.Select();
+
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 int eventId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["event_id"].Value);
@@ -117,7 +128,7 @@ namespace Bookaroom
             bindingSource1.DataSource = EventsOrm.Select();
 
         }
-   
+
     }
 }
 

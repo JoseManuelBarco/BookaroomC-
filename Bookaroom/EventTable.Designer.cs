@@ -53,8 +53,8 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -240,7 +240,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -251,12 +251,11 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
             this.capacityDataGridViewTextBoxColumn,
-            this.startdateDataGridViewTextBoxColumn,
-            this.enddateDataGridViewTextBoxColumn});
+            this.start_date,
+            this.end_date});
             this.dataGridView1.DataSource = this.bindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(39, 77);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -268,7 +267,6 @@
             this.event_id.DataPropertyName = "event_id";
             this.event_id.HeaderText = "event_id";
             this.event_id.Name = "event_id";
-            this.event_id.ReadOnly = true;
             this.event_id.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
@@ -276,42 +274,36 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // capacityDataGridViewTextBoxColumn
             // 
             this.capacityDataGridViewTextBoxColumn.DataPropertyName = "capacity";
             this.capacityDataGridViewTextBoxColumn.HeaderText = "capacity";
             this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
-            this.capacityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // startdateDataGridViewTextBoxColumn
+            // start_date
             // 
-            this.startdateDataGridViewTextBoxColumn.DataPropertyName = "start_date";
-            this.startdateDataGridViewTextBoxColumn.HeaderText = "start_date";
-            this.startdateDataGridViewTextBoxColumn.Name = "startdateDataGridViewTextBoxColumn";
-            this.startdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.start_date.DataPropertyName = "start_date";
+            this.start_date.HeaderText = "start_date";
+            this.start_date.Name = "start_date";
             // 
-            // enddateDataGridViewTextBoxColumn
+            // end_date
             // 
-            this.enddateDataGridViewTextBoxColumn.DataPropertyName = "end_date";
-            this.enddateDataGridViewTextBoxColumn.HeaderText = "end_date";
-            this.enddateDataGridViewTextBoxColumn.Name = "enddateDataGridViewTextBoxColumn";
-            this.enddateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.end_date.DataPropertyName = "end_date";
+            this.end_date.HeaderText = "end_date";
+            this.end_date.Name = "end_date";
             // 
             // bindingSource1
             // 
@@ -378,7 +370,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enddateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn start_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn end_date;
     }
 }

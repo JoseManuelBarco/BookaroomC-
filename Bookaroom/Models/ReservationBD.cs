@@ -12,29 +12,6 @@ namespace Bookaroom.Models
     internal class ReserveBD
     {
 
-        public static DataTable GetTickets()
-        {
-            DataTable dt = new DataTable();
-
-            SqlCommand command = new SqlCommand(@"
-            SELECT e.ticket_id,u.name as nom_usuari,u.email,ev.name as nom_event,b.row_number,b.seat_number
-            FROM Entrades e
-            JOIN Usuaris u ON e.user_id = u.user_id
-            JOIN Esdeveniments ev ON e.event_id=ev.event_id
-            JOIN Butaca b ON e.seat_id = b.seat_id", Bd.connexioJose);
-
-            try
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading users: {ex.Message}");
-            }
-
-            return dt;
-        }
         public static bool SaveReservation(int userId, int eventId, int seatId, int status)
         {
             SqlConnection conn = Bd.connexioJose;

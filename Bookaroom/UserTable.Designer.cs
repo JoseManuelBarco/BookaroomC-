@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserTable));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.makeAllVisible = new System.Windows.Forms.Label();
@@ -48,18 +49,28 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.closesessionLabel = new System.Windows.Forms.ToolStripLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.gestionarEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.closesessionLabel = new System.Windows.Forms.ToolStripLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+            this.bindingSourceUsers = new System.Windows.Forms.BindingSource(this.components);
+            this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.active = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // makeAllVisible
@@ -170,7 +181,7 @@
             this.rol,
             this.actiu});
             this.userdataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.userdataGridView.Location = new System.Drawing.Point(36, 76);
+            this.userdataGridView.Location = new System.Drawing.Point(1014, 76);
             this.userdataGridView.MultiSelect = false;
             this.userdataGridView.Name = "userdataGridView";
             this.userdataGridView.ReadOnly = true;
@@ -246,6 +257,32 @@
             this.toolStrip1.TabIndex = 29;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionarEventsToolStripMenuItem,
+            this.gestionarReservasToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // gestionarEventsToolStripMenuItem
+            // 
+            this.gestionarEventsToolStripMenuItem.Name = "gestionarEventsToolStripMenuItem";
+            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarEventsToolStripMenuItem.Text = "Gestionar Events";
+            this.gestionarEventsToolStripMenuItem.Click += new System.EventHandler(this.gestionarEventsToolStripMenuItem_Click);
+            // 
+            // gestionarReservasToolStripMenuItem
+            // 
+            this.gestionarReservasToolStripMenuItem.Name = "gestionarReservasToolStripMenuItem";
+            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarReservasToolStripMenuItem.Text = "Gestionar Reservas";
+            this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -267,38 +304,73 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
-            // toolStripDropDownButton1
+            // dataGridViewUsers
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarEventsToolStripMenuItem,
-            this.gestionarReservasToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.dataGridViewUsers.AllowUserToAddRows = false;
+            this.dataGridViewUsers.AllowUserToDeleteRows = false;
+            this.dataGridViewUsers.AllowUserToOrderColumns = true;
+            this.dataGridViewUsers.AutoGenerateColumns = false;
+            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.useridDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.surnameDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.roleDataGridViewTextBoxColumn,
+            this.active});
+            this.dataGridViewUsers.DataSource = this.bindingSourceUsers;
+            this.dataGridViewUsers.Location = new System.Drawing.Point(25, 64);
+            this.dataGridViewUsers.Name = "dataGridViewUsers";
+            this.dataGridViewUsers.Size = new System.Drawing.Size(601, 466);
+            this.dataGridViewUsers.TabIndex = 42;
             // 
-            // gestionarEventsToolStripMenuItem
+            // bindingSourceUsers
             // 
-            this.gestionarEventsToolStripMenuItem.Name = "gestionarEventsToolStripMenuItem";
-            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarEventsToolStripMenuItem.Text = "Gestionar Events";
-            this.gestionarEventsToolStripMenuItem.Click += new System.EventHandler(this.gestionarEventsToolStripMenuItem_Click);
+            this.bindingSourceUsers.DataSource = typeof(Bookaroom.Models.Usuaris);
             // 
-            // gestionarReservasToolStripMenuItem
+            // useridDataGridViewTextBoxColumn
             // 
-            this.gestionarReservasToolStripMenuItem.Name = "gestionarReservasToolStripMenuItem";
-            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarReservasToolStripMenuItem.Text = "Gestionar Reservas";
-            this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
+            this.useridDataGridViewTextBoxColumn.DataPropertyName = "user_id";
+            this.useridDataGridViewTextBoxColumn.HeaderText = "user_id";
+            this.useridDataGridViewTextBoxColumn.Name = "useridDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // roleDataGridViewTextBoxColumn
+            // 
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "role";
+            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            // 
+            // active
+            // 
+            this.active.DataPropertyName = "active";
+            this.active.HeaderText = "active";
+            this.active.Name = "active";
             // 
             // UserTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(1668, 561);
+            this.Controls.Add(this.dataGridViewUsers);
             this.Controls.Add(this.makeAllVisible);
             this.Controls.Add(this.seeNotActives);
             this.Controls.Add(this.label2);
@@ -314,6 +386,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Name = "UserTable";
             this.Text = "UserTable";
+            this.Load += new System.EventHandler(this.UserTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -321,6 +394,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +427,13 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem gestionarEventsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarReservasToolStripMenuItem;
+        private System.Windows.Forms.BindingSource bindingSourceUsers;
+        private System.Windows.Forms.DataGridView dataGridViewUsers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn useridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn active;
     }
 }

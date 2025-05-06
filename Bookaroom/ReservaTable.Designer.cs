@@ -36,13 +36,6 @@
             this.editreservationbutton = new System.Windows.Forms.Button();
             this.desactivatereservationbutton = new System.Windows.Forms.Button();
             this.createreservationbutton = new System.Windows.Forms.Button();
-            this.reservationDataGridView = new System.Windows.Forms.DataGridView();
-            this.id_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_esdeveniment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero_fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero_butaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.gestionarUsuarisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,13 +50,16 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGridView)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bindingSourceTickets = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTickets)).BeginInit();
             this.SuspendLayout();
             // 
             // filterdateendlabel
@@ -136,64 +132,6 @@
             this.createreservationbutton.Text = "CREAR RESERVA";
             this.createreservationbutton.UseVisualStyleBackColor = false;
             this.createreservationbutton.Click += new System.EventHandler(this.createreservationbutton_Click);
-            // 
-            // reservationDataGridView
-            // 
-            this.reservationDataGridView.AllowUserToAddRows = false;
-            this.reservationDataGridView.AllowUserToDeleteRows = false;
-            this.reservationDataGridView.AllowUserToOrderColumns = true;
-            this.reservationDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
-            this.reservationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reservationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_entrada,
-            this.id_esdeveniment,
-            this.id_usuari,
-            this.email,
-            this.numero_fila,
-            this.numero_butaca});
-            this.reservationDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.reservationDataGridView.Location = new System.Drawing.Point(36, 76);
-            this.reservationDataGridView.Name = "reservationDataGridView";
-            this.reservationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.reservationDataGridView.Size = new System.Drawing.Size(579, 443);
-            this.reservationDataGridView.TabIndex = 33;
-            // 
-            // id_entrada
-            // 
-            this.id_entrada.HeaderText = "ID_entrada";
-            this.id_entrada.Name = "id_entrada";
-            this.id_entrada.ReadOnly = true;
-            this.id_entrada.Visible = false;
-            // 
-            // id_esdeveniment
-            // 
-            this.id_esdeveniment.HeaderText = "Nom Esdeveniment";
-            this.id_esdeveniment.Name = "id_esdeveniment";
-            this.id_esdeveniment.ReadOnly = true;
-            // 
-            // id_usuari
-            // 
-            this.id_usuari.HeaderText = "Usuari Assignat";
-            this.id_usuari.Name = "id_usuari";
-            this.id_usuari.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Correu";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // numero_fila
-            // 
-            this.numero_fila.HeaderText = "Numero Fila";
-            this.numero_fila.Name = "numero_fila";
-            this.numero_fila.ReadOnly = true;
-            // 
-            // numero_butaca
-            // 
-            this.numero_butaca.HeaderText = "Numero Butaca";
-            this.numero_butaca.Name = "numero_butaca";
-            this.numero_butaca.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -317,12 +255,23 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.bindingSourceTickets;
+            this.dataGridView1.Location = new System.Drawing.Point(25, 64);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(601, 466);
+            this.dataGridView1.TabIndex = 45;
+            // 
             // ReservaTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(954, 561);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.resetpictureBox);
             this.Controls.Add(this.seeUserFilterButton);
             this.Controls.Add(this.userfilterbox);
@@ -333,14 +282,13 @@
             this.Controls.Add(this.editreservationbutton);
             this.Controls.Add(this.desactivatereservationbutton);
             this.Controls.Add(this.createreservationbutton);
-            this.Controls.Add(this.reservationDataGridView);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "ReservaTable";
             this.Text = "ReservaTable";
-            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGridView)).EndInit();
+            this.Load += new System.EventHandler(this.ReservaTable_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetpictureBox)).EndInit();
@@ -348,6 +296,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTickets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,19 +311,12 @@
         private System.Windows.Forms.Button editreservationbutton;
         private System.Windows.Forms.Button desactivatereservationbutton;
         private System.Windows.Forms.Button createreservationbutton;
-        private System.Windows.Forms.DataGridView reservationDataGridView;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel closesessiontoolStripLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_entrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_esdeveniment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuari;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numero_fila;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numero_butaca;
         private System.Windows.Forms.TextBox userfilterbox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button seeUserFilterButton;
@@ -381,5 +324,7 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem gestionarUsuarisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarEventsToolStripMenuItem;
+        private System.Windows.Forms.BindingSource bindingSourceTickets;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

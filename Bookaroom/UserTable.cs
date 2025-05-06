@@ -16,48 +16,15 @@ namespace Bookaroom
         public UserTable()
         {
             InitializeComponent();
-            LoadDataIntoPreExistingColumns();
-            userdataGridView.RowHeadersVisible = false;
-            userdataGridView.EnableHeadersVisualStyles = false;
-            userdataGridView.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            userdataGridView.DefaultCellStyle.ForeColor = Color.Black;
-            userdataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            userdataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dataGridViewUsers.RowHeadersVisible = false;
+            dataGridViewUsers.EnableHeadersVisualStyles = false;
+            dataGridViewUsers.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            dataGridViewUsers.DefaultCellStyle.ForeColor = Color.Black;
+            dataGridViewUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            dataGridViewUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
         }
-        private void LoadDataIntoPreExistingColumns()
-        {
-            try
-            {
-                userdataGridView.Rows.Clear();
-
-                DataTable usersTable = Users.GetUsers();
-                foreach (DataRow row in usersTable.Rows)
-                {
-                    int rowIndex = userdataGridView.Rows.Add();
-                    userdataGridView.Rows[rowIndex].Cells["Id_usuari"].Value = row["user_id"];
-                    userdataGridView.Rows[rowIndex].Cells["Nom"].Value = row["name"];
-                    userdataGridView.Rows[rowIndex].Cells["Cognom"].Value = row["surname"];
-                    userdataGridView.Rows[rowIndex].Cells["Email"].Value = row["email"];
-                    userdataGridView.Rows[rowIndex].Cells["Rol"].Value = row["role"];
-
-                    if (row["status"].ToString() == "Activo")
-                    {
-                        userdataGridView.Rows[rowIndex].Cells["Actiu"].Value = "Activo";
-                    }
-                    else
-                    {
-                        userdataGridView.Rows[rowIndex].Cells["Actiu"].Value = "Inactivo";
-                    }
-                
-            }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading data: {ex.Message}");
-            }
-        }
-
+ 
         private void closesessionLabel_Click(object sender, EventArgs e)
         {
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
@@ -68,7 +35,6 @@ namespace Bookaroom
         {
             CreateUserForm f = new CreateUserForm();
             f.ShowDialog();
-            LoadDataIntoPreExistingColumns();
 
         }
 
@@ -80,7 +46,6 @@ namespace Bookaroom
 
                 EditUserForm f = new EditUserForm(userId);
                 f.ShowDialog();
-                LoadDataIntoPreExistingColumns();
 
             }
 
@@ -103,9 +68,6 @@ namespace Bookaroom
                 if (result == DialogResult.Yes)
                 {
                     Users.DeleteUser(userId);
-
-
-                    LoadDataIntoPreExistingColumns();
                 }
             }
             else
@@ -116,39 +78,48 @@ namespace Bookaroom
 
         private void label2_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.userdataGridView.Rows)
+            dataGridViewUsers.ClearSelection();
+            dataGridViewUsers.CurrentCell = null; // Muy importante
+
+            foreach (DataGridViewRow row in dataGridViewUsers.Rows)
             {
-                if (row.Cells["Actiu"].Value != null && row.Cells["Actiu"].Value.ToString() == "Inactivo")
+                if (row.Cells["active"].Value != null && Convert.ToInt32(row.Cells["active"].Value) == 0)
                 {
-                    row.Visible = false;  
+                    row.Visible = false;
                 }
                 else
                 {
-                    row.Visible = true; 
+                    row.Visible = true;
                 }
             }
         }
 
         private void seeNotActives_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.userdataGridView.Rows)
+            dataGridViewUsers.ClearSelection();
+            dataGridViewUsers.CurrentCell = null; // Muy importante
+
+            foreach (DataGridViewRow row in dataGridViewUsers.Rows)
             {
-                if (row.Cells["Actiu"].Value != null && row.Cells["Actiu"].Value.ToString() == "Activo")
+                if (row.Cells["active"].Value != null && Convert.ToInt32(row.Cells["active"].Value) == 1)
                 {
-                    row.Visible = false;  
+                    row.Visible = false;
                 }
                 else
                 {
-                    row.Visible = true;  
+                    row.Visible = true;
                 }
             }
         }
 
         private void makeAllVisible_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.userdataGridView.Rows)
+            dataGridViewUsers.ClearSelection();
+            dataGridViewUsers.CurrentCell = null;
+            foreach (DataGridViewRow row in dataGridViewUsers.Rows)
             {
                 row.Visible = true;
+
             }
         }
 
@@ -162,6 +133,12 @@ namespace Bookaroom
         {
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
             staticFormmainForm.OpenForm(new ReservaTable());
+        }
+
+        private void UserTable_Load(object sender, EventArgs e)
+        {
+            bindingSourceUsers.DataSource = UsersOrm.Select();
+
         }
     }
 }
