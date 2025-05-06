@@ -13,70 +13,122 @@ namespace Bookaroom
 {
     public partial class EventTable : Form
     {
+        string rolUsuario = Session.Rol;
+
         public EventTable()
         {
             InitializeComponent();
-            LoadDataIntoPreExistingColumns();
-            eventdatagridview.RowHeadersVisible = false;
-            eventdatagridview.EnableHeadersVisualStyles = false;
-            eventdatagridview.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            eventdatagridview.DefaultCellStyle.ForeColor = Color.Black;
-            eventdatagridview.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            eventdatagridview.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-       }
-            
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
-
-
-
-
-        private void LoadDataIntoPreExistingColumns()
-        {
-            try
+            if (Session.Rol == "Event Organizer")
             {
-                eventdatagridview.Rows.Clear();
-
-                DataTable usersTable = EventsBD.GetEvents();
-                foreach (DataRow row in usersTable.Rows)
-                {
-                    int rowIndex = eventdatagridview.Rows.Add();
-                    eventdatagridview.Rows[rowIndex].Cells["Id_esdeveniment"].Value = row["id_esdeveniment"];
-                    eventdatagridview.Rows[rowIndex].Cells["id_sala"].Value = row["id_sala"];
-                    eventdatagridview.Rows[rowIndex].Cells["id_usuari"].Value = row["nom_usuari"];
-                    eventdatagridview.Rows[rowIndex].Cells["Nom"].Value = row["nombre"];
-                    eventdatagridview.Rows[rowIndex].Cells["descripcio"].Value = row["descripcio"];
-                    eventdatagridview.Rows[rowIndex].Cells["aforament"].Value = row["aforament"];
-                    eventdatagridview.Rows[rowIndex].Cells["Data_Inici"].Value = row["data_inici"];
-                    eventdatagridview.Rows[rowIndex].Cells["Data_fi"].Value = row["data_fi"];
-                    eventdatagridview.Rows[rowIndex].Cells["Preu"].Value = row["preu"];
-
-
-
-
-                }
+                gestionarUserToolStripMenuItem.Visible = false;
             }
-            catch (Exception ex)
+            else if(Session.Rol == "SuperAdmin")
             {
-                MessageBox.Show($"Error loading data: {ex.Message}");
+                gestionarUserToolStripMenuItem.Visible = true;
             }
-        }    
+        }
         private void capacityfilterlabel_Click_1(object sender, EventArgs e)
         {
-            
-                this.eventdatagridview.Columns["aforament"].Visible =
-                   !this.eventdatagridview.Columns["aforament"].Visible;
+                dataGridView1.Columns["capacity"].Visible =
+                   !dataGridView1.Columns["capacity"].Visible;
         }
         private void dateendfilterlabel_Click(object sender, EventArgs e)
         {
-            this.eventdatagridview.Columns["Data_fi"].Visible =
-                !this.eventdatagridview.Columns["Data_fi"].Visible;
+            this.dataGridView1.Columns["end_date"].Visible =
+                !this.dataGridView1.Columns["end_date"].Visible;
         }
-
         private void dateinifilterlabel_Click(object sender, EventArgs e)
         {
-            this.eventdatagridview.Columns["Data_Inici"].Visible =
-                  !this.eventdatagridview.Columns["Data_Inici"].Visible;
+            bindingSource1.DataSource = EventsOrm.Select();
+
+            if (dataGridView1.Columns.Contains("start_date"))
+            {
+                dataGridView1.Columns["start_date"].Visible =
+                    !dataGridView1.Columns["start_date"].Visible;
+            }
+            else
+            {
+                MessageBox.Show("La columna 'start_date' no existe en el DataGridView.");
+            }
         }
+        private void createeventbutton_Click(object sender, EventArgs e)
+        {
+            CreateEventForm f = new CreateEventForm();
+            f.ShowDialog();
+            bindingSource1.DataSource = EventsOrm.Select();
+        }
+
+        private void desactivateeventbutton_Click(object sender, EventArgs e)
+        {
+            bindingSource1.DataSource = EventsOrm.Select();
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int eventId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["event_id"].Value);
+
+                var result = MessageBox.Show("Vols desactivar aquest esdeveniment?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    EventsBD.DeleteEvent(eventId);
+                    bindingSource1.DataSource = EventsOrm.Select();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Siusplau selecionni un esdeveniment.");
+            }
+
+        }
+        private void editeventbutton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int eventID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["event_id"].Value);
+
+                EditEventForm f = new EditEventForm(eventID);
+                f.ShowDialog();
+                bindingSource1.DataSource = EventsOrm.Select();
+            }
+
+            else
+            {
+                MessageBox.Show("Porfavor selecione un usuario.");
+            }
+
+        }
+
+        private void gestionarUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new UserTable());
+        }
+
+        private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new ReservaTable());
+        }
+
+        private void closesessiontoolStripLabel_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new LoginForm());
+        }
+
+        private void EventTable_Load(object sender, EventArgs e)
+        {
+            bindingSource1.DataSource = EventsOrm.Select();
+
+        }
+
     }
 }
 

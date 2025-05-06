@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserTable));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.makeAllVisible = new System.Windows.Forms.Label();
+            this.seeNotActives = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.edituserbutton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.desactivateuserbutton = new System.Windows.Forms.Button();
             this.createuserButton = new System.Windows.Forms.Button();
             this.userdataGridView = new System.Windows.Forms.DataGridView();
             this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,42 +45,57 @@
             this.cognom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actiu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.gestionarEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closesessionLabel = new System.Windows.Forms.ToolStripLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+            this.bindingSourceUsers = new System.Windows.Forms.BindingSource(this.components);
+            this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.active = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).BeginInit();
             this.SuspendLayout();
             // 
-            // label4
+            // makeAllVisible
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.label4.Location = new System.Drawing.Point(706, 247);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(207, 41);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "FILTRO 3";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.makeAllVisible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
+            this.makeAllVisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.makeAllVisible.Location = new System.Drawing.Point(706, 247);
+            this.makeAllVisible.Name = "makeAllVisible";
+            this.makeAllVisible.Size = new System.Drawing.Size(207, 41);
+            this.makeAllVisible.TabIndex = 41;
+            this.makeAllVisible.Text = "MOSTRAR TODO";
+            this.makeAllVisible.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.makeAllVisible.Click += new System.EventHandler(this.makeAllVisible_Click);
             // 
-            // label3
+            // seeNotActives
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.label3.Location = new System.Drawing.Point(706, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(207, 44);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "FILTRO 2";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.seeNotActives.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
+            this.seeNotActives.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.seeNotActives.Location = new System.Drawing.Point(706, 197);
+            this.seeNotActives.Name = "seeNotActives";
+            this.seeNotActives.Size = new System.Drawing.Size(207, 44);
+            this.seeNotActives.TabIndex = 40;
+            this.seeNotActives.Text = "VER INACTIVOS";
+            this.seeNotActives.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.seeNotActives.Click += new System.EventHandler(this.seeNotActives_Click);
             // 
             // label2
             // 
@@ -88,8 +105,9 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(211, 47);
             this.label2.TabIndex = 39;
-            this.label2.Text = "FILTRO 1";
+            this.label2.Text = "VER ACTIVOS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -124,16 +142,17 @@
             this.edituserbutton.UseVisualStyleBackColor = false;
             this.edituserbutton.Click += new System.EventHandler(this.edituserbutton_Click);
             // 
-            // button2
+            // desactivateuserbutton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(722, 382);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 50);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "DESACTIVAR USUARIO";
-            this.button2.UseVisualStyleBackColor = false;
+            this.desactivateuserbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.desactivateuserbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.desactivateuserbutton.Location = new System.Drawing.Point(722, 382);
+            this.desactivateuserbutton.Name = "desactivateuserbutton";
+            this.desactivateuserbutton.Size = new System.Drawing.Size(175, 50);
+            this.desactivateuserbutton.TabIndex = 35;
+            this.desactivateuserbutton.Text = "DESACTIVAR USUARIO";
+            this.desactivateuserbutton.UseVisualStyleBackColor = false;
+            this.desactivateuserbutton.Click += new System.EventHandler(this.desactivateuserbutton_Click);
             // 
             // createuserButton
             // 
@@ -159,9 +178,10 @@
             this.nom,
             this.cognom,
             this.email,
-            this.rol});
+            this.rol,
+            this.actiu});
             this.userdataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.userdataGridView.Location = new System.Drawing.Point(36, 76);
+            this.userdataGridView.Location = new System.Drawing.Point(1014, 76);
             this.userdataGridView.MultiSelect = false;
             this.userdataGridView.Name = "userdataGridView";
             this.userdataGridView.ReadOnly = true;
@@ -200,6 +220,12 @@
             this.rol.Name = "rol";
             this.rol.ReadOnly = true;
             // 
+            // actiu
+            // 
+            this.actiu.HeaderText = "Actiu";
+            this.actiu.Name = "actiu";
+            this.actiu.ReadOnly = true;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(25, 64);
@@ -222,7 +248,7 @@
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
+            this.toolStripDropDownButton1,
             this.toolStripSeparator1,
             this.closesessionLabel});
             this.toolStrip1.Location = new System.Drawing.Point(9, 10);
@@ -231,11 +257,31 @@
             this.toolStrip1.TabIndex = 29;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripLabel1
+            // toolStripDropDownButton1
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(64, 32);
-            this.toolStripLabel1.Text = "ACCIONES";
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionarEventsToolStripMenuItem,
+            this.gestionarReservasToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // gestionarEventsToolStripMenuItem
+            // 
+            this.gestionarEventsToolStripMenuItem.Name = "gestionarEventsToolStripMenuItem";
+            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarEventsToolStripMenuItem.Text = "Gestionar Events";
+            this.gestionarEventsToolStripMenuItem.Click += new System.EventHandler(this.gestionarEventsToolStripMenuItem_Click);
+            // 
+            // gestionarReservasToolStripMenuItem
+            // 
+            this.gestionarReservasToolStripMenuItem.Name = "gestionarReservasToolStripMenuItem";
+            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarReservasToolStripMenuItem.Text = "Gestionar Reservas";
+            this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -258,19 +304,80 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
+            // dataGridViewUsers
+            // 
+            this.dataGridViewUsers.AllowUserToAddRows = false;
+            this.dataGridViewUsers.AllowUserToDeleteRows = false;
+            this.dataGridViewUsers.AllowUserToOrderColumns = true;
+            this.dataGridViewUsers.AutoGenerateColumns = false;
+            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.useridDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.surnameDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.roleDataGridViewTextBoxColumn,
+            this.active});
+            this.dataGridViewUsers.DataSource = this.bindingSourceUsers;
+            this.dataGridViewUsers.Location = new System.Drawing.Point(25, 64);
+            this.dataGridViewUsers.Name = "dataGridViewUsers";
+            this.dataGridViewUsers.Size = new System.Drawing.Size(601, 466);
+            this.dataGridViewUsers.TabIndex = 42;
+            // 
+            // bindingSourceUsers
+            // 
+            this.bindingSourceUsers.DataSource = typeof(Bookaroom.Models.Usuaris);
+            // 
+            // useridDataGridViewTextBoxColumn
+            // 
+            this.useridDataGridViewTextBoxColumn.DataPropertyName = "user_id";
+            this.useridDataGridViewTextBoxColumn.HeaderText = "user_id";
+            this.useridDataGridViewTextBoxColumn.Name = "useridDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // roleDataGridViewTextBoxColumn
+            // 
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "role";
+            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            // 
+            // active
+            // 
+            this.active.DataPropertyName = "active";
+            this.active.HeaderText = "active";
+            this.active.Name = "active";
+            // 
             // UserTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(1668, 561);
+            this.Controls.Add(this.dataGridViewUsers);
+            this.Controls.Add(this.makeAllVisible);
+            this.Controls.Add(this.seeNotActives);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.edituserbutton);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.desactivateuserbutton);
             this.Controls.Add(this.createuserButton);
             this.Controls.Add(this.userdataGridView);
             this.Controls.Add(this.pictureBox3);
@@ -279,6 +386,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Name = "UserTable";
             this.Text = "UserTable";
+            this.Load += new System.EventHandler(this.UserTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -286,6 +394,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,19 +403,18 @@
 
         #endregion
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label makeAllVisible;
+        private System.Windows.Forms.Label seeNotActives;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button edituserbutton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button desactivateuserbutton;
         private System.Windows.Forms.Button createuserButton;
         private System.Windows.Forms.DataGridView userdataGridView;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel closesessionLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -314,5 +423,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cognom;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn actiu;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem gestionarEventsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarReservasToolStripMenuItem;
+        private System.Windows.Forms.BindingSource bindingSourceUsers;
+        private System.Windows.Forms.DataGridView dataGridViewUsers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn useridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn active;
     }
 }

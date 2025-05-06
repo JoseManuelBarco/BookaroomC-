@@ -36,32 +36,26 @@ namespace Bookaroom
             }
             if (rolcombobox.SelectedIndex != -1)
             {
-                int idrole = rolcombobox.SelectedIndex + 1;
+                string role = rolcombobox.SelectedItem.ToString();
 
                 if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(surnames) ||
                     string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
                 {
-                    MessageBox.Show("All fields are required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Todos los campos son necesarios.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                if (password != confirmPassword)
+             
+                if (Users.AddUser(email, name, surnames, password, role, actiu))
                 {
-                    MessageBox.Show("Passwords do not match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                    MessageBox.Show("Usuari afegit correctament", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                   this.Close();
 
-                if (Users.AddUser(email, name, surnames, password, idrole, actiu))
-                {
-                    MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-                    staticFormmainForm.OpenForm(new UserTable());
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add user. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al añadir el usuario. Por favor vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -69,8 +63,7 @@ namespace Bookaroom
         private void cancelbutton_Click(object sender, EventArgs e)
         {
 
-            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-            staticFormmainForm.OpenForm(new UserTable());
+           this.Close();
         }
     }
 }

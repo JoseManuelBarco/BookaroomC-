@@ -25,7 +25,7 @@ namespace Bookaroom
 
         private void login_button_Click(object sender, EventArgs e)
         {
-             if (!String.IsNullOrEmpty(emailtextbox.Text) || !String.IsNullOrEmpty(passwordtextbox.Text))
+            if (!String.IsNullOrEmpty(emailtextbox.Text) || !String.IsNullOrEmpty(passwordtextbox.Text))
             {
 
                 string email = emailtextbox.Text;
@@ -34,22 +34,28 @@ namespace Bookaroom
 
                 if (check)
                 {
-                    string rol = Users.checkRol(email);
-                    if (rol == "Superadmin") {
-                        StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-                        staticFormmainForm.OpenForm(new SuperadminSelection());
-                    }
-                    else if(rol == "Event Organizer")
                     {
-                        StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-                        staticFormmainForm.OpenForm(new EventOrganizerContent());
-                    }
+                        string rol = Users.checkRol(email);
+                        Session.Email = email;
+                        Session.Rol = rol;
 
-                }        
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (rol == "Superadmin")
+                        {
+                            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+                            staticFormmainForm.OpenForm(new SuperadminSelection());
+                        }
+                        else if (rol == "Event Organizer")
+                        {
+                            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+                            staticFormmainForm.OpenForm(new EventOrganizerContent());
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

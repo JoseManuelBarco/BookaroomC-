@@ -28,48 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventTable));
             this.capacityfilterlabel = new System.Windows.Forms.Label();
             this.dateendfilterlabel = new System.Windows.Forms.Label();
             this.dateinifilterlabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.editeventbutton = new System.Windows.Forms.Button();
+            this.desactivateeventbutton = new System.Windows.Forms.Button();
+            this.createeventbutton = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.gestionarUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.closesessiontoolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.eventdatagridview = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.id_event = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_usuari = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aforament = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_inici = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_fi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.event_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventdatagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // capacityfilterlabel
             // 
             this.capacityfilterlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.capacityfilterlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.capacityfilterlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.capacityfilterlabel.Location = new System.Drawing.Point(706, 247);
             this.capacityfilterlabel.Name = "capacityfilterlabel";
             this.capacityfilterlabel.Size = new System.Drawing.Size(207, 41);
             this.capacityfilterlabel.TabIndex = 28;
-            this.capacityfilterlabel.Text = "VEURE/TREURE AFORO";
+            this.capacityfilterlabel.Text = "VEURE/TREURE AFOR.";
             this.capacityfilterlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.capacityfilterlabel.Click += new System.EventHandler(this.capacityfilterlabel_Click_1);
             // 
@@ -108,6 +112,96 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "FILTROS";
             // 
+            // editeventbutton
+            // 
+            this.editeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.editeventbutton.ForeColor = System.Drawing.Color.White;
+            this.editeventbutton.Location = new System.Drawing.Point(722, 447);
+            this.editeventbutton.Name = "editeventbutton";
+            this.editeventbutton.Size = new System.Drawing.Size(175, 50);
+            this.editeventbutton.TabIndex = 23;
+            this.editeventbutton.Text = "EDITAR ESDEVENIMENT";
+            this.editeventbutton.UseVisualStyleBackColor = false;
+            this.editeventbutton.Click += new System.EventHandler(this.editeventbutton_Click);
+            // 
+            // desactivateeventbutton
+            // 
+            this.desactivateeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.desactivateeventbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.desactivateeventbutton.Location = new System.Drawing.Point(722, 382);
+            this.desactivateeventbutton.Name = "desactivateeventbutton";
+            this.desactivateeventbutton.Size = new System.Drawing.Size(175, 50);
+            this.desactivateeventbutton.TabIndex = 22;
+            this.desactivateeventbutton.Text = "DESACTIVAR ESDEVENIMENT";
+            this.desactivateeventbutton.UseVisualStyleBackColor = false;
+            this.desactivateeventbutton.Click += new System.EventHandler(this.desactivateeventbutton_Click);
+            // 
+            // createeventbutton
+            // 
+            this.createeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.createeventbutton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.createeventbutton.ForeColor = System.Drawing.Color.White;
+            this.createeventbutton.Location = new System.Drawing.Point(722, 317);
+            this.createeventbutton.Name = "createeventbutton";
+            this.createeventbutton.Size = new System.Drawing.Size(175, 50);
+            this.createeventbutton.TabIndex = 21;
+            this.createeventbutton.Text = "CREAR ESDEVENIMENT";
+            this.createeventbutton.UseVisualStyleBackColor = false;
+            this.createeventbutton.Click += new System.EventHandler(this.createeventbutton_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1,
+            this.toolStripSeparator1,
+            this.closesessiontoolStripLabel});
+            this.toolStrip1.Location = new System.Drawing.Point(9, 10);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(966, 35);
+            this.toolStrip1.TabIndex = 16;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionarUserToolStripMenuItem,
+            this.gestionarReservasToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // gestionarUserToolStripMenuItem
+            // 
+            this.gestionarUserToolStripMenuItem.Name = "gestionarUserToolStripMenuItem";
+            this.gestionarUserToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarUserToolStripMenuItem.Text = "Gestionar Usuaris";
+            this.gestionarUserToolStripMenuItem.Click += new System.EventHandler(this.gestionarUserToolStripMenuItem_Click);
+            // 
+            // gestionarReservasToolStripMenuItem
+            // 
+            this.gestionarReservasToolStripMenuItem.Name = "gestionarReservasToolStripMenuItem";
+            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarReservasToolStripMenuItem.Text = "Gestionar Reservas";
+            this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
+            // 
+            // closesessiontoolStripLabel
+            // 
+            this.closesessiontoolStripLabel.Name = "closesessiontoolStripLabel";
+            this.closesessiontoolStripLabel.Size = new System.Drawing.Size(92, 32);
+            this.closesessiontoolStripLabel.Text = "CERRAR SESIÓN";
+            this.closesessiontoolStripLabel.Click += new System.EventHandler(this.closesessiontoolStripLabel_Click);
+            // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
@@ -117,62 +211,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(211, 204);
             this.pictureBox5.TabIndex = 24;
             this.pictureBox5.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(722, 447);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 50);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "EDITAR USUARIO";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(722, 382);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 50);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "DESACTIVAR USUARIO";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(722, 317);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 50);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "CREAR USUARIO";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // eventdatagridview
-            // 
-            this.eventdatagridview.AllowUserToAddRows = false;
-            this.eventdatagridview.AllowUserToDeleteRows = false;
-            this.eventdatagridview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
-            this.eventdatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventdatagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_event,
-            this.id_sala,
-            this.id_usuari,
-            this.nom,
-            this.descripcio,
-            this.aforament,
-            this.data_inici,
-            this.data_fi,
-            this.preu});
-            this.eventdatagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
-            this.eventdatagridview.Location = new System.Drawing.Point(36, 76);
-            this.eventdatagridview.Name = "eventdatagridview";
-            this.eventdatagridview.Size = new System.Drawing.Size(579, 443);
-            this.eventdatagridview.TabIndex = 20;
             // 
             // pictureBox3
             // 
@@ -190,38 +228,6 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripSeparator1,
-            this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(9, 10);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(966, 35);
-            this.toolStrip1.TabIndex = 16;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(64, 32);
-            this.toolStripLabel1.Text = "ACCIONES";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(92, 32);
-            this.toolStripLabel2.Text = "CERRAR SESIÓN";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
@@ -231,91 +237,108 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
-            // id_event
+            // dataGridView1
             // 
-            this.id_event.HeaderText = "ID_event";
-            this.id_event.Name = "id_event";
-            this.id_event.ReadOnly = true;
-            this.id_event.Visible = false;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
+            this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.event_id,
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.capacityDataGridViewTextBoxColumn,
+            this.start_date,
+            this.end_date});
+            this.dataGridView1.DataSource = this.bindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(39, 77);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(575, 442);
+            this.dataGridView1.TabIndex = 29;
             // 
-            // id_sala
+            // event_id
             // 
-            this.id_sala.HeaderText = "Numero Sala";
-            this.id_sala.Name = "id_sala";
-            this.id_sala.ReadOnly = true;
-            this.id_sala.Visible = false;
+            this.event_id.DataPropertyName = "event_id";
+            this.event_id.HeaderText = "event_id";
+            this.event_id.Name = "event_id";
+            this.event_id.Visible = false;
             // 
-            // id_usuari
+            // nameDataGridViewTextBoxColumn
             // 
-            this.id_usuari.HeaderText = "Usuario asignado";
-            this.id_usuari.Name = "id_usuari";
-            this.id_usuari.ReadOnly = true;
-            this.id_usuari.Visible = false;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // nom
+            // descriptionDataGridViewTextBoxColumn
             // 
-            this.nom.HeaderText = "Nom Event";
-            this.nom.Name = "nom";
-            this.nom.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             // 
-            // descripcio
+            // priceDataGridViewTextBoxColumn
             // 
-            this.descripcio.HeaderText = "Descripció";
-            this.descripcio.Name = "descripcio";
-            this.descripcio.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
-            // aforament
+            // capacityDataGridViewTextBoxColumn
             // 
-            this.aforament.HeaderText = "Aforament";
-            this.aforament.Name = "aforament";
-            this.aforament.ReadOnly = true;
+            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "capacity";
+            this.capacityDataGridViewTextBoxColumn.HeaderText = "capacity";
+            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
             // 
-            // data_inici
+            // start_date
             // 
-            this.data_inici.HeaderText = "Data Inici";
-            this.data_inici.Name = "data_inici";
-            this.data_inici.ReadOnly = true;
+            this.start_date.DataPropertyName = "start_date";
+            this.start_date.HeaderText = "start_date";
+            this.start_date.Name = "start_date";
             // 
-            // data_fi
+            // end_date
             // 
-            this.data_fi.HeaderText = "Data fi";
-            this.data_fi.Name = "data_fi";
-            this.data_fi.ReadOnly = true;
+            this.end_date.DataPropertyName = "end_date";
+            this.end_date.HeaderText = "end_date";
+            this.end_date.Name = "end_date";
             // 
-            // preu
+            // bindingSource1
             // 
-            this.preu.HeaderText = "Preu";
-            this.preu.Name = "preu";
-            this.preu.ReadOnly = true;
+            this.bindingSource1.DataSource = typeof(Bookaroom.Models.Esdeveniments);
             // 
             // EventTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(979, 561);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.capacityfilterlabel);
             this.Controls.Add(this.dateendfilterlabel);
             this.Controls.Add(this.dateinifilterlabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.eventdatagridview);
+            this.Controls.Add(this.editeventbutton);
+            this.Controls.Add(this.desactivateeventbutton);
+            this.Controls.Add(this.createeventbutton);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "EventTable";
             this.Text = "EventTable";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventdatagridview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.EventTable_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,25 +351,26 @@
         private System.Windows.Forms.Label dateinifilterlabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView eventdatagridview;
+        private System.Windows.Forms.Button editeventbutton;
+        private System.Windows.Forms.Button desactivateeventbutton;
+        private System.Windows.Forms.Button createeventbutton;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel closesessiontoolStripLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_event;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_sala;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuari;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aforament;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_inici;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_fi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preu;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem gestionarUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarReservasToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn event_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn start_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn end_date;
     }
 }

@@ -184,9 +184,9 @@
             // 
             this.rolcombobox.FormattingEnabled = true;
             this.rolcombobox.Items.AddRange(new object[] {
-            "SuperAdmin",
+            "Superadmin",
             "Event Organizer",
-            "Normal User"});
+            "Common User"});
             this.rolcombobox.Location = new System.Drawing.Point(41, 352);
             this.rolcombobox.Name = "rolcombobox";
             this.rolcombobox.Size = new System.Drawing.Size(356, 21);
