@@ -27,31 +27,25 @@ namespace Bookaroom
 
                 string email = emailtextbox.Text;
                 string password = passwordtextbox.Text;
-                bool check = Users.checkUserBD(email, password);
+
+                bool check = UsersOrm.checkUserBD(email, password);
 
                 if (check)
                 {
+                    string rol = UsersOrm.checkRol(email);
+
+                    Session.Email = email;
+                    Session.Rol = rol;
+
+                    StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+                    if (rol == "Superadmin")
                     {
-                        string rol = Users.checkRol(email);
-                        Session.Email = email;
-                        Session.Rol = rol;
-
-                        if (rol == "Superadmin")
-                        {
-                            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-                            staticFormmainForm.OpenForm(new SuperadminSelection());
-                        }
-                        else if (rol == "Event Organizer")
-                        {
-                            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-                            staticFormmainForm.OpenForm(new EventOrganizerContent());
-                        }
-
+                        staticFormmainForm.OpenForm(new SuperadminSelection());
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else if (rol == "Event Organizer")
+                    {
+                        staticFormmainForm.OpenForm(new EventOrganizerContent());
+                    }
                 }
             }
         }

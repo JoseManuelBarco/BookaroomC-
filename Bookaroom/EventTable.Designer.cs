@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventTable));
-            this.capacityfilterlabel = new System.Windows.Forms.Label();
-            this.dateendfilterlabel = new System.Windows.Forms.Label();
-            this.dateinifilterlabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.editeventbutton = new System.Windows.Forms.Button();
             this.desactivateeventbutton = new System.Windows.Forms.Button();
             this.createeventbutton = new System.Windows.Forms.Button();
@@ -43,96 +39,55 @@
             this.gestionarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closesessiontoolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eventdataGridView = new System.Windows.Forms.DataGridView();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.seedateiniradiocheckBox = new System.Windows.Forms.CheckBox();
+            this.seedateendcheckBox = new System.Windows.Forms.CheckBox();
+            this.seecapacitycheckBox = new System.Windows.Forms.CheckBox();
             this.event_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // capacityfilterlabel
-            // 
-            this.capacityfilterlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.capacityfilterlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.capacityfilterlabel.Location = new System.Drawing.Point(706, 247);
-            this.capacityfilterlabel.Name = "capacityfilterlabel";
-            this.capacityfilterlabel.Size = new System.Drawing.Size(207, 41);
-            this.capacityfilterlabel.TabIndex = 28;
-            this.capacityfilterlabel.Text = "VEURE/TREURE AFOR.";
-            this.capacityfilterlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.capacityfilterlabel.Click += new System.EventHandler(this.capacityfilterlabel_Click_1);
-            // 
-            // dateendfilterlabel
-            // 
-            this.dateendfilterlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.dateendfilterlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.dateendfilterlabel.Location = new System.Drawing.Point(706, 197);
-            this.dateendfilterlabel.Name = "dateendfilterlabel";
-            this.dateendfilterlabel.Size = new System.Drawing.Size(207, 44);
-            this.dateendfilterlabel.TabIndex = 27;
-            this.dateendfilterlabel.Text = "VER/TREURE DATA FI";
-            this.dateendfilterlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.dateendfilterlabel.Click += new System.EventHandler(this.dateendfilterlabel_Click);
-            // 
-            // dateinifilterlabel
-            // 
-            this.dateinifilterlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
-            this.dateinifilterlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.dateinifilterlabel.Location = new System.Drawing.Point(702, 144);
-            this.dateinifilterlabel.Name = "dateinifilterlabel";
-            this.dateinifilterlabel.Size = new System.Drawing.Size(211, 47);
-            this.dateinifilterlabel.TabIndex = 26;
-            this.dateinifilterlabel.Text = "VER/TREURE DATA INICI";
-            this.dateinifilterlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.dateinifilterlabel.Click += new System.EventHandler(this.dateinifilterlabel_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(171)))), ((int)(((byte)(86)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.label1.Location = new System.Drawing.Point(768, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 22);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "FILTROS";
             // 
             // editeventbutton
             // 
             this.editeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.editeventbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.editeventbutton.ForeColor = System.Drawing.Color.White;
-            this.editeventbutton.Location = new System.Drawing.Point(722, 447);
+            this.editeventbutton.Location = new System.Drawing.Point(687, 272);
             this.editeventbutton.Name = "editeventbutton";
-            this.editeventbutton.Size = new System.Drawing.Size(175, 50);
+            this.editeventbutton.Size = new System.Drawing.Size(235, 73);
             this.editeventbutton.TabIndex = 23;
-            this.editeventbutton.Text = "EDITAR ESDEVENIMENT";
+            this.editeventbutton.Text = "EDITAR EVENTO";
             this.editeventbutton.UseVisualStyleBackColor = false;
             this.editeventbutton.Click += new System.EventHandler(this.editeventbutton_Click);
             // 
             // desactivateeventbutton
             // 
             this.desactivateeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.desactivateeventbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.desactivateeventbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.desactivateeventbutton.Location = new System.Drawing.Point(722, 382);
+            this.desactivateeventbutton.Location = new System.Drawing.Point(687, 183);
             this.desactivateeventbutton.Name = "desactivateeventbutton";
-            this.desactivateeventbutton.Size = new System.Drawing.Size(175, 50);
+            this.desactivateeventbutton.Size = new System.Drawing.Size(235, 73);
             this.desactivateeventbutton.TabIndex = 22;
-            this.desactivateeventbutton.Text = "DESACTIVAR ESDEVENIMENT";
+            this.desactivateeventbutton.Text = "DESACTIVAR EVENTO";
             this.desactivateeventbutton.UseVisualStyleBackColor = false;
             this.desactivateeventbutton.Click += new System.EventHandler(this.desactivateeventbutton_Click);
             // 
@@ -140,12 +95,13 @@
             // 
             this.createeventbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.createeventbutton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.createeventbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.createeventbutton.ForeColor = System.Drawing.Color.White;
-            this.createeventbutton.Location = new System.Drawing.Point(722, 317);
+            this.createeventbutton.Location = new System.Drawing.Point(687, 93);
             this.createeventbutton.Name = "createeventbutton";
-            this.createeventbutton.Size = new System.Drawing.Size(175, 50);
+            this.createeventbutton.Size = new System.Drawing.Size(235, 73);
             this.createeventbutton.TabIndex = 21;
-            this.createeventbutton.Text = "CREAR ESDEVENIMENT";
+            this.createeventbutton.Text = "CREAR EVENTO";
             this.createeventbutton.UseVisualStyleBackColor = false;
             this.createeventbutton.Click += new System.EventHandler(this.createeventbutton_Click);
             // 
@@ -202,16 +158,6 @@
             this.closesessiontoolStripLabel.Text = "CERRAR SESIÓN";
             this.closesessiontoolStripLabel.Click += new System.EventHandler(this.closesessiontoolStripLabel_Click);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.BackgroundImage = global::Bookaroom.Properties.Resources.filtros_background;
-            this.pictureBox5.Location = new System.Drawing.Point(702, 91);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(211, 204);
-            this.pictureBox5.TabIndex = 24;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(25, 64);
@@ -237,73 +183,145 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
-            // dataGridView1
+            // eventdataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
-            this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.eventdataGridView.AllowUserToAddRows = false;
+            this.eventdataGridView.AllowUserToDeleteRows = false;
+            this.eventdataGridView.AllowUserToOrderColumns = true;
+            this.eventdataGridView.AutoGenerateColumns = false;
+            this.eventdataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
+            this.eventdataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.eventdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.eventdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.event_id,
             this.nameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
-            this.capacityDataGridViewTextBoxColumn,
+            this.capacity,
             this.start_date,
             this.end_date});
-            this.dataGridView1.DataSource = this.bindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 77);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(575, 442);
-            this.dataGridView1.TabIndex = 29;
+            this.eventdataGridView.DataSource = this.bindingSource1;
+            this.eventdataGridView.Location = new System.Drawing.Point(39, 77);
+            this.eventdataGridView.Name = "eventdataGridView";
+            this.eventdataGridView.ReadOnly = true;
+            this.eventdataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.eventdataGridView.RowHeadersVisible = false;
+            this.eventdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.eventdataGridView.Size = new System.Drawing.Size(575, 442);
+            this.eventdataGridView.TabIndex = 29;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.pictureBox4.Location = new System.Drawing.Point(687, 376);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(235, 126);
+            this.pictureBox4.TabIndex = 46;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(754, 385);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 22);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "FILTROS";
+            // 
+            // seedateiniradiocheckBox
+            // 
+            this.seedateiniradiocheckBox.AutoSize = true;
+            this.seedateiniradiocheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.seedateiniradiocheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.seedateiniradiocheckBox.ForeColor = System.Drawing.Color.White;
+            this.seedateiniradiocheckBox.Location = new System.Drawing.Point(708, 419);
+            this.seedateiniradiocheckBox.Name = "seedateiniradiocheckBox";
+            this.seedateiniradiocheckBox.Size = new System.Drawing.Size(147, 21);
+            this.seedateiniradiocheckBox.TabIndex = 51;
+            this.seedateiniradiocheckBox.Text = "Quitar Dia de Inicio";
+            this.seedateiniradiocheckBox.UseVisualStyleBackColor = false;
+            this.seedateiniradiocheckBox.CheckedChanged += new System.EventHandler(this.seedateiniradiocheckBox_CheckedChanged);
+            // 
+            // seedateendcheckBox
+            // 
+            this.seedateendcheckBox.AutoSize = true;
+            this.seedateendcheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.seedateendcheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.seedateendcheckBox.ForeColor = System.Drawing.Color.White;
+            this.seedateendcheckBox.Location = new System.Drawing.Point(708, 446);
+            this.seedateendcheckBox.Name = "seedateendcheckBox";
+            this.seedateendcheckBox.Size = new System.Drawing.Size(189, 21);
+            this.seedateendcheckBox.TabIndex = 52;
+            this.seedateendcheckBox.Text = "Quitar Dia de Finalizacion";
+            this.seedateendcheckBox.UseVisualStyleBackColor = false;
+            this.seedateendcheckBox.CheckedChanged += new System.EventHandler(this.seedateendcheckBox_CheckedChanged);
+            // 
+            // seecapacitycheckBox
+            // 
+            this.seecapacitycheckBox.AutoSize = true;
+            this.seecapacitycheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.seecapacitycheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.seecapacitycheckBox.ForeColor = System.Drawing.Color.White;
+            this.seecapacitycheckBox.Location = new System.Drawing.Point(708, 473);
+            this.seecapacitycheckBox.Name = "seecapacitycheckBox";
+            this.seecapacitycheckBox.Size = new System.Drawing.Size(104, 21);
+            this.seecapacitycheckBox.TabIndex = 53;
+            this.seecapacitycheckBox.Text = "Quitar Aforo";
+            this.seecapacitycheckBox.UseVisualStyleBackColor = false;
+            this.seecapacitycheckBox.CheckedChanged += new System.EventHandler(this.seecapacitycheckBox_CheckedChanged);
             // 
             // event_id
             // 
             this.event_id.DataPropertyName = "event_id";
             this.event_id.HeaderText = "event_id";
             this.event_id.Name = "event_id";
+            this.event_id.ReadOnly = true;
             this.event_id.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // capacityDataGridViewTextBoxColumn
+            // capacity
             // 
-            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "capacity";
-            this.capacityDataGridViewTextBoxColumn.HeaderText = "capacity";
-            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
+            this.capacity.DataPropertyName = "capacity";
+            this.capacity.HeaderText = "Capacidad";
+            this.capacity.Name = "capacity";
+            this.capacity.ReadOnly = true;
             // 
             // start_date
             // 
             this.start_date.DataPropertyName = "start_date";
-            this.start_date.HeaderText = "start_date";
+            this.start_date.HeaderText = "Fecha de Inicio";
             this.start_date.Name = "start_date";
+            this.start_date.ReadOnly = true;
             // 
             // end_date
             // 
             this.end_date.DataPropertyName = "end_date";
-            this.end_date.HeaderText = "end_date";
+            this.end_date.HeaderText = "Fecha de Finalizacion";
             this.end_date.Name = "end_date";
+            this.end_date.ReadOnly = true;
             // 
             // bindingSource1
             // 
@@ -314,13 +332,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(979, 561);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.capacityfilterlabel);
-            this.Controls.Add(this.dateendfilterlabel);
-            this.Controls.Add(this.dateinifilterlabel);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox5);
+            this.ClientSize = new System.Drawing.Size(976, 561);
+            this.Controls.Add(this.seecapacitycheckBox);
+            this.Controls.Add(this.seedateendcheckBox);
+            this.Controls.Add(this.seedateiniradiocheckBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.eventdataGridView);
             this.Controls.Add(this.editeventbutton);
             this.Controls.Add(this.desactivateeventbutton);
             this.Controls.Add(this.createeventbutton);
@@ -333,11 +351,11 @@
             this.Load += new System.EventHandler(this.EventTable_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -345,12 +363,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label capacityfilterlabel;
-        private System.Windows.Forms.Label dateendfilterlabel;
-        private System.Windows.Forms.Label dateinifilterlabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button editeventbutton;
         private System.Windows.Forms.Button desactivateeventbutton;
         private System.Windows.Forms.Button createeventbutton;
@@ -363,13 +375,18 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem gestionarUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarReservasToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView eventdataGridView;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox seedateiniradiocheckBox;
+        private System.Windows.Forms.CheckBox seedateendcheckBox;
+        private System.Windows.Forms.CheckBox seecapacitycheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn event_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn start_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn end_date;
     }

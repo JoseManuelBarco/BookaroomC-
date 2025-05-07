@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaticForm));
             this.ContainerPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1034, 611);
             this.Controls.Add(this.ContainerPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaticForm";
             this.Text = "BOOKAROOM";
             this.ResumeLayout(false);

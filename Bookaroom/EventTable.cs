@@ -18,44 +18,20 @@ namespace Bookaroom
         public EventTable()
         {
             InitializeComponent();
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            eventdataGridView.RowHeadersVisible = false;
+            eventdataGridView.EnableHeadersVisualStyles = false;
+            eventdataGridView.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            eventdataGridView.DefaultCellStyle.ForeColor = Color.Black;
+            eventdataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            eventdataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
             if (Session.Rol == "Event Organizer")
             {
                 gestionarUserToolStripMenuItem.Visible = false;
             }
-            else if(Session.Rol == "SuperAdmin")
+            else if (Session.Rol == "SuperAdmin")
             {
                 gestionarUserToolStripMenuItem.Visible = true;
-            }
-        }
-        private void capacityfilterlabel_Click_1(object sender, EventArgs e)
-        {
-                dataGridView1.Columns["capacity"].Visible =
-                   !dataGridView1.Columns["capacity"].Visible;
-        }
-        private void dateendfilterlabel_Click(object sender, EventArgs e)
-        {
-            this.dataGridView1.Columns["end_date"].Visible =
-                !this.dataGridView1.Columns["end_date"].Visible;
-        }
-        private void dateinifilterlabel_Click(object sender, EventArgs e)
-        {
-            bindingSource1.DataSource = EventsOrm.Select();
-
-            if (dataGridView1.Columns.Contains("start_date"))
-            {
-                dataGridView1.Columns["start_date"].Visible =
-                    !dataGridView1.Columns["start_date"].Visible;
-            }
-            else
-            {
-                MessageBox.Show("La columna 'start_date' no existe en el DataGridView.");
             }
         }
         private void createeventbutton_Click(object sender, EventArgs e)
@@ -69,9 +45,9 @@ namespace Bookaroom
         {
             bindingSource1.DataSource = EventsOrm.Select();
 
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (eventdataGridView.SelectedRows.Count > 0)
             {
-                int eventId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["event_id"].Value);
+                int eventId = Convert.ToInt32(eventdataGridView.SelectedRows[0].Cells["event_id"].Value);
 
                 var result = MessageBox.Show("Vols desactivar aquest esdeveniment?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -89,9 +65,9 @@ namespace Bookaroom
         }
         private void editeventbutton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (eventdataGridView.SelectedRows.Count > 0)
             {
-                int eventID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["event_id"].Value);
+                int eventID = Convert.ToInt32(eventdataGridView.SelectedRows[0].Cells["event_id"].Value);
 
                 EditEventForm f = new EditEventForm(eventID);
                 f.ShowDialog();
@@ -128,7 +104,59 @@ namespace Bookaroom
             bindingSource1.DataSource = EventsOrm.Select();
 
         }
+        private void seedateiniradiocheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (seedateiniradiocheckBox.Checked)
+            {
+                if (eventdataGridView.Columns.Contains("start_date"))
+                {
+                    eventdataGridView.Columns["start_date"].Visible = false; 
+                }
+            }
+            else
+            {
+                if (eventdataGridView.Columns.Contains("start_date"))
+                {
+                    eventdataGridView.Columns["start_date"].Visible = true; 
+                }
+            }
+        }
 
+        private void seedateendcheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (seedateendcheckBox.Checked)
+            {
+                if (eventdataGridView.Columns.Contains("end_date"))
+                {
+                    eventdataGridView.Columns["end_date"].Visible = false; 
+                }
+            }
+            else
+            {
+                if (eventdataGridView.Columns.Contains("end_date"))
+                {
+                    eventdataGridView.Columns["end_date"].Visible = true; 
+                }
+            }
+        }
+
+        private void seecapacitycheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (seecapacitycheckBox.Checked)
+            {
+                if (eventdataGridView.Columns.Contains("capacity"))
+                {
+                    eventdataGridView.Columns["capacity"].Visible = false; 
+                }
+            }
+            else
+            {
+                if (eventdataGridView.Columns.Contains("capacity"))
+                {
+                    eventdataGridView.Columns["capacity"].Visible = true;
+                }
+            }
+        }
     }
 }
 

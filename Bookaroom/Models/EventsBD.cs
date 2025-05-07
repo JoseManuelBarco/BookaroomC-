@@ -96,60 +96,6 @@ namespace Bookaroom.Models
                 Bd.connexioJose.Close();
             }
         }
-        public static bool ModifyEvent(int eventID,int capacity, string name, DateTime dataini, DateTime dateend, int price)
-        {
-
-            SqlCommand command = new SqlCommand();
-            command.Connection = Bd.connexioJose;
-            command.Parameters.AddWithValue("@capacity", capacity);
-            command.Parameters.AddWithValue("@Name", name);
-            command.Parameters.AddWithValue("@dataini", dataini);
-            command.Parameters.AddWithValue("@dataend", dateend);
-            command.Parameters.AddWithValue("@price", price);
-            command.Parameters.AddWithValue("@eventid", eventID);
-
-            command.CommandText = "UPDATE Esdeveniments SET capacity = @capacity,name = @Name, start_date = @dataini, end_date = @dataend, price = @price WHERE event_id = @eventid;";
-
-            try
-            {
-                Bd.connexioJose.Open();
-                int result = command.ExecuteNonQuery();
-                return result > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error adding user: {ex.Message}");
-                return false;
-            }
-            finally
-            {
-                Bd.connexioJose.Close();
-            }
-        }
-
-
-        public static DataTable GetEvent(int eventID)
-        {
-            DataTable dt = new DataTable();
-
-            SqlCommand command = new SqlCommand(@"
-                SELECT e.event_id, e.name, e.capacity, e.start_date, e.end_date, e.price
-                FROM Esdeveniments e
-                WHERE e.event_id = @id", Bd.connexioJose);
-
-            try
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                command.Parameters.AddWithValue("@id", eventID);
-                adapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading event: {ex.Message}");
-            }
-
-            return dt;
-        }
         public static bool EventConflictExists(DateTime startDate, DateTime endDate, int roomId)
         {
             SqlCommand cmd = new SqlCommand(@"

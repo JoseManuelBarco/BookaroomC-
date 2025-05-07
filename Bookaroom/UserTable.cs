@@ -18,14 +18,16 @@ namespace Bookaroom
             InitializeComponent();
             dataGridViewUsers.RowHeadersVisible = false;
             dataGridViewUsers.EnableHeadersVisualStyles = false;
-            dataGridViewUsers.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            dataGridViewUsers.DefaultCellStyle.BackColor = Color.FromArgb(232, 207, 174);
             dataGridViewUsers.DefaultCellStyle.ForeColor = Color.Black;
-            dataGridViewUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
+            dataGridViewUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(232, 207, 174);
             dataGridViewUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-
         }
- 
 
+        private void UserTable_Load(object sender, EventArgs e)
+        {
+            bindingSourceUsers.DataSource = UsersOrm.Select();
+        }
         private void closesessionLabel_Click(object sender, EventArgs e)
         {
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
@@ -64,7 +66,6 @@ namespace Bookaroom
                 MessageBox.Show("Porfavor selecione un usuario.");
             }
         }
-
         private void desactivateuserbutton_Click(object sender, EventArgs e)
         {
             if (dataGridViewUsers.SelectedRows.Count > 0)
@@ -80,8 +81,8 @@ namespace Bookaroom
                     bool updated = UsersOrm.ToggleActiveStatus(userId);
                     if (updated)
                     {
-                        MessageBox.Show($"Usuario {action}do correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        bindingSourceUsers.DataSource = UsersOrm.Select(); // Refresca la tabla
+                        MessageBox.Show($"Usuario {action} correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        bindingSourceUsers.DataSource = UsersOrm.Select(); 
                     }
                     else
                     {
@@ -94,17 +95,10 @@ namespace Bookaroom
                 MessageBox.Show("Por favor, selecciona un usuario.");
             }
         }
-     
-        private void UserTable_Load(object sender, EventArgs e)
-        {
-            bindingSourceUsers.DataSource = UsersOrm.Select();
-
-        }
-
         private void seeinactiveradioButton_CheckedChanged(object sender, EventArgs e)
         {
-            //dataGridViewUsers.ClearSelection();
-            //dataGridViewUsers.CurrentCell = null; 
+           dataGridViewUsers.ClearSelection();
+           dataGridViewUsers.CurrentCell = null; 
 
             foreach (DataGridViewRow row in dataGridViewUsers.Rows)
             {
@@ -118,7 +112,20 @@ namespace Bookaroom
                 }
             }
         }
-
+        private void seeactiveradioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridViewUsers.Rows)
+            {
+                if (row.Cells["active"].Value != null && Convert.ToInt32(row.Cells["active"].Value) == 0)
+                {
+                    row.Visible = false;
+                }
+                else
+                {
+                    row.Visible = true;
+                }
+            }
+        }
         private void seeallradioButton_CheckedChanged(object sender, EventArgs e)
         {
             {
@@ -133,21 +140,5 @@ namespace Bookaroom
             }
         }
 
-        private void seeactiveradioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            
-
-            foreach (DataGridViewRow row in dataGridViewUsers.Rows)
-            {
-                if (row.Cells["active"].Value != null && Convert.ToInt32(row.Cells["active"].Value) == 0)
-                {
-                    row.Visible = false;
-                }
-                else
-                {
-                    row.Visible = true;
-                }
-            }
-        }
     }
 }

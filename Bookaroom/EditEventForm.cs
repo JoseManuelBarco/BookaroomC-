@@ -22,18 +22,30 @@ namespace Bookaroom
         }
         private void LoadEventData()
         {
-            DataTable eventData = EventsBD.GetEvent(eventID);
-            DataRow row = eventData.Rows[0];
+            try
+            {
+                var eventData = EventsOrm.GetEvent(eventID);
 
-
-            nomtextBox.Text = row["name"].ToString();
-            capacitytextBox.Text = row["capacity"].ToString();  
-            datainidateTimePicker.Value = Convert.ToDateTime(row["start_date"]);  
-            dataenddateTimePicker.Value = Convert.ToDateTime(row["end_date"]); 
-            pricetextBox.Text = row["price"].ToString();
+                if (eventData != null)
+                {
+                    nomtextBox.Text = eventData.name;
+                    capacitytextBox.Text = eventData.capacity.ToString();
+                    datainidateTimePicker.Value = eventData.start_date;
+                    dataenddateTimePicker.Value = eventData.end_date;
+                    pricetextBox.Text = eventData.price.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Evento no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los datos del evento: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-          
-        
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             int eventIDSend = eventID;
@@ -50,7 +62,7 @@ namespace Bookaroom
             }
 
 
-            if (EventsBD.ModifyEvent(eventIDSend, capacity, name, dataini, dataend, price))
+            if (EventsOrm.ModifyEvent(eventIDSend, capacity, name, dataini, dataend, price))
                 {
                     MessageBox.Show("Event modificat correctament", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

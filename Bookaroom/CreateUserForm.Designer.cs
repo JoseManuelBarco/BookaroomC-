@@ -206,6 +206,8 @@
             // 
             this.activecheckBox.AutoSize = true;
             this.activecheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.activecheckBox.Checked = true;
+            this.activecheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.activecheckBox.Location = new System.Drawing.Point(38, 389);
             this.activecheckBox.Name = "activecheckBox";
             this.activecheckBox.Size = new System.Drawing.Size(50, 17);

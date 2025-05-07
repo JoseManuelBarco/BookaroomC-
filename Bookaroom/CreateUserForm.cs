@@ -34,6 +34,11 @@ namespace Bookaroom
                 actiu = 1;
 
             }
+            if (password.StartsWith("book-", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Por motivos de seguridad no se permite esa contraseña'.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (rolcombobox.SelectedIndex != -1)
             {
                 string role = rolcombobox.SelectedItem.ToString();

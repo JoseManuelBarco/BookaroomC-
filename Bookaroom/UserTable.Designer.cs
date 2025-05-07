@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserTable));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.edituserbutton = new System.Windows.Forms.Button();
@@ -68,8 +67,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(171)))), ((int)(((byte)(86)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(759, 402);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 22);
@@ -79,6 +79,7 @@
             // edituserbutton
             // 
             this.edituserbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.edituserbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.edituserbutton.ForeColor = System.Drawing.Color.White;
             this.edituserbutton.Location = new System.Drawing.Point(690, 285);
             this.edituserbutton.Name = "edituserbutton";
@@ -91,12 +92,13 @@
             // desactivateuserbutton
             // 
             this.desactivateuserbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.desactivateuserbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.desactivateuserbutton.ForeColor = System.Drawing.SystemColors.Control;
             this.desactivateuserbutton.Location = new System.Drawing.Point(690, 192);
             this.desactivateuserbutton.Name = "desactivateuserbutton";
             this.desactivateuserbutton.Size = new System.Drawing.Size(235, 81);
             this.desactivateuserbutton.TabIndex = 35;
-            this.desactivateuserbutton.Text = "DESACTIVAR USUARIO";
+            this.desactivateuserbutton.Text = "ACTIVAR/DESACTIVAR USUARIO";
             this.desactivateuserbutton.UseVisualStyleBackColor = false;
             this.desactivateuserbutton.Click += new System.EventHandler(this.desactivateuserbutton_Click);
             // 
@@ -104,7 +106,7 @@
             // 
             this.createuserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.createuserButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.createuserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.createuserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.createuserButton.ForeColor = System.Drawing.Color.White;
             this.createuserButton.Location = new System.Drawing.Point(690, 102);
             this.createuserButton.Name = "createuserButton";
@@ -151,7 +153,7 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionarEventsToolStripMenuItem,
             this.gestionarReservasToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.Image = global::Bookaroom.Properties.Resources.bookaroom_ic;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
@@ -198,7 +200,7 @@
             this.dataGridViewUsers.AllowUserToDeleteRows = false;
             this.dataGridViewUsers.AllowUserToOrderColumns = true;
             this.dataGridViewUsers.AutoGenerateColumns = false;
-            this.dataGridViewUsers.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(150)))));
+            this.dataGridViewUsers.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
             this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.user_id,
@@ -208,57 +210,66 @@
             this.role,
             this.active});
             this.dataGridViewUsers.DataSource = this.bindingSourceUsers;
-            this.dataGridViewUsers.Location = new System.Drawing.Point(25, 64);
+            this.dataGridViewUsers.Location = new System.Drawing.Point(40, 73);
             this.dataGridViewUsers.MultiSelect = false;
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.ReadOnly = true;
             this.dataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(601, 466);
+            this.dataGridViewUsers.Size = new System.Drawing.Size(571, 447);
             this.dataGridViewUsers.TabIndex = 42;
             // 
             // seeactiveradioButton
             // 
             this.seeactiveradioButton.AutoSize = true;
+            this.seeactiveradioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.seeactiveradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.seeactiveradioButton.ForeColor = System.Drawing.Color.White;
             this.seeactiveradioButton.Location = new System.Drawing.Point(690, 436);
             this.seeactiveradioButton.Name = "seeactiveradioButton";
-            this.seeactiveradioButton.Size = new System.Drawing.Size(78, 17);
+            this.seeactiveradioButton.Size = new System.Drawing.Size(96, 21);
             this.seeactiveradioButton.TabIndex = 43;
             this.seeactiveradioButton.TabStop = true;
             this.seeactiveradioButton.Text = "Ver activos";
-            this.seeactiveradioButton.UseVisualStyleBackColor = true;
+            this.seeactiveradioButton.UseVisualStyleBackColor = false;
             this.seeactiveradioButton.CheckedChanged += new System.EventHandler(this.seeactiveradioButton_CheckedChanged);
             // 
             // seeinactiveradioButton
             // 
             this.seeinactiveradioButton.AutoSize = true;
-            this.seeinactiveradioButton.Location = new System.Drawing.Point(828, 436);
+            this.seeinactiveradioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.seeinactiveradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.seeinactiveradioButton.ForeColor = System.Drawing.Color.White;
+            this.seeinactiveradioButton.Location = new System.Drawing.Point(818, 436);
             this.seeinactiveradioButton.Name = "seeinactiveradioButton";
-            this.seeinactiveradioButton.Size = new System.Drawing.Size(87, 17);
+            this.seeinactiveradioButton.Size = new System.Drawing.Size(107, 21);
             this.seeinactiveradioButton.TabIndex = 44;
             this.seeinactiveradioButton.TabStop = true;
             this.seeinactiveradioButton.Text = "Ver Inactivos";
-            this.seeinactiveradioButton.UseVisualStyleBackColor = true;
+            this.seeinactiveradioButton.UseVisualStyleBackColor = false;
             this.seeinactiveradioButton.CheckedChanged += new System.EventHandler(this.seeinactiveradioButton_CheckedChanged);
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(171)))), ((int)(((byte)(86)))));
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.pictureBox4.Location = new System.Drawing.Point(690, 393);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(225, 112);
+            this.pictureBox4.Size = new System.Drawing.Size(235, 112);
             this.pictureBox4.TabIndex = 45;
             this.pictureBox4.TabStop = false;
             // 
             // seeallradioButton
             // 
             this.seeallradioButton.AutoSize = true;
-            this.seeallradioButton.Location = new System.Drawing.Point(763, 475);
+            this.seeallradioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.seeallradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.seeallradioButton.ForeColor = System.Drawing.Color.White;
+            this.seeallradioButton.Location = new System.Drawing.Point(753, 475);
             this.seeallradioButton.Name = "seeallradioButton";
-            this.seeallradioButton.Size = new System.Drawing.Size(74, 17);
+            this.seeallradioButton.Size = new System.Drawing.Size(92, 21);
             this.seeallradioButton.TabIndex = 46;
             this.seeallradioButton.TabStop = true;
             this.seeallradioButton.Text = "Ver Todos";
-            this.seeallradioButton.UseVisualStyleBackColor = true;
+            this.seeallradioButton.UseVisualStyleBackColor = false;
             this.seeallradioButton.CheckedChanged += new System.EventHandler(this.seeallradioButton_CheckedChanged);
             // 
             // user_id

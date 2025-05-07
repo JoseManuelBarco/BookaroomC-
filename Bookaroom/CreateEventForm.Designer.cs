@@ -52,8 +52,8 @@
             this.bindingSourceUsers = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.roomcomboBox = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.bindingSourceRooms = new System.Windows.Forms.BindingSource(this.components);
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).BeginInit();
@@ -274,6 +274,10 @@
             this.roomcomboBox.Size = new System.Drawing.Size(358, 21);
             this.roomcomboBox.TabIndex = 36;
             // 
+            // bindingSourceRooms
+            // 
+            this.bindingSourceRooms.DataSource = typeof(Bookaroom.Models.Rooms);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -283,10 +287,6 @@
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 37;
             this.label9.Text = "Usuari ";
-            // 
-            // bindingSourceRooms
-            // 
-            this.bindingSourceRooms.DataSource = typeof(Bookaroom.Models.Rooms);
             // 
             // CreateEventForm
             // 
@@ -316,6 +316,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateEventForm";
             this.Text = "CreateEventForm";
             this.Load += new System.EventHandler(this.CreateEventForm_Load);
