@@ -43,6 +43,11 @@ namespace Bookaroom
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
             staticFormmainForm.OpenForm(new ReservaTable());
         }
+        private void gestionarSalasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new RoomTable());
+        }
         private void createuserButton_Click(object sender, EventArgs e)
         {
             CreateUserForm f = new CreateUserForm();
@@ -140,5 +145,6 @@ namespace Bookaroom
             }
         }
 
+       
     }
 }

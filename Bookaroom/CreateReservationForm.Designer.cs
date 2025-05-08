@@ -50,9 +50,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(37, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "Usuari";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Usuario";
             // 
             // label5
             // 
@@ -62,7 +62,7 @@
             this.label5.Location = new System.Drawing.Point(263, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(151, 20);
-            this.label5.TabIndex = 56;
+            this.label5.TabIndex = 0;
             this.label5.Text = "CREAR RESERVA";
             // 
             // button2
@@ -73,7 +73,7 @@
             this.button2.Location = new System.Drawing.Point(237, 337);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 51);
-            this.button2.TabIndex = 54;
+            this.button2.TabIndex = 9;
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -84,7 +84,7 @@
             this.savechangesbutton.Location = new System.Drawing.Point(39, 337);
             this.savechangesbutton.Name = "savechangesbutton";
             this.savechangesbutton.Size = new System.Drawing.Size(159, 51);
-            this.savechangesbutton.TabIndex = 53;
+            this.savechangesbutton.TabIndex = 8;
             this.savechangesbutton.Text = "CREAR RESERVA";
             this.savechangesbutton.UseVisualStyleBackColor = false;
             this.savechangesbutton.Click += new System.EventHandler(this.savechangesbutton_Click);
@@ -95,9 +95,9 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label4.Location = new System.Drawing.Point(37, 162);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "Esdeveniment";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Evento";
             // 
             // label2
             // 
@@ -106,7 +106,7 @@
             this.label2.Location = new System.Drawing.Point(37, 232);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 47;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Butaca";
             // 
             // pictureBox2
@@ -137,7 +137,7 @@
             this.usercomboBox.Location = new System.Drawing.Point(40, 114);
             this.usercomboBox.Name = "usercomboBox";
             this.usercomboBox.Size = new System.Drawing.Size(358, 21);
-            this.usercomboBox.TabIndex = 58;
+            this.usercomboBox.TabIndex = 2;
             // 
             // seatcomboBox
             // 
@@ -145,7 +145,7 @@
             this.seatcomboBox.Location = new System.Drawing.Point(39, 248);
             this.seatcomboBox.Name = "seatcomboBox";
             this.seatcomboBox.Size = new System.Drawing.Size(357, 21);
-            this.seatcomboBox.TabIndex = 59;
+            this.seatcomboBox.TabIndex = 6;
             this.seatcomboBox.SelectedIndexChanged += new System.EventHandler(this.seatcomboBox_SelectedIndexChanged);
             // 
             // eventcomboBox
@@ -154,18 +154,20 @@
             this.eventcomboBox.Location = new System.Drawing.Point(39, 178);
             this.eventcomboBox.Name = "eventcomboBox";
             this.eventcomboBox.Size = new System.Drawing.Size(357, 21);
-            this.eventcomboBox.TabIndex = 60;
+            this.eventcomboBox.TabIndex = 4;
             this.eventcomboBox.SelectedIndexChanged += new System.EventHandler(this.eventcomboBox_SelectedIndexChanged);
             // 
             // activecheckbox
             // 
             this.activecheckbox.AutoSize = true;
             this.activecheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.activecheckbox.Checked = true;
+            this.activecheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.activecheckbox.Location = new System.Drawing.Point(40, 301);
             this.activecheckbox.Name = "activecheckbox";
-            this.activecheckbox.Size = new System.Drawing.Size(50, 17);
-            this.activecheckbox.TabIndex = 61;
-            this.activecheckbox.Text = "Actiu";
+            this.activecheckbox.Size = new System.Drawing.Size(56, 17);
+            this.activecheckbox.TabIndex = 7;
+            this.activecheckbox.Text = "Activo";
             this.activecheckbox.UseVisualStyleBackColor = false;
             // 
             // CreateReservationForm

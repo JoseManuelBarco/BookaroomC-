@@ -43,11 +43,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.eventdataGridView = new System.Windows.Forms.DataGridView();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.seedateiniradiocheckBox = new System.Windows.Forms.CheckBox();
-            this.seedateendcheckBox = new System.Windows.Forms.CheckBox();
-            this.seecapacitycheckBox = new System.Windows.Forms.CheckBox();
             this.event_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +51,19 @@
             this.start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.seedateiniradiocheckBox = new System.Windows.Forms.CheckBox();
+            this.seedateendcheckBox = new System.Windows.Forms.CheckBox();
+            this.seecapacitycheckBox = new System.Windows.Forms.CheckBox();
+            this.gestionarSalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventdataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // editeventbutton
@@ -73,7 +74,7 @@
             this.editeventbutton.Location = new System.Drawing.Point(687, 272);
             this.editeventbutton.Name = "editeventbutton";
             this.editeventbutton.Size = new System.Drawing.Size(235, 73);
-            this.editeventbutton.TabIndex = 23;
+            this.editeventbutton.TabIndex = 3;
             this.editeventbutton.Text = "EDITAR EVENTO";
             this.editeventbutton.UseVisualStyleBackColor = false;
             this.editeventbutton.Click += new System.EventHandler(this.editeventbutton_Click);
@@ -86,7 +87,7 @@
             this.desactivateeventbutton.Location = new System.Drawing.Point(687, 183);
             this.desactivateeventbutton.Name = "desactivateeventbutton";
             this.desactivateeventbutton.Size = new System.Drawing.Size(235, 73);
-            this.desactivateeventbutton.TabIndex = 22;
+            this.desactivateeventbutton.TabIndex = 2;
             this.desactivateeventbutton.Text = "DESACTIVAR EVENTO";
             this.desactivateeventbutton.UseVisualStyleBackColor = false;
             this.desactivateeventbutton.Click += new System.EventHandler(this.desactivateeventbutton_Click);
@@ -100,7 +101,7 @@
             this.createeventbutton.Location = new System.Drawing.Point(687, 93);
             this.createeventbutton.Name = "createeventbutton";
             this.createeventbutton.Size = new System.Drawing.Size(235, 73);
-            this.createeventbutton.TabIndex = 21;
+            this.createeventbutton.TabIndex = 1;
             this.createeventbutton.Text = "CREAR EVENTO";
             this.createeventbutton.UseVisualStyleBackColor = false;
             this.createeventbutton.Click += new System.EventHandler(this.createeventbutton_Click);
@@ -117,7 +118,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(9, 10);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(966, 35);
-            this.toolStrip1.TabIndex = 16;
+            this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripDropDownButton1
@@ -125,7 +126,8 @@
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionarUserToolStripMenuItem,
-            this.gestionarReservasToolStripMenuItem});
+            this.gestionarReservasToolStripMenuItem,
+            this.gestionarSalasToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -135,14 +137,14 @@
             // gestionarUserToolStripMenuItem
             // 
             this.gestionarUserToolStripMenuItem.Name = "gestionarUserToolStripMenuItem";
-            this.gestionarUserToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionarUserToolStripMenuItem.Text = "Gestionar Usuaris";
             this.gestionarUserToolStripMenuItem.Click += new System.EventHandler(this.gestionarUserToolStripMenuItem_Click);
             // 
             // gestionarReservasToolStripMenuItem
             // 
             this.gestionarReservasToolStripMenuItem.Name = "gestionarReservasToolStripMenuItem";
-            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionarReservasToolStripMenuItem.Text = "Gestionar Reservas";
             this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
             // 
@@ -208,70 +210,7 @@
             this.eventdataGridView.RowHeadersVisible = false;
             this.eventdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.eventdataGridView.Size = new System.Drawing.Size(575, 442);
-            this.eventdataGridView.TabIndex = 29;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.pictureBox4.Location = new System.Drawing.Point(687, 376);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(235, 126);
-            this.pictureBox4.TabIndex = 46;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(754, 385);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 22);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "FILTROS";
-            // 
-            // seedateiniradiocheckBox
-            // 
-            this.seedateiniradiocheckBox.AutoSize = true;
-            this.seedateiniradiocheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.seedateiniradiocheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.seedateiniradiocheckBox.ForeColor = System.Drawing.Color.White;
-            this.seedateiniradiocheckBox.Location = new System.Drawing.Point(708, 419);
-            this.seedateiniradiocheckBox.Name = "seedateiniradiocheckBox";
-            this.seedateiniradiocheckBox.Size = new System.Drawing.Size(147, 21);
-            this.seedateiniradiocheckBox.TabIndex = 51;
-            this.seedateiniradiocheckBox.Text = "Quitar Dia de Inicio";
-            this.seedateiniradiocheckBox.UseVisualStyleBackColor = false;
-            this.seedateiniradiocheckBox.CheckedChanged += new System.EventHandler(this.seedateiniradiocheckBox_CheckedChanged);
-            // 
-            // seedateendcheckBox
-            // 
-            this.seedateendcheckBox.AutoSize = true;
-            this.seedateendcheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.seedateendcheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.seedateendcheckBox.ForeColor = System.Drawing.Color.White;
-            this.seedateendcheckBox.Location = new System.Drawing.Point(708, 446);
-            this.seedateendcheckBox.Name = "seedateendcheckBox";
-            this.seedateendcheckBox.Size = new System.Drawing.Size(189, 21);
-            this.seedateendcheckBox.TabIndex = 52;
-            this.seedateendcheckBox.Text = "Quitar Dia de Finalizacion";
-            this.seedateendcheckBox.UseVisualStyleBackColor = false;
-            this.seedateendcheckBox.CheckedChanged += new System.EventHandler(this.seedateendcheckBox_CheckedChanged);
-            // 
-            // seecapacitycheckBox
-            // 
-            this.seecapacitycheckBox.AutoSize = true;
-            this.seecapacitycheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.seecapacitycheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.seecapacitycheckBox.ForeColor = System.Drawing.Color.White;
-            this.seecapacitycheckBox.Location = new System.Drawing.Point(708, 473);
-            this.seecapacitycheckBox.Name = "seecapacitycheckBox";
-            this.seecapacitycheckBox.Size = new System.Drawing.Size(104, 21);
-            this.seecapacitycheckBox.TabIndex = 53;
-            this.seecapacitycheckBox.Text = "Quitar Aforo";
-            this.seecapacitycheckBox.UseVisualStyleBackColor = false;
-            this.seecapacitycheckBox.CheckedChanged += new System.EventHandler(this.seecapacitycheckBox_CheckedChanged);
+            this.eventdataGridView.TabIndex = 8;
             // 
             // event_id
             // 
@@ -327,12 +266,84 @@
             // 
             this.bindingSource1.DataSource = typeof(Bookaroom.Models.Esdeveniments);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.pictureBox4.Location = new System.Drawing.Point(687, 376);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(235, 126);
+            this.pictureBox4.TabIndex = 46;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(754, 385);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 22);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "FILTROS";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // seedateiniradiocheckBox
+            // 
+            this.seedateiniradiocheckBox.AutoSize = true;
+            this.seedateiniradiocheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.seedateiniradiocheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.seedateiniradiocheckBox.ForeColor = System.Drawing.Color.White;
+            this.seedateiniradiocheckBox.Location = new System.Drawing.Point(708, 419);
+            this.seedateiniradiocheckBox.Name = "seedateiniradiocheckBox";
+            this.seedateiniradiocheckBox.Size = new System.Drawing.Size(147, 21);
+            this.seedateiniradiocheckBox.TabIndex = 5;
+            this.seedateiniradiocheckBox.Text = "Quitar Dia de Inicio";
+            this.seedateiniradiocheckBox.UseVisualStyleBackColor = false;
+            this.seedateiniradiocheckBox.CheckedChanged += new System.EventHandler(this.seedateiniradiocheckBox_CheckedChanged);
+            // 
+            // seedateendcheckBox
+            // 
+            this.seedateendcheckBox.AutoSize = true;
+            this.seedateendcheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.seedateendcheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.seedateendcheckBox.ForeColor = System.Drawing.Color.White;
+            this.seedateendcheckBox.Location = new System.Drawing.Point(708, 446);
+            this.seedateendcheckBox.Name = "seedateendcheckBox";
+            this.seedateendcheckBox.Size = new System.Drawing.Size(189, 21);
+            this.seedateendcheckBox.TabIndex = 6;
+            this.seedateendcheckBox.Text = "Quitar Dia de Finalizacion";
+            this.seedateendcheckBox.UseVisualStyleBackColor = false;
+            this.seedateendcheckBox.CheckedChanged += new System.EventHandler(this.seedateendcheckBox_CheckedChanged);
+            // 
+            // seecapacitycheckBox
+            // 
+            this.seecapacitycheckBox.AutoSize = true;
+            this.seecapacitycheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.seecapacitycheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.seecapacitycheckBox.ForeColor = System.Drawing.Color.White;
+            this.seecapacitycheckBox.Location = new System.Drawing.Point(708, 473);
+            this.seecapacitycheckBox.Name = "seecapacitycheckBox";
+            this.seecapacitycheckBox.Size = new System.Drawing.Size(104, 21);
+            this.seecapacitycheckBox.TabIndex = 7;
+            this.seecapacitycheckBox.Text = "Quitar Aforo";
+            this.seecapacitycheckBox.UseVisualStyleBackColor = false;
+            this.seecapacitycheckBox.CheckedChanged += new System.EventHandler(this.seecapacitycheckBox_CheckedChanged);
+            // 
+            // gestionarSalasToolStripMenuItem
+            // 
+            this.gestionarSalasToolStripMenuItem.Name = "gestionarSalasToolStripMenuItem";
+            this.gestionarSalasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarSalasToolStripMenuItem.Text = "Gestionar Salas";
+            this.gestionarSalasToolStripMenuItem.Click += new System.EventHandler(this.gestionarSalasToolStripMenuItem_Click);
+            // 
             // EventTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(976, 561);
+            this.ClientSize = new System.Drawing.Size(989, 561);
             this.Controls.Add(this.seecapacitycheckBox);
             this.Controls.Add(this.seedateendcheckBox);
             this.Controls.Add(this.seedateiniradiocheckBox);
@@ -355,8 +366,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventdataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +400,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn capacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn start_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn end_date;
+        private System.Windows.Forms.ToolStripMenuItem gestionarSalasToolStripMenuItem;
     }
 }

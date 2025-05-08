@@ -72,37 +72,40 @@
             this.passwordtextbox.PasswordChar = '*';
             this.passwordtextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.passwordtextbox.Size = new System.Drawing.Size(380, 40);
-            this.passwordtextbox.TabIndex = 2;
+            this.passwordtextbox.TabIndex = 3;
+            this.passwordtextbox.TabStop = false;
+            this.passwordtextbox.WordWrap = false;
             // 
             // login_button
             // 
             this.login_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.login_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.login_button.ForeColor = System.Drawing.Color.White;
             this.login_button.Location = new System.Drawing.Point(397, 418);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(192, 47);
-            this.login_button.TabIndex = 3;
-            this.login_button.Text = "LOGIN";
+            this.login_button.TabIndex = 4;
+            this.login_button.Text = "INICIAR SESION";
             this.login_button.UseVisualStyleBackColor = false;
             this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(243, 299);
+            this.label1.Location = new System.Drawing.Point(202, 311);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Email";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Correo Electronico";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(243, 360);
+            this.label2.Location = new System.Drawing.Point(235, 372);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Password";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Contraseña";
             // 
             // LoginForm
             // 

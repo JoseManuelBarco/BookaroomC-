@@ -28,11 +28,31 @@ namespace Bookaroom
             if (Session.Rol == "Event Organizer")
             {
                 gestionarUserToolStripMenuItem.Visible = false;
+                gestionarSalasToolStripMenuItem.Visible = false;
             }
             else if (Session.Rol == "SuperAdmin")
             {
                 gestionarUserToolStripMenuItem.Visible = true;
+                gestionarSalasToolStripMenuItem.Visible = false;
+
             }
+        }
+        private void gestionarUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new UserTable());
+        }
+
+        private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new ReservaTable());
+        }
+
+        private void gestionarSalasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new RoomTable());
         }
         private void createeventbutton_Click(object sender, EventArgs e)
         {
@@ -81,17 +101,6 @@ namespace Bookaroom
 
         }
 
-        private void gestionarUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-            staticFormmainForm.OpenForm(new UserTable());
-        }
-
-        private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
-            staticFormmainForm.OpenForm(new ReservaTable());
-        }
 
         private void closesessiontoolStripLabel_Click(object sender, EventArgs e)
         {
@@ -157,6 +166,17 @@ namespace Bookaroom
                 }
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 

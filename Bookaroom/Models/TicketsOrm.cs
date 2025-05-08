@@ -14,7 +14,6 @@ namespace Bookaroom.Models
         {
             public int TicketId { get; set; }
             public string UserName { get; set; }
-            public int UserID { get; set; }
             public string EventName { get; set; }
             public string Email { get; set; }
             public int? RowColumn { get; set; }
@@ -33,7 +32,6 @@ namespace Bookaroom.Models
                           {
                               TicketId = entrada.ticket_id,
                               UserName = usuari.name,
-                              UserID = usuari.user_id,
                               EventName = evente.name,
                               Email = usuari.email,
                               RowColumn = asienton.row_number,

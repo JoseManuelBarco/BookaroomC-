@@ -72,5 +72,10 @@ namespace Bookaroom
                     MessageBox.Show("Error al añadir el usuario. Por favor vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+        private void cancelbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+    }
     }

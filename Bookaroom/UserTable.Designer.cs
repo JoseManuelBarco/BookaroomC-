@@ -55,6 +55,7 @@
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.active = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceUsers = new System.Windows.Forms.BindingSource(this.components);
+            this.gestionarSalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -70,7 +71,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(759, 402);
+            this.label1.Location = new System.Drawing.Point(762, 393);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 22);
             this.label1.TabIndex = 38;
@@ -152,7 +153,8 @@
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionarEventsToolStripMenuItem,
-            this.gestionarReservasToolStripMenuItem});
+            this.gestionarReservasToolStripMenuItem,
+            this.gestionarSalasToolStripMenuItem});
             this.toolStripDropDownButton1.Image = global::Bookaroom.Properties.Resources.bookaroom_ic;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -162,14 +164,14 @@
             // gestionarEventsToolStripMenuItem
             // 
             this.gestionarEventsToolStripMenuItem.Name = "gestionarEventsToolStripMenuItem";
-            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionarEventsToolStripMenuItem.Text = "Gestionar Events";
             this.gestionarEventsToolStripMenuItem.Click += new System.EventHandler(this.gestionarEventsToolStripMenuItem_Click);
             // 
             // gestionarReservasToolStripMenuItem
             // 
             this.gestionarReservasToolStripMenuItem.Name = "gestionarReservasToolStripMenuItem";
-            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionarReservasToolStripMenuItem.Text = "Gestionar Reservas";
             this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
             // 
@@ -224,7 +226,7 @@
             this.seeactiveradioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.seeactiveradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.seeactiveradioButton.ForeColor = System.Drawing.Color.White;
-            this.seeactiveradioButton.Location = new System.Drawing.Point(690, 436);
+            this.seeactiveradioButton.Location = new System.Drawing.Point(708, 418);
             this.seeactiveradioButton.Name = "seeactiveradioButton";
             this.seeactiveradioButton.Size = new System.Drawing.Size(96, 21);
             this.seeactiveradioButton.TabIndex = 43;
@@ -239,7 +241,7 @@
             this.seeinactiveradioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.seeinactiveradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.seeinactiveradioButton.ForeColor = System.Drawing.Color.White;
-            this.seeinactiveradioButton.Location = new System.Drawing.Point(818, 436);
+            this.seeinactiveradioButton.Location = new System.Drawing.Point(708, 445);
             this.seeinactiveradioButton.Name = "seeinactiveradioButton";
             this.seeinactiveradioButton.Size = new System.Drawing.Size(107, 21);
             this.seeinactiveradioButton.TabIndex = 44;
@@ -263,7 +265,7 @@
             this.seeallradioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.seeallradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.seeallradioButton.ForeColor = System.Drawing.Color.White;
-            this.seeallradioButton.Location = new System.Drawing.Point(753, 475);
+            this.seeallradioButton.Location = new System.Drawing.Point(708, 472);
             this.seeallradioButton.Name = "seeallradioButton";
             this.seeallradioButton.Size = new System.Drawing.Size(92, 21);
             this.seeallradioButton.TabIndex = 46;
@@ -319,12 +321,19 @@
             // 
             this.bindingSourceUsers.DataSource = typeof(Bookaroom.Models.Usuaris);
             // 
+            // gestionarSalasToolStripMenuItem
+            // 
+            this.gestionarSalasToolStripMenuItem.Name = "gestionarSalasToolStripMenuItem";
+            this.gestionarSalasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarSalasToolStripMenuItem.Text = "Gestionar Salas";
+            this.gestionarSalasToolStripMenuItem.Click += new System.EventHandler(this.gestionarSalasToolStripMenuItem_Click);
+            // 
             // UserTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(79)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(978, 561);
+            this.ClientSize = new System.Drawing.Size(988, 561);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.seeallradioButton);
             this.Controls.Add(this.seeactiveradioButton);
@@ -381,5 +390,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
         private System.Windows.Forms.DataGridViewTextBoxColumn active;
+        private System.Windows.Forms.ToolStripMenuItem gestionarSalasToolStripMenuItem;
     }
 }

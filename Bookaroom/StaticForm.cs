@@ -31,7 +31,6 @@ namespace Bookaroom
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
             ContainerPanel.Controls.Clear();
             ContainerPanel.Controls.Add(childForm);
             ContainerPanel.Tag = childForm;

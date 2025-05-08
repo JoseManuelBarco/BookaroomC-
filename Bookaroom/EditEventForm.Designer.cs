@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEventForm));
             this.dataenddateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.datainidateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cancelbutton = new System.Windows.Forms.Button();
             this.savechangesbutton = new System.Windows.Forms.Button();
             this.pricetextBox = new System.Windows.Forms.TextBox();
             this.capacitytextBox = new System.Windows.Forms.TextBox();
@@ -54,7 +55,7 @@
             this.dataenddateTimePicker.Location = new System.Drawing.Point(222, 246);
             this.dataenddateTimePicker.Name = "dataenddateTimePicker";
             this.dataenddateTimePicker.Size = new System.Drawing.Size(178, 20);
-            this.dataenddateTimePicker.TabIndex = 45;
+            this.dataenddateTimePicker.TabIndex = 8;
             // 
             // datainidateTimePicker
             // 
@@ -63,7 +64,7 @@
             this.datainidateTimePicker.Location = new System.Drawing.Point(40, 246);
             this.datainidateTimePicker.Name = "datainidateTimePicker";
             this.datainidateTimePicker.Size = new System.Drawing.Size(178, 20);
-            this.datainidateTimePicker.TabIndex = 44;
+            this.datainidateTimePicker.TabIndex = 6;
             // 
             // label6
             // 
@@ -71,9 +72,9 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label6.Location = new System.Drawing.Point(37, 221);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 43;
-            this.label6.Text = "Data Inici";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Dia de Inicio";
             // 
             // label1
             // 
@@ -81,9 +82,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(37, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Nom";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nombre";
             // 
             // label5
             // 
@@ -92,21 +93,22 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label5.Location = new System.Drawing.Point(263, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 20);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "EDIT EVENT";
+            this.label5.Size = new System.Drawing.Size(143, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "EDITAR EVENTO";
             // 
-            // button2
+            // cancelbutton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(238, 373);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 51);
-            this.button2.TabIndex = 39;
-            this.button2.Text = "CANCELAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.cancelbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.cancelbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelbutton.ForeColor = System.Drawing.Color.White;
+            this.cancelbutton.Location = new System.Drawing.Point(238, 373);
+            this.cancelbutton.Name = "cancelbutton";
+            this.cancelbutton.Size = new System.Drawing.Size(159, 51);
+            this.cancelbutton.TabIndex = 12;
+            this.cancelbutton.Text = "CANCELAR";
+            this.cancelbutton.UseVisualStyleBackColor = false;
+            this.cancelbutton.Click += new System.EventHandler(this.cancelbutton_Click);
             // 
             // savechangesbutton
             // 
@@ -115,8 +117,8 @@
             this.savechangesbutton.Location = new System.Drawing.Point(40, 373);
             this.savechangesbutton.Name = "savechangesbutton";
             this.savechangesbutton.Size = new System.Drawing.Size(159, 51);
-            this.savechangesbutton.TabIndex = 38;
-            this.savechangesbutton.Text = "EDITAR EVENT";
+            this.savechangesbutton.TabIndex = 11;
+            this.savechangesbutton.Text = "GUARDAR";
             this.savechangesbutton.UseVisualStyleBackColor = false;
             this.savechangesbutton.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -127,7 +129,7 @@
             this.pricetextBox.Location = new System.Drawing.Point(40, 302);
             this.pricetextBox.Name = "pricetextBox";
             this.pricetextBox.Size = new System.Drawing.Size(358, 20);
-            this.pricetextBox.TabIndex = 37;
+            this.pricetextBox.TabIndex = 10;
             // 
             // capacitytextBox
             // 
@@ -136,7 +138,7 @@
             this.capacitytextBox.Location = new System.Drawing.Point(40, 177);
             this.capacitytextBox.Name = "capacitytextBox";
             this.capacitytextBox.Size = new System.Drawing.Size(358, 20);
-            this.capacitytextBox.TabIndex = 36;
+            this.capacitytextBox.TabIndex = 4;
             // 
             // nomtextBox
             // 
@@ -145,7 +147,7 @@
             this.nomtextBox.Location = new System.Drawing.Point(40, 118);
             this.nomtextBox.Name = "nomtextBox";
             this.nomtextBox.Size = new System.Drawing.Size(358, 20);
-            this.nomtextBox.TabIndex = 35;
+            this.nomtextBox.TabIndex = 2;
             // 
             // label4
             // 
@@ -153,9 +155,9 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label4.Location = new System.Drawing.Point(37, 286);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Preu";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Precio";
             // 
             // label3
             // 
@@ -163,9 +165,9 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label3.Location = new System.Drawing.Point(221, 221);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Data Fi";
+            this.label3.Size = new System.Drawing.Size(96, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Dia de Finalizacion";
             // 
             // label2
             // 
@@ -173,9 +175,9 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(37, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Aforament";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Aforo";
             // 
             // pictureBox2
             // 
@@ -211,7 +213,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cancelbutton);
             this.Controls.Add(this.savechangesbutton);
             this.Controls.Add(this.pricetextBox);
             this.Controls.Add(this.capacitytextBox);
@@ -220,6 +222,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditEventForm";
             this.Text = "EditEventForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -237,7 +240,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cancelbutton;
         private System.Windows.Forms.Button savechangesbutton;
         private System.Windows.Forms.TextBox pricetextBox;
         private System.Windows.Forms.TextBox capacitytextBox;

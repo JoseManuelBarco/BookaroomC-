@@ -39,5 +39,16 @@ namespace Bookaroom
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
             staticFormmainForm.OpenForm(new ReservaTable());
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new RoomTable());
+        }
+
+        private void SuperadminSelection_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

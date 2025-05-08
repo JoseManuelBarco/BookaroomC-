@@ -120,8 +120,8 @@ namespace Bookaroom
 
         private void savechangesbutton_Click(object sender, EventArgs e)
         {
-            int userId = Convert.ToInt32(usercomboBox.SelectedValue);  // ID del usuario
-            int eventId = Convert.ToInt32(eventcomboBox.SelectedValue); // ID del evento
+            int userId = Convert.ToInt32(usercomboBox.SelectedValue);  
+            int eventId = Convert.ToInt32(eventcomboBox.SelectedValue); 
             int seatId = Convert.ToInt32(seatcomboBox.SelectedValue);
             int status = 0;
 

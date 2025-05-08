@@ -49,7 +49,7 @@
             this.eventscomboBox.Location = new System.Drawing.Point(39, 245);
             this.eventscomboBox.Name = "eventscomboBox";
             this.eventscomboBox.Size = new System.Drawing.Size(357, 21);
-            this.eventscomboBox.TabIndex = 73;
+            this.eventscomboBox.TabIndex = 6;
             // 
             // seatcomboBox
             // 
@@ -57,7 +57,7 @@
             this.seatcomboBox.Location = new System.Drawing.Point(40, 182);
             this.seatcomboBox.Name = "seatcomboBox";
             this.seatcomboBox.Size = new System.Drawing.Size(357, 21);
-            this.seatcomboBox.TabIndex = 72;
+            this.seatcomboBox.TabIndex = 4;
             // 
             // usercomboBox
             // 
@@ -65,7 +65,7 @@
             this.usercomboBox.Location = new System.Drawing.Point(40, 114);
             this.usercomboBox.Name = "usercomboBox";
             this.usercomboBox.Size = new System.Drawing.Size(358, 21);
-            this.usercomboBox.TabIndex = 71;
+            this.usercomboBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -74,9 +74,9 @@
             this.label1.Font = new System.Drawing.Font("Outfit", 9.749999F);
             this.label1.Location = new System.Drawing.Point(38, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "Usuari";
+            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Usuario";
             // 
             // label5
             // 
@@ -86,7 +86,7 @@
             this.label5.Location = new System.Drawing.Point(232, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(203, 30);
-            this.label5.TabIndex = 69;
+            this.label5.TabIndex = 0;
             this.label5.Text = "EDITAR RESERVA";
             // 
             // button2
@@ -97,7 +97,7 @@
             this.button2.Location = new System.Drawing.Point(239, 310);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 51);
-            this.button2.TabIndex = 67;
+            this.button2.TabIndex = 8;
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -108,7 +108,7 @@
             this.button1.Location = new System.Drawing.Point(40, 310);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 51);
-            this.button1.TabIndex = 66;
+            this.button1.TabIndex = 7;
             this.button1.Text = "EDITAR RESERVA";
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -119,9 +119,9 @@
             this.label4.Font = new System.Drawing.Font("Outfit", 9.749999F);
             this.label4.Location = new System.Drawing.Point(37, 219);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 16);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "Esdeveniment";
+            this.label4.Size = new System.Drawing.Size(48, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Evento";
             // 
             // label2
             // 
@@ -131,7 +131,7 @@
             this.label2.Location = new System.Drawing.Point(37, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 16);
-            this.label2.TabIndex = 64;
+            this.label2.TabIndex = 3;
             this.label2.Text = "Butaca";
             // 
             // pictureBox2

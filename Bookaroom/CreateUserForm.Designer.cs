@@ -54,9 +54,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(38, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nom";
+            this.label1.Text = "Nombre";
             // 
             // label2
             // 
@@ -64,9 +64,9 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(37, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Cognoms";
+            this.label2.Text = "Apellidos";
             // 
             // label3
             // 
@@ -74,9 +74,9 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label3.Location = new System.Drawing.Point(35, 219);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(211, 13);
+            this.label3.Size = new System.Drawing.Size(206, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = " Contrasenya | 8 caràcters, mínim 1 número\r\n";
+            this.label3.Text = " Contraseña | 8 caràcters, mínim 1 número\r\n";
             // 
             // label4
             // 
@@ -84,9 +84,9 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label4.Location = new System.Drawing.Point(37, 280);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Correu Electrónic";
+            this.label4.Text = "Correo Electrónico";
             // 
             // nomtextBox
             // 
@@ -127,6 +127,7 @@
             // createuserbutton
             // 
             this.createuserbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.createuserbutton.ForeColor = System.Drawing.Color.White;
             this.createuserbutton.Location = new System.Drawing.Point(38, 412);
             this.createuserbutton.Name = "createuserbutton";
             this.createuserbutton.Size = new System.Drawing.Size(159, 51);
@@ -139,6 +140,7 @@
             // 
             this.cancelbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.cancelbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelbutton.ForeColor = System.Drawing.Color.White;
             this.cancelbutton.Location = new System.Drawing.Point(238, 412);
             this.cancelbutton.Name = "cancelbutton";
             this.cancelbutton.Size = new System.Drawing.Size(159, 51);
@@ -154,9 +156,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label5.Location = new System.Drawing.Point(263, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 20);
+            this.label5.Size = new System.Drawing.Size(147, 20);
             this.label5.TabIndex = 12;
-            this.label5.Text = "CREAR USUARI";
+            this.label5.Text = "CREAR USUARIO";
             // 
             // pictureBox2
             // 
@@ -179,6 +181,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(410, 473);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
             // 
             // rolcombobox
             // 
@@ -210,9 +213,9 @@
             this.activecheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.activecheckBox.Location = new System.Drawing.Point(38, 389);
             this.activecheckBox.Name = "activecheckBox";
-            this.activecheckBox.Size = new System.Drawing.Size(50, 17);
+            this.activecheckBox.Size = new System.Drawing.Size(56, 17);
             this.activecheckBox.TabIndex = 17;
-            this.activecheckBox.Text = "Actiu";
+            this.activecheckBox.Text = "Activo";
             this.activecheckBox.UseVisualStyleBackColor = false;
             // 
             // CreateUserForm

@@ -34,9 +34,10 @@
             // 
             // ContainerPanel
             // 
-            this.ContainerPanel.Location = new System.Drawing.Point(12, 12);
+            this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContainerPanel.Location = new System.Drawing.Point(0, 0);
             this.ContainerPanel.Name = "ContainerPanel";
-            this.ContainerPanel.Size = new System.Drawing.Size(1010, 587);
+            this.ContainerPanel.Size = new System.Drawing.Size(987, 561);
             this.ContainerPanel.TabIndex = 0;
             // 
             // StaticForm
@@ -44,7 +45,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1034, 611);
+            this.ClientSize = new System.Drawing.Size(987, 561);
             this.Controls.Add(this.ContainerPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaticForm";

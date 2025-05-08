@@ -81,6 +81,12 @@
     <Compile Include="CreateReservationForm.Designer.cs">
       <DependentUpon>CreateReservationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateRoom.Designer.cs">
+      <DependentUpon>CreateRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="EditReservationForm.Designer.cs">
       <DependentUpon>EditReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRoomForm.Designer.cs">
+      <DependentUpon>EditRoomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditUserForm.cs">
       <SubType>Form</SubType>
@@ -183,6 +195,12 @@
     <Compile Include="ReservaTable.Designer.cs">
       <DependentUpon>ReservaTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoomTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomTable.Designer.cs">
+      <DependentUpon>RoomTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="StaticForm.cs">
       <SubType>Form</SubType>
@@ -208,6 +226,9 @@
     <EmbeddedResource Include="CreateReservationForm.resx">
       <DependentUpon>CreateReservationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateRoom.resx">
+      <DependentUpon>CreateRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUserForm.resx">
       <DependentUpon>CreateUserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditReservationForm.resx">
       <DependentUpon>EditReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditRoomForm.resx">
+      <DependentUpon>EditRoomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
@@ -236,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReservaTable.resx">
       <DependentUpon>ReservaTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomTable.resx">
+      <DependentUpon>RoomTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaticForm.resx">
       <DependentUpon>StaticForm.cs</DependentUpon>

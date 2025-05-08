@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUserForm));
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@
             this.label5.Location = new System.Drawing.Point(263, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(150, 20);
-            this.label5.TabIndex = 25;
+            this.label5.TabIndex = 0;
             this.label5.Text = "EDITAR USUARIO";
             // 
             // pictureBox2
@@ -71,23 +72,25 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(238, 381);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 51);
-            this.button2.TabIndex = 23;
+            this.button2.TabIndex = 9;
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // confirmchangesbutton
             // 
             this.confirmchangesbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.confirmchangesbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.confirmchangesbutton.ForeColor = System.Drawing.Color.White;
             this.confirmchangesbutton.Location = new System.Drawing.Point(41, 381);
             this.confirmchangesbutton.Name = "confirmchangesbutton";
             this.confirmchangesbutton.Size = new System.Drawing.Size(159, 51);
-            this.confirmchangesbutton.TabIndex = 22;
-            this.confirmchangesbutton.Text = "CONFIRMACION EDICIÓN";
+            this.confirmchangesbutton.TabIndex = 8;
+            this.confirmchangesbutton.Text = "CONFIRMACION CAMBIOS";
             this.confirmchangesbutton.UseVisualStyleBackColor = false;
             this.confirmchangesbutton.Click += new System.EventHandler(this.confirmchangesbutton_Click);
             // 
@@ -98,7 +101,7 @@
             this.emailtextBox.Location = new System.Drawing.Point(40, 235);
             this.emailtextBox.Name = "emailtextBox";
             this.emailtextBox.Size = new System.Drawing.Size(358, 20);
-            this.emailtextBox.TabIndex = 20;
+            this.emailtextBox.TabIndex = 6;
             // 
             // surnametextBox
             // 
@@ -107,7 +110,7 @@
             this.surnametextBox.Location = new System.Drawing.Point(40, 171);
             this.surnametextBox.Name = "surnametextBox";
             this.surnametextBox.Size = new System.Drawing.Size(358, 20);
-            this.surnametextBox.TabIndex = 19;
+            this.surnametextBox.TabIndex = 4;
             // 
             // nomtextBox
             // 
@@ -116,7 +119,7 @@
             this.nomtextBox.Location = new System.Drawing.Point(40, 112);
             this.nomtextBox.Name = "nomtextBox";
             this.nomtextBox.Size = new System.Drawing.Size(358, 20);
-            this.nomtextBox.TabIndex = 18;
+            this.nomtextBox.TabIndex = 2;
             // 
             // label3
             // 
@@ -124,9 +127,9 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label3.Location = new System.Drawing.Point(35, 219);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Email";
+            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Correo Electronico";
             // 
             // label2
             // 
@@ -134,9 +137,9 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(37, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Cognoms";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Apellidos";
             // 
             // label1
             // 
@@ -144,9 +147,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(38, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Nom";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nombre";
             // 
             // pictureBox1
             // 
@@ -162,11 +165,12 @@
             // resetpasswordbutton
             // 
             this.resetpasswordbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.resetpasswordbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.resetpasswordbutton.ForeColor = System.Drawing.Color.White;
             this.resetpasswordbutton.Location = new System.Drawing.Point(41, 294);
             this.resetpasswordbutton.Name = "resetpasswordbutton";
             this.resetpasswordbutton.Size = new System.Drawing.Size(357, 51);
-            this.resetpasswordbutton.TabIndex = 26;
+            this.resetpasswordbutton.TabIndex = 7;
             this.resetpasswordbutton.Text = "REINICIAR CONTRASEÑA";
             this.resetpasswordbutton.UseVisualStyleBackColor = false;
             this.resetpasswordbutton.Click += new System.EventHandler(this.resetpasswordbutton_Click);
@@ -189,6 +193,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(450, 550);
             this.MinimumSize = new System.Drawing.Size(450, 550);

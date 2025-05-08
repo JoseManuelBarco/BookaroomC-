@@ -18,29 +18,29 @@ namespace Bookaroom
         {
             InitializeComponent();
             
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(229, 196, 153);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            ticketsdataGridView.RowHeadersVisible = false;
+            ticketsdataGridView.EnableHeadersVisualStyles = false;
+            ticketsdataGridView.DefaultCellStyle.BackColor = Color.FromArgb(232, 207, 174);
+            ticketsdataGridView.DefaultCellStyle.ForeColor = Color.Black;
+            ticketsdataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(232, 207, 174);
+            ticketsdataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
-            dataGridView1.Columns.Clear();
+            ticketsdataGridView.Columns.Clear();
 
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "TicketId",        
                 HeaderText = "ID Ticket",
                 Name = "TicketId"
             });
 
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "UserName",      
                 HeaderText = "Nom Usuari",
                 Name = "UserName"
             });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "UserID",
                 HeaderText = "ID Usuario",
@@ -48,14 +48,14 @@ namespace Bookaroom
                 
             });
 
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "EventName", 
                 HeaderText = "Nom Esdeveniment",
                 Name = "EventName"
             });
 
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Email",        
                 HeaderText = "Email",
@@ -63,31 +63,33 @@ namespace Bookaroom
             });
 
 
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "RowColumn",
                 HeaderText = "Numero Columna",
                 Name = "RowColumn"
             });
 
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "SeatNumber",
                 HeaderText = "Numero Asiento",
                 Name = "SeatNumber"
             });
 
-            dataGridView1.Columns["UserID"].Visible = false;
 
 
 
             if (Session.Rol == "Event Organizer")
             {
                 gestionarUsuarisToolStripMenuItem.Visible = false;
+                gestionarSalasToolStripMenuItem.Visible = false;
             }
             else if (Session.Rol == "SuperAdmin")
             {
                 gestionarUsuarisToolStripMenuItem.Visible = true;
+                gestionarSalasToolStripMenuItem.Visible = false;
+
             }
         }
         
@@ -95,32 +97,29 @@ namespace Bookaroom
 
         private void filterdateinilabel_Click(object sender, EventArgs e)
         {
-            this.dataGridView1.Columns["RowColumn"].Visible =
-                 !this.dataGridView1.Columns["RowColumn"].Visible;
+            this.ticketsdataGridView.Columns["RowColumn"].Visible =
+                 !this.ticketsdataGridView.Columns["RowColumn"].Visible;
 
-            this.dataGridView1.Columns["SeatNumber"].Visible =
-                !this.dataGridView1.Columns["SeatNumber"].Visible;
+            this.ticketsdataGridView.Columns["SeatNumber"].Visible =
+                !this.ticketsdataGridView.Columns["SeatNumber"].Visible;
         }
 
 
         private void seeUserFilterButton_Click(object sender, EventArgs e)
         {
-            dataGridView1.ClearSelection();
-            dataGridView1.CurrentCell = null;
+            ticketsdataGridView.ClearSelection();
+            ticketsdataGridView.CurrentCell = null;
             string userName = userfilterbox.Text.Trim().ToLower();
 
-            // Mostrar todas las filas primero
-            foreach (DataGridViewRow row in this.dataGridView1.Rows)
+            foreach (DataGridViewRow row in this.ticketsdataGridView.Rows)
             {
                 row.Visible = true;
             }
 
-            // Si el filtro está vacío, no hacemos nada más
             if (string.IsNullOrEmpty(userName))
                 return;
 
-            // Aplicar el filtro por nombre
-            foreach (DataGridViewRow row in this.dataGridView1.Rows)
+            foreach (DataGridViewRow row in this.ticketsdataGridView.Rows)
             {
                 if (row.Cells["UserName"].Value != null &&
                     !row.Cells["UserName"].Value.ToString().ToLower().Contains(userName))
@@ -132,12 +131,11 @@ namespace Bookaroom
 
         private void resetpictureBox_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.dataGridView1.Rows)
+            foreach (DataGridViewRow row in this.ticketsdataGridView.Rows)
             {
                 row.Visible = true;
             }
         }
-
         private void gestionarUsuarisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
@@ -156,6 +154,12 @@ namespace Bookaroom
             staticFormmainForm.OpenForm(new LoginForm());
         }
 
+        private void gestionarSalasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticFormmainForm = (StaticForm)this.ParentForm;
+            staticFormmainForm.OpenForm(new RoomTable());
+
+        }
         private void createreservationbutton_Click(object sender, EventArgs e)
         {
             CreateReservationForm f = new CreateReservationForm();
@@ -164,12 +168,12 @@ namespace Bookaroom
 
         private void desactivatereservationbutton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (ticketsdataGridView.SelectedRows.Count > 0)
             {
-                int active = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id_entrada"].Value);
+                int active = Convert.ToInt32(ticketsdataGridView.SelectedRows[0].Cells["id_entrada"].Value);
 
 
-                int reservationid = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id_entrada"].Value);
+                int reservationid = Convert.ToInt32(ticketsdataGridView.SelectedRows[0].Cells["TicketId"].Value);
 
                 var result = MessageBox.Show("Quieres desactivar esta reserva?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -186,16 +190,14 @@ namespace Bookaroom
 
         private void editreservationbutton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (ticketsdataGridView.SelectedRows.Count > 0)
             {
-                int reservationID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id_entrada"].Value);
+                int reservationID = Convert.ToInt32(ticketsdataGridView.SelectedRows[0].Cells["TicketId"].Value);
               
                 EditReservationForm f = new EditReservationForm(reservationID);
                 f.ShowDialog();
 
-            }
-
-            else
+            }else
             {
                 MessageBox.Show("Porfavor selecione un usuario.");
             }
@@ -204,7 +206,36 @@ namespace Bookaroom
         private void ReservaTable_Load(object sender, EventArgs e)
         {
             bindingSourceTickets.DataSource = TicketsOrm.SelectEntradesAmbDetalls();
+            ticketsdataGridView.Columns["UserID"].Visible = false;
         }
+
+        private void seeseatsinforadiocheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (seeseatsinforadiocheckBox.Checked)
+            {
+                if (ticketsdataGridView.Columns.Contains("SeatNumber"))
+                {
+                    ticketsdataGridView.Columns["SeatNumber"].Visible = false;
+                }
+                if(ticketsdataGridView.Columns.Contains("RowColumn"))
+                {
+                    ticketsdataGridView.Columns["RowColumn"].Visible = false;
+                }
+            }
+            else
+            {
+                if (ticketsdataGridView.Columns.Contains("SeatNumber"))
+                {
+                    ticketsdataGridView.Columns["SeatNumber"].Visible = true;
+                }
+                if (ticketsdataGridView.Columns.Contains("RowColumn"))
+                {
+                    ticketsdataGridView.Columns["RowColumn"].Visible = true;
+                }
+            }
+        }
+
+     
     }
 }
 

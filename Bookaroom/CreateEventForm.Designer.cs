@@ -67,9 +67,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label5.Location = new System.Drawing.Point(263, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 20);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "CREAR EVENT";
+            this.label5.Size = new System.Drawing.Size(136, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "CREAR EVENTo";
             // 
             // pictureBox2
             // 
@@ -90,7 +90,7 @@
             this.button2.Location = new System.Drawing.Point(243, 495);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 51);
-            this.button2.TabIndex = 22;
+            this.button2.TabIndex = 19;
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -101,8 +101,8 @@
             this.savebutton.Location = new System.Drawing.Point(42, 495);
             this.savebutton.Name = "savebutton";
             this.savebutton.Size = new System.Drawing.Size(159, 51);
-            this.savebutton.TabIndex = 21;
-            this.savebutton.Text = "CREAR EVENT";
+            this.savebutton.TabIndex = 18;
+            this.savebutton.Text = "CREAR EVENTO";
             this.savebutton.UseVisualStyleBackColor = false;
             this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
             // 
@@ -113,7 +113,7 @@
             this.pricetextBox.Location = new System.Drawing.Point(40, 446);
             this.pricetextBox.Name = "pricetextBox";
             this.pricetextBox.Size = new System.Drawing.Size(358, 20);
-            this.pricetextBox.TabIndex = 20;
+            this.pricetextBox.TabIndex = 16;
             // 
             // capacitytextBox
             // 
@@ -122,7 +122,7 @@
             this.capacitytextBox.Location = new System.Drawing.Point(42, 340);
             this.capacitytextBox.Name = "capacitytextBox";
             this.capacitytextBox.Size = new System.Drawing.Size(354, 20);
-            this.capacitytextBox.TabIndex = 18;
+            this.capacitytextBox.TabIndex = 10;
             // 
             // nametextBox
             // 
@@ -131,7 +131,7 @@
             this.nametextBox.Location = new System.Drawing.Point(40, 118);
             this.nametextBox.Name = "nametextBox";
             this.nametextBox.Size = new System.Drawing.Size(358, 20);
-            this.nametextBox.TabIndex = 17;
+            this.nametextBox.TabIndex = 2;
             // 
             // label4
             // 
@@ -139,9 +139,9 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label4.Location = new System.Drawing.Point(39, 430);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Preu";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Precio";
             // 
             // label3
             // 
@@ -149,9 +149,9 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label3.Location = new System.Drawing.Point(221, 377);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Data Fi";
+            this.label3.Size = new System.Drawing.Size(96, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Dia de Finalizacion";
             // 
             // label2
             // 
@@ -159,9 +159,9 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(37, 324);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Aforament";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Aforo";
             // 
             // pictureBox1
             // 
@@ -180,9 +180,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(37, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Nom";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nombre";
             // 
             // label6
             // 
@@ -190,9 +190,9 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label6.Location = new System.Drawing.Point(37, 377);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Data Inici";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Dia de Inicio";
             // 
             // dateinidateTimePicker
             // 
@@ -201,7 +201,7 @@
             this.dateinidateTimePicker.Location = new System.Drawing.Point(40, 393);
             this.dateinidateTimePicker.Name = "dateinidateTimePicker";
             this.dateinidateTimePicker.Size = new System.Drawing.Size(178, 20);
-            this.dateinidateTimePicker.TabIndex = 29;
+            this.dateinidateTimePicker.TabIndex = 12;
             // 
             // dataenddateTimePicker
             // 
@@ -210,17 +210,20 @@
             this.dataenddateTimePicker.Location = new System.Drawing.Point(224, 393);
             this.dataenddateTimePicker.Name = "dataenddateTimePicker";
             this.dataenddateTimePicker.Size = new System.Drawing.Size(178, 20);
-            this.dataenddateTimePicker.TabIndex = 30;
+            this.dataenddateTimePicker.TabIndex = 14;
             // 
             // activecheckbox
             // 
             this.activecheckbox.AutoSize = true;
             this.activecheckbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
+            this.activecheckbox.Checked = true;
+            this.activecheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activecheckbox.Enabled = false;
             this.activecheckbox.Location = new System.Drawing.Point(42, 472);
             this.activecheckbox.Name = "activecheckbox";
-            this.activecheckbox.Size = new System.Drawing.Size(50, 17);
-            this.activecheckbox.TabIndex = 31;
-            this.activecheckbox.Text = "Actiu";
+            this.activecheckbox.Size = new System.Drawing.Size(56, 17);
+            this.activecheckbox.TabIndex = 17;
+            this.activecheckbox.Text = "Activo";
             this.activecheckbox.UseVisualStyleBackColor = false;
             // 
             // descriptiontextBox
@@ -230,7 +233,7 @@
             this.descriptiontextBox.Location = new System.Drawing.Point(40, 172);
             this.descriptiontextBox.Name = "descriptiontextBox";
             this.descriptiontextBox.Size = new System.Drawing.Size(358, 20);
-            this.descriptiontextBox.TabIndex = 32;
+            this.descriptiontextBox.TabIndex = 4;
             // 
             // label7
             // 
@@ -238,9 +241,9 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label7.Location = new System.Drawing.Point(37, 156);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 13);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Descripcio";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Descripcion";
             // 
             // userscomboBox
             // 
@@ -249,7 +252,7 @@
             this.userscomboBox.Location = new System.Drawing.Point(38, 224);
             this.userscomboBox.Name = "userscomboBox";
             this.userscomboBox.Size = new System.Drawing.Size(358, 21);
-            this.userscomboBox.TabIndex = 34;
+            this.userscomboBox.TabIndex = 6;
             // 
             // bindingSourceUsers
             // 
@@ -262,7 +265,7 @@
             this.label8.Location = new System.Drawing.Point(39, 270);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(28, 13);
-            this.label8.TabIndex = 35;
+            this.label8.TabIndex = 7;
             this.label8.Text = "Sala";
             // 
             // roomcomboBox
@@ -272,7 +275,7 @@
             this.roomcomboBox.Location = new System.Drawing.Point(42, 286);
             this.roomcomboBox.Name = "roomcomboBox";
             this.roomcomboBox.Size = new System.Drawing.Size(358, 21);
-            this.roomcomboBox.TabIndex = 36;
+            this.roomcomboBox.TabIndex = 8;
             // 
             // bindingSourceRooms
             // 
@@ -284,9 +287,9 @@
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(223)))), ((int)(((byte)(192)))));
             this.label9.Location = new System.Drawing.Point(39, 208);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Usuari ";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Usuario";
             // 
             // CreateEventForm
             // 

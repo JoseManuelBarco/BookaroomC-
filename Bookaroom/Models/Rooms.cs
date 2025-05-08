@@ -96,10 +96,6 @@ namespace Bookaroom.Models
 
             return seatid;
         }
-
-
-
-
         public static DataTable GetSeatsForEdit(int salaId, int seatid)
         {
             DataTable dt = new DataTable();
