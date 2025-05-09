@@ -38,6 +38,7 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.gestionarUsuarisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarSalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closesessiontoolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.userfilterbox = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.seeseatsinforadiocheckBox = new System.Windows.Forms.CheckBox();
-            this.gestionarSalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -96,7 +96,7 @@
             this.desactivatereservationbutton.Name = "desactivatereservationbutton";
             this.desactivatereservationbutton.Size = new System.Drawing.Size(235, 75);
             this.desactivatereservationbutton.TabIndex = 2;
-            this.desactivatereservationbutton.Text = "DESACTIVAR RESERVA";
+            this.desactivatereservationbutton.Text = "ACTIVAR/DESACTIVAR RESERVA";
             this.desactivatereservationbutton.UseVisualStyleBackColor = false;
             this.desactivatereservationbutton.Click += new System.EventHandler(this.desactivatereservationbutton_Click);
             // 
@@ -145,16 +145,23 @@
             // gestionarUsuarisToolStripMenuItem
             // 
             this.gestionarUsuarisToolStripMenuItem.Name = "gestionarUsuarisToolStripMenuItem";
-            this.gestionarUsuarisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarUsuarisToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.gestionarUsuarisToolStripMenuItem.Text = "Gestionar Usuaris";
             this.gestionarUsuarisToolStripMenuItem.Click += new System.EventHandler(this.gestionarUsuarisToolStripMenuItem_Click);
             // 
             // gestionarEventsToolStripMenuItem
             // 
             this.gestionarEventsToolStripMenuItem.Name = "gestionarEventsToolStripMenuItem";
-            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.gestionarEventsToolStripMenuItem.Text = "Gestionar Events";
             this.gestionarEventsToolStripMenuItem.Click += new System.EventHandler(this.gestionarEventsToolStripMenuItem_Click);
+            // 
+            // gestionarSalasToolStripMenuItem
+            // 
+            this.gestionarSalasToolStripMenuItem.Name = "gestionarSalasToolStripMenuItem";
+            this.gestionarSalasToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gestionarSalasToolStripMenuItem.Text = "Gestionar Salas";
+            this.gestionarSalasToolStripMenuItem.Click += new System.EventHandler(this.gestionarSalasToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -277,13 +284,6 @@
             this.seeseatsinforadiocheckBox.Text = "Quitar Info Asiento";
             this.seeseatsinforadiocheckBox.UseVisualStyleBackColor = false;
             this.seeseatsinforadiocheckBox.CheckedChanged += new System.EventHandler(this.seeseatsinforadiocheckBox_CheckedChanged);
-            // 
-            // gestionarSalasToolStripMenuItem
-            // 
-            this.gestionarSalasToolStripMenuItem.Name = "gestionarSalasToolStripMenuItem";
-            this.gestionarSalasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarSalasToolStripMenuItem.Text = "Gestionar Salas";
-            this.gestionarSalasToolStripMenuItem.Click += new System.EventHandler(this.gestionarSalasToolStripMenuItem_Click);
             // 
             // ReservaTable
             // 

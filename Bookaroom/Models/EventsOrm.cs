@@ -19,7 +19,15 @@ namespace Bookaroom.Models
 
             return _esdeveniments;
         }
+        public static List<Esdeveniments> SelectAvailablesEvents()
+        {
+            List<Esdeveniments> _esdeveniments = Orm.bd.Esdeveniments
+                .Where(e => e.active == 1)
+                .OrderBy(e => e.name)
+                .ToList();
 
+            return _esdeveniments;
+        }
         public static Esdeveniments GetEvent(int eventID)
         {
             return Orm.bd.Esdeveniments

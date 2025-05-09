@@ -13,35 +13,30 @@ namespace Bookaroom
 {
     public partial class CreateReservationForm : Form
     {
+        int reservationID;
+
         public CreateReservationForm()
         {
             InitializeComponent();
             LoadUsersComboBox();
             LoadEventsComboBox();
+            LoadSeatsComboBox(reservationID);
+
 
         }
 
         private void LoadEventsComboBox()
         {
-            DataTable events = EventsBD.GetEvents();
-            if (events.Rows.Count > 0)
-            {
-                eventcomboBox.DataSource = events;
-                eventcomboBox.DisplayMember = "name";
-                eventcomboBox.ValueMember = "event_id";
+            bindingSourceEvents.DataSource = EventsOrm.SelectAvailablesEvents();
 
-                AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-                foreach (DataRow row in events.Rows)
-                {
-                    string fullName = $"{row["name"]}";
-                    autoComplete.Add(fullName);
-                }
+            eventcomboBox.DataSource = bindingSourceEvents;
+            eventcomboBox.DisplayMember = "name"; 
+            eventcomboBox.ValueMember = "event_id"; 
 
-                eventcomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                eventcomboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                eventcomboBox.AutoCompleteCustomSource = autoComplete;
-            }
+            eventcomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            eventcomboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
+        
         private void LoadUsersComboBox()
         {
             DataTable users = Users.GetUsers();
@@ -66,7 +61,10 @@ namespace Bookaroom
         }
         private void LoadSeatsComboBox(int salaId)
         {
-            DataTable seats = Rooms.GetSeatsBySalaId(salaId);
+            int seatid = Rooms.GetSeatAssigned(reservationID);
+            int salaid = Rooms.GetRoomAssigned(reservationID);
+
+            DataTable seats = Rooms.GetSeatsForEdit(salaid, seatid);
 
             if (seats.Rows.Count > 0)
             {
@@ -76,13 +74,13 @@ namespace Bookaroom
                 {
                     string fila = row["row_number"].ToString();
                     string asiento = row["seat_number"].ToString();
+
                     row["DisplaySeat"] = $"Fila {fila} - Asiento {asiento}";
                 }
 
                 seatcomboBox.DataSource = seats;
                 seatcomboBox.DisplayMember = "DisplaySeat";
                 seatcomboBox.ValueMember = "seat_id";
-
             }
             else
             {
@@ -97,24 +95,10 @@ namespace Bookaroom
 
         private void eventcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (eventcomboBox.SelectedItem is DataRowView selectedRow)
+            var selectedEvent = eventcomboBox.SelectedItem as Esdeveniments;
+            if (selectedEvent != null)
             {
-                if (selectedRow.Row.Table.Columns.Contains("room_id"))
-                {
-                    try
-                    {
-                        int idSala = Convert.ToInt32(selectedRow["room_id"]);
-                        LoadSeatsComboBox(idSala);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al obtener la sala: " + ex.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("La columna 'id_sala' no está en el DataTable.");
-                }
+                reservationID = selectedEvent.event_id;
             }
         }
 
@@ -132,7 +116,7 @@ namespace Bookaroom
             }
 
 
-            bool result = ReserveBD.SaveReservation(userId, eventId, seatId,status);
+            bool result = TicketsOrm.InsertTicket(userId, eventId, seatId,status);
             this.Close();          
         }
     }

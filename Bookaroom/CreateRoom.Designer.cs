@@ -52,7 +52,7 @@
             this.label9.Location = new System.Drawing.Point(37, 210);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 13);
-            this.label9.TabIndex = 29;
+            this.label9.TabIndex = 5;
             this.label9.Text = "Numero Asientos";
             // 
             // label7
@@ -62,7 +62,7 @@
             this.label7.Location = new System.Drawing.Point(37, 148);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 13);
-            this.label7.TabIndex = 27;
+            this.label7.TabIndex = 3;
             this.label7.Text = "Capacidad Maxima";
             // 
             // maxcapacitytextBox
@@ -72,7 +72,7 @@
             this.maxcapacitytextBox.Location = new System.Drawing.Point(40, 164);
             this.maxcapacitytextBox.Name = "maxcapacitytextBox";
             this.maxcapacitytextBox.Size = new System.Drawing.Size(358, 20);
-            this.maxcapacitytextBox.TabIndex = 28;
+            this.maxcapacitytextBox.TabIndex = 4;
             // 
             // activecheckbox
             // 
@@ -84,7 +84,7 @@
             this.activecheckbox.Location = new System.Drawing.Point(38, 263);
             this.activecheckbox.Name = "activecheckbox";
             this.activecheckbox.Size = new System.Drawing.Size(56, 17);
-            this.activecheckbox.TabIndex = 42;
+            this.activecheckbox.TabIndex = 7;
             this.activecheckbox.Text = "Activo";
             this.activecheckbox.UseVisualStyleBackColor = false;
             // 
@@ -95,7 +95,7 @@
             this.label1.Location = new System.Drawing.Point(37, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
-            this.label1.TabIndex = 25;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Dimensions(m2)";
             // 
             // label5
@@ -106,7 +106,7 @@
             this.label5.Location = new System.Drawing.Point(263, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 20);
-            this.label5.TabIndex = 24;
+            this.label5.TabIndex = 0;
             this.label5.Text = "CREAR SALA";
             // 
             // pictureBox2
@@ -128,7 +128,7 @@
             this.button2.Location = new System.Drawing.Point(249, 286);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 51);
-            this.button2.TabIndex = 44;
+            this.button2.TabIndex = 9;
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -139,7 +139,7 @@
             this.savebutton.Location = new System.Drawing.Point(38, 286);
             this.savebutton.Name = "savebutton";
             this.savebutton.Size = new System.Drawing.Size(159, 51);
-            this.savebutton.TabIndex = 43;
+            this.savebutton.TabIndex = 8;
             this.savebutton.Text = "CREAR EVENTO";
             this.savebutton.UseVisualStyleBackColor = false;
             this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
@@ -151,7 +151,7 @@
             this.sizetextBox.Location = new System.Drawing.Point(40, 110);
             this.sizetextBox.Name = "sizetextBox";
             this.sizetextBox.Size = new System.Drawing.Size(358, 20);
-            this.sizetextBox.TabIndex = 26;
+            this.sizetextBox.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -171,7 +171,7 @@
             this.numerseatstextBox.Location = new System.Drawing.Point(40, 226);
             this.numerseatstextBox.Name = "numerseatstextBox";
             this.numerseatstextBox.Size = new System.Drawing.Size(358, 20);
-            this.numerseatstextBox.TabIndex = 46;
+            this.numerseatstextBox.TabIndex = 6;
             // 
             // CreateRoom
             // 

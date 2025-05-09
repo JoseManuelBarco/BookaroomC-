@@ -198,7 +198,6 @@ namespace Bookaroom.Models
 
                 for (int i = 0; i < length; i++)
                 {
-                    // Use modulus to select from chars
                     result[i] = chars[data[i] % chars.Length];
                 }
 

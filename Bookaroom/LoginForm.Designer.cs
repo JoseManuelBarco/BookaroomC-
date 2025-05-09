@@ -72,7 +72,7 @@
             this.passwordtextbox.PasswordChar = '*';
             this.passwordtextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.passwordtextbox.Size = new System.Drawing.Size(380, 40);
-            this.passwordtextbox.TabIndex = 3;
+            this.passwordtextbox.TabIndex = 2;
             this.passwordtextbox.TabStop = false;
             this.passwordtextbox.WordWrap = false;
             // 
@@ -104,7 +104,7 @@
             this.label2.Location = new System.Drawing.Point(235, 372);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 3;
             this.label2.Text = "Contraseña";
             // 
             // LoginForm

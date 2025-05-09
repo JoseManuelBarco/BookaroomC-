@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewRooms = new System.Windows.Forms.DataGridView();
+            this.room_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventory_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dimensions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxcapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numseatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceRooms = new System.Windows.Forms.BindingSource(this.components);
             this.editroomsbutton = new System.Windows.Forms.Button();
             this.desactivateroomsbutton = new System.Windows.Forms.Button();
             this.createroomsButton = new System.Windows.Forms.Button();
@@ -43,24 +50,17 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closesessionLabel = new System.Windows.Forms.ToolStripLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.room_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventory_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dimensions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maxcapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numseatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSourceRooms = new System.Windows.Forms.BindingSource(this.components);
             this.seeinactiveradioButton = new System.Windows.Forms.RadioButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.seeactiveradioButton = new System.Windows.Forms.RadioButton();
             this.seeallradioButton = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +86,54 @@
             this.dataGridViewRooms.ReadOnly = true;
             this.dataGridViewRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRooms.Size = new System.Drawing.Size(571, 447);
-            this.dataGridViewRooms.TabIndex = 55;
+            this.dataGridViewRooms.TabIndex = 1;
+            // 
+            // room_id
+            // 
+            this.room_id.DataPropertyName = "room_id";
+            this.room_id.HeaderText = "Sala";
+            this.room_id.Name = "room_id";
+            this.room_id.ReadOnly = true;
+            // 
+            // inventory_id
+            // 
+            this.inventory_id.DataPropertyName = "inventory_id";
+            this.inventory_id.HeaderText = "inventory_id";
+            this.inventory_id.Name = "inventory_id";
+            this.inventory_id.ReadOnly = true;
+            this.inventory_id.Visible = false;
+            // 
+            // dimensions
+            // 
+            this.dimensions.DataPropertyName = "dimensions";
+            this.dimensions.HeaderText = "Dimensiones";
+            this.dimensions.Name = "dimensions";
+            this.dimensions.ReadOnly = true;
+            // 
+            // maxcapacity
+            // 
+            this.maxcapacity.DataPropertyName = "max_capacity";
+            this.maxcapacity.HeaderText = "Capacidad Maxima";
+            this.maxcapacity.Name = "maxcapacity";
+            this.maxcapacity.ReadOnly = true;
+            // 
+            // numseatsDataGridViewTextBoxColumn
+            // 
+            this.numseatsDataGridViewTextBoxColumn.DataPropertyName = "num_seats";
+            this.numseatsDataGridViewTextBoxColumn.HeaderText = "Nº Asientos";
+            this.numseatsDataGridViewTextBoxColumn.Name = "numseatsDataGridViewTextBoxColumn";
+            this.numseatsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Estatus";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // bindingSourceRooms
+            // 
+            this.bindingSourceRooms.DataSource = typeof(Bookaroom.Models.Sales);
             // 
             // editroomsbutton
             // 
@@ -96,7 +143,7 @@
             this.editroomsbutton.Location = new System.Drawing.Point(693, 284);
             this.editroomsbutton.Name = "editroomsbutton";
             this.editroomsbutton.Size = new System.Drawing.Size(235, 77);
-            this.editroomsbutton.TabIndex = 53;
+            this.editroomsbutton.TabIndex = 4;
             this.editroomsbutton.Text = "EDITAR SALAS";
             this.editroomsbutton.UseVisualStyleBackColor = false;
             this.editroomsbutton.Click += new System.EventHandler(this.editroomsbutton_Click);
@@ -109,7 +156,7 @@
             this.desactivateroomsbutton.Location = new System.Drawing.Point(693, 191);
             this.desactivateroomsbutton.Name = "desactivateroomsbutton";
             this.desactivateroomsbutton.Size = new System.Drawing.Size(235, 81);
-            this.desactivateroomsbutton.TabIndex = 52;
+            this.desactivateroomsbutton.TabIndex = 3;
             this.desactivateroomsbutton.Text = "ACTIVAR/DESACTIVAR SALAS";
             this.desactivateroomsbutton.UseVisualStyleBackColor = false;
             this.desactivateroomsbutton.Click += new System.EventHandler(this.desactivateroomsbutton_Click);
@@ -123,7 +170,7 @@
             this.createroomsButton.Location = new System.Drawing.Point(693, 101);
             this.createroomsButton.Name = "createroomsButton";
             this.createroomsButton.Size = new System.Drawing.Size(235, 75);
-            this.createroomsButton.TabIndex = 51;
+            this.createroomsButton.TabIndex = 2;
             this.createroomsButton.Text = "CREAR SALAS";
             this.createroomsButton.UseVisualStyleBackColor = false;
             this.createroomsButton.Click += new System.EventHandler(this.createroomsButton_Click);
@@ -156,7 +203,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(12, 9);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(966, 35);
-            this.toolStrip1.TabIndex = 47;
+            this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripDropDownButton1
@@ -214,53 +261,6 @@
             this.pictureBox2.TabIndex = 48;
             this.pictureBox2.TabStop = false;
             // 
-            // room_id
-            // 
-            this.room_id.DataPropertyName = "room_id";
-            this.room_id.HeaderText = "Sala";
-            this.room_id.Name = "room_id";
-            this.room_id.ReadOnly = true;
-            // 
-            // inventory_id
-            // 
-            this.inventory_id.DataPropertyName = "inventory_id";
-            this.inventory_id.HeaderText = "inventory_id";
-            this.inventory_id.Name = "inventory_id";
-            this.inventory_id.ReadOnly = true;
-            this.inventory_id.Visible = false;
-            // 
-            // dimensions
-            // 
-            this.dimensions.DataPropertyName = "dimensions";
-            this.dimensions.HeaderText = "Dimensiones";
-            this.dimensions.Name = "dimensions";
-            this.dimensions.ReadOnly = true;
-            // 
-            // maxcapacity
-            // 
-            this.maxcapacity.DataPropertyName = "max_capacity";
-            this.maxcapacity.HeaderText = "Capacidad Maxima";
-            this.maxcapacity.Name = "maxcapacity";
-            this.maxcapacity.ReadOnly = true;
-            // 
-            // numseatsDataGridViewTextBoxColumn
-            // 
-            this.numseatsDataGridViewTextBoxColumn.DataPropertyName = "num_seats";
-            this.numseatsDataGridViewTextBoxColumn.HeaderText = "Nº Asientos";
-            this.numseatsDataGridViewTextBoxColumn.Name = "numseatsDataGridViewTextBoxColumn";
-            this.numseatsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Estatus";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // bindingSourceRooms
-            // 
-            this.bindingSourceRooms.DataSource = typeof(Bookaroom.Models.Sales);
-            // 
             // seeinactiveradioButton
             // 
             this.seeinactiveradioButton.AutoSize = true;
@@ -270,7 +270,7 @@
             this.seeinactiveradioButton.Location = new System.Drawing.Point(711, 444);
             this.seeinactiveradioButton.Name = "seeinactiveradioButton";
             this.seeinactiveradioButton.Size = new System.Drawing.Size(107, 21);
-            this.seeinactiveradioButton.TabIndex = 57;
+            this.seeinactiveradioButton.TabIndex = 7;
             this.seeinactiveradioButton.TabStop = true;
             this.seeinactiveradioButton.Text = "Ver Inactivos";
             this.seeinactiveradioButton.UseVisualStyleBackColor = false;
@@ -294,7 +294,7 @@
             this.seeactiveradioButton.Location = new System.Drawing.Point(711, 417);
             this.seeactiveradioButton.Name = "seeactiveradioButton";
             this.seeactiveradioButton.Size = new System.Drawing.Size(96, 21);
-            this.seeactiveradioButton.TabIndex = 56;
+            this.seeactiveradioButton.TabIndex = 6;
             this.seeactiveradioButton.TabStop = true;
             this.seeactiveradioButton.Text = "Ver activos";
             this.seeactiveradioButton.UseVisualStyleBackColor = false;
@@ -309,7 +309,7 @@
             this.seeallradioButton.Location = new System.Drawing.Point(711, 471);
             this.seeallradioButton.Name = "seeallradioButton";
             this.seeallradioButton.Size = new System.Drawing.Size(92, 21);
-            this.seeallradioButton.TabIndex = 59;
+            this.seeallradioButton.TabIndex = 8;
             this.seeallradioButton.TabStop = true;
             this.seeallradioButton.Text = "Ver Todos";
             this.seeallradioButton.UseVisualStyleBackColor = false;
@@ -324,7 +324,7 @@
             this.label1.Location = new System.Drawing.Point(765, 392);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 22);
-            this.label1.TabIndex = 54;
+            this.label1.TabIndex = 5;
             this.label1.Text = "FILTROS";
             // 
             // RoomTable
@@ -350,12 +350,12 @@
             this.Text = "RoomTable";
             this.Load += new System.EventHandler(this.RoomTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRooms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRooms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

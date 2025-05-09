@@ -47,7 +47,6 @@ namespace Bookaroom
                 Name = "UserID"
                 
             });
-
             ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "EventName", 
@@ -61,22 +60,24 @@ namespace Bookaroom
                 HeaderText = "Email",
                 Name = "Email"
             });
-
-
             ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "RowColumn",
                 HeaderText = "Numero Columna",
                 Name = "RowColumn"
             });
-
             ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "SeatNumber",
                 HeaderText = "Numero Asiento",
                 Name = "SeatNumber"
             });
-
+            ticketsdataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Status",
+                HeaderText = "Estaddo",
+                Name = "Status"
+            });
 
 
 
@@ -170,21 +171,29 @@ namespace Bookaroom
         {
             if (ticketsdataGridView.SelectedRows.Count > 0)
             {
-                int active = Convert.ToInt32(ticketsdataGridView.SelectedRows[0].Cells["id_entrada"].Value);
+                int ticketID = Convert.ToInt32(ticketsdataGridView.SelectedRows[0].Cells["TicketId"].Value);
+                int active = Convert.ToInt32(ticketsdataGridView.SelectedRows[0].Cells["Status"].Value);
 
-
-                int reservationid = Convert.ToInt32(ticketsdataGridView.SelectedRows[0].Cells["TicketId"].Value);
-
-                var result = MessageBox.Show("Quieres desactivar esta reserva?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                string action = active == 1 ? "desactivar" : "activar";
+                var result = MessageBox.Show($"¿Quieres {action} esta entrada?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    ReserveBD.DeleteReservation(reservationid);
+                    bool updated = TicketsOrm.ToggleActiveStatus(ticketID);
+                    if (updated)
+                    {
+                        MessageBox.Show($"Usuario {action} correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        bindingSourceTickets.DataSource = TicketsOrm.SelectEntradesAmbDetalls();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al actualizar el estado del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Porfavor selecione un usuario.");
+                MessageBox.Show("Por favor, selecciona un usuario.");
             }
         }
 
@@ -196,8 +205,11 @@ namespace Bookaroom
               
                 EditReservationForm f = new EditReservationForm(reservationID);
                 f.ShowDialog();
+                bindingSourceTickets.DataSource = TicketsOrm.SelectEntradesAmbDetalls();
 
-            }else
+
+            }
+            else
             {
                 MessageBox.Show("Porfavor selecione un usuario.");
             }

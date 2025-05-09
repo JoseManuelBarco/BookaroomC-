@@ -50,7 +50,7 @@
             this.label1.Location = new System.Drawing.Point(50, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
-            this.label1.TabIndex = 42;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Dimensiones(m2)";
             // 
             // label5
@@ -61,7 +61,7 @@
             this.label5.Location = new System.Drawing.Point(276, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 20);
-            this.label5.TabIndex = 41;
+            this.label5.TabIndex = 0;
             this.label5.Text = "EDITAR SALA";
             // 
             // pictureBox2
@@ -84,7 +84,7 @@
             this.cancelbutton.Location = new System.Drawing.Point(252, 264);
             this.cancelbutton.Name = "cancelbutton";
             this.cancelbutton.Size = new System.Drawing.Size(159, 51);
-            this.cancelbutton.TabIndex = 53;
+            this.cancelbutton.TabIndex = 8;
             this.cancelbutton.Text = "CANCELAR";
             this.cancelbutton.UseVisualStyleBackColor = false;
             // 
@@ -96,7 +96,7 @@
             this.savechangesbutton.Location = new System.Drawing.Point(52, 264);
             this.savechangesbutton.Name = "savechangesbutton";
             this.savechangesbutton.Size = new System.Drawing.Size(159, 51);
-            this.savechangesbutton.TabIndex = 52;
+            this.savechangesbutton.TabIndex = 7;
             this.savechangesbutton.Text = "GUARDAR";
             this.savechangesbutton.UseVisualStyleBackColor = false;
             this.savechangesbutton.Click += new System.EventHandler(this.savechangesbutton_Click);
@@ -108,7 +108,7 @@
             this.capacitytextBox.Location = new System.Drawing.Point(53, 170);
             this.capacitytextBox.Name = "capacitytextBox";
             this.capacitytextBox.Size = new System.Drawing.Size(358, 20);
-            this.capacitytextBox.TabIndex = 45;
+            this.capacitytextBox.TabIndex = 4;
             // 
             // sizetextBox
             // 
@@ -117,7 +117,7 @@
             this.sizetextBox.Location = new System.Drawing.Point(53, 111);
             this.sizetextBox.Name = "sizetextBox";
             this.sizetextBox.Size = new System.Drawing.Size(358, 20);
-            this.sizetextBox.TabIndex = 43;
+            this.sizetextBox.TabIndex = 2;
             // 
             // label4
             // 
@@ -126,7 +126,7 @@
             this.label4.Location = new System.Drawing.Point(50, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 13);
-            this.label4.TabIndex = 50;
+            this.label4.TabIndex = 5;
             this.label4.Text = "Numero Asientos";
             // 
             // label2
@@ -136,7 +136,7 @@
             this.label2.Location = new System.Drawing.Point(50, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 13);
-            this.label2.TabIndex = 44;
+            this.label2.TabIndex = 3;
             this.label2.Text = "Capacidad Maxima";
             // 
             // pictureBox1
@@ -157,7 +157,7 @@
             this.seatsnumbertextBox.Location = new System.Drawing.Point(52, 229);
             this.seatsnumbertextBox.Name = "seatsnumbertextBox";
             this.seatsnumbertextBox.Size = new System.Drawing.Size(359, 20);
-            this.seatsnumbertextBox.TabIndex = 56;
+            this.seatsnumbertextBox.TabIndex = 6;
             // 
             // EditRoomForm
             // 

@@ -4,20 +4,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bookaroom.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Bookaroom
 {
     public partial class EditReservationForm : Form
     {
         int reservationID;
-        public EditReservationForm(int reservationID)
+        public EditReservationForm(int reservationIDD)
         {
             InitializeComponent();
-            this.reservationID = reservationID;
+            this.reservationID = reservationIDD;
 
             LoadEventsComboBox();
             LoadUsersComboBox();
@@ -72,7 +74,7 @@ namespace Bookaroom
         private void LoadSeatsComboBox()
         {
             int seatid = Rooms.GetSeatAssigned(reservationID);
-            int salaid = Rooms.GetRoomAssigned(reservationID); 
+            int salaid = Rooms.GetRoomAssigned(reservationID);
 
             DataTable seats = Rooms.GetSeatsForEdit(salaid, seatid);
 
@@ -99,7 +101,7 @@ namespace Bookaroom
         }
         private void LoadReservationData()
         {
-            DataTable reservation = ReserveBD.GetReservationDetails(reservationID); // Usa el método que te mostré antes
+            DataTable reservation = ReserveBD.GetReservationDetails(reservationID); 
 
             if (reservation.Rows.Count > 0)
             {
@@ -113,6 +115,33 @@ namespace Bookaroom
             {
                 MessageBox.Show("No se encontraron datos para esta reserva.");
             }
+        }
+
+
+
+        private void savebutton_Click(object sender, EventArgs e)
+        {
+            int userId = Convert.ToInt32(usercomboBox.SelectedValue);
+            int eventId = Convert.ToInt32(eventscomboBox.SelectedValue);
+            int seatId = Convert.ToInt32(seatcomboBox.SelectedValue);
+
+            bool result = TicketsOrm.UpdateTicket(userId, eventId, seatId, reservationID);
+
+            if (result)
+            {
+                MessageBox.Show("Reserva actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar la reserva.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cancelbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
