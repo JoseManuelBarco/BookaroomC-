@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservaTable));
             this.label1 = new System.Windows.Forms.Label();
             this.editreservationbutton = new System.Windows.Forms.Button();
             this.desactivatereservationbutton = new System.Windows.Forms.Button();
@@ -136,7 +135,7 @@
             this.gestionarUsuarisToolStripMenuItem,
             this.gestionarEventsToolStripMenuItem,
             this.gestionarSalasToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.Image = global::Bookaroom.Properties.Resources.bookaroom_ic;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
@@ -145,21 +144,21 @@
             // gestionarUsuarisToolStripMenuItem
             // 
             this.gestionarUsuarisToolStripMenuItem.Name = "gestionarUsuarisToolStripMenuItem";
-            this.gestionarUsuarisToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gestionarUsuarisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionarUsuarisToolStripMenuItem.Text = "Gestionar Usuaris";
             this.gestionarUsuarisToolStripMenuItem.Click += new System.EventHandler(this.gestionarUsuarisToolStripMenuItem_Click);
             // 
             // gestionarEventsToolStripMenuItem
             // 
             this.gestionarEventsToolStripMenuItem.Name = "gestionarEventsToolStripMenuItem";
-            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gestionarEventsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionarEventsToolStripMenuItem.Text = "Gestionar Events";
             this.gestionarEventsToolStripMenuItem.Click += new System.EventHandler(this.gestionarEventsToolStripMenuItem_Click);
             // 
             // gestionarSalasToolStripMenuItem
             // 
             this.gestionarSalasToolStripMenuItem.Name = "gestionarSalasToolStripMenuItem";
-            this.gestionarSalasToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gestionarSalasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionarSalasToolStripMenuItem.Text = "Gestionar Salas";
             this.gestionarSalasToolStripMenuItem.Click += new System.EventHandler(this.gestionarSalasToolStripMenuItem_Click);
             // 

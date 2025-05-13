@@ -10,6 +10,6 @@ namespace Bookaroom
     {
         public static string Email { get; set; }
         public static string Rol { get; set; }
-        public static int Id { get; set; } // Si también quieres guardar el ID del usuario
+        public static int Id { get; set; } 
     }
 }

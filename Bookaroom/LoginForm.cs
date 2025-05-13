@@ -46,6 +46,9 @@ namespace Bookaroom
                     {
                         staticFormmainForm.OpenForm(new EventOrganizerContent());
                     }
+                    else if (rol == "Common User") {
+                        MessageBox.Show("Este usuario no puede iniciar sesión.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

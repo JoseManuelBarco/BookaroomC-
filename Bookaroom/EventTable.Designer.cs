@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventTable));
             this.editeventbutton = new System.Windows.Forms.Button();
             this.desactivateeventbutton = new System.Windows.Forms.Button();
             this.createeventbutton = new System.Windows.Forms.Button();
@@ -37,6 +36,7 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.gestionarUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarSalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closesessiontoolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -56,7 +56,6 @@
             this.seedateiniradiocheckBox = new System.Windows.Forms.CheckBox();
             this.seedateendcheckBox = new System.Windows.Forms.CheckBox();
             this.seecapacitycheckBox = new System.Windows.Forms.CheckBox();
-            this.gestionarSalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -128,7 +127,7 @@
             this.gestionarUserToolStripMenuItem,
             this.gestionarReservasToolStripMenuItem,
             this.gestionarSalasToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.Image = global::Bookaroom.Properties.Resources.bookaroom_ic;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 32);
@@ -147,6 +146,13 @@
             this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionarReservasToolStripMenuItem.Text = "Gestionar Reservas";
             this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
+            // 
+            // gestionarSalasToolStripMenuItem
+            // 
+            this.gestionarSalasToolStripMenuItem.Name = "gestionarSalasToolStripMenuItem";
+            this.gestionarSalasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarSalasToolStripMenuItem.Text = "Gestionar Salas";
+            this.gestionarSalasToolStripMenuItem.Click += new System.EventHandler(this.gestionarSalasToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -330,13 +336,6 @@
             this.seecapacitycheckBox.Text = "Quitar Aforo";
             this.seecapacitycheckBox.UseVisualStyleBackColor = false;
             this.seecapacitycheckBox.CheckedChanged += new System.EventHandler(this.seecapacitycheckBox_CheckedChanged);
-            // 
-            // gestionarSalasToolStripMenuItem
-            // 
-            this.gestionarSalasToolStripMenuItem.Name = "gestionarSalasToolStripMenuItem";
-            this.gestionarSalasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarSalasToolStripMenuItem.Text = "Gestionar Salas";
-            this.gestionarSalasToolStripMenuItem.Click += new System.EventHandler(this.gestionarSalasToolStripMenuItem_Click);
             // 
             // EventTable
             // 

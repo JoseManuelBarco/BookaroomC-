@@ -16,6 +16,7 @@ namespace Bookaroom
         public RoomTable()
         {
             InitializeComponent();
+            dataGridViewRooms.RowHeadersVisible = false;
             dataGridViewRooms.EnableHeadersVisualStyles = false;
             dataGridViewRooms.DefaultCellStyle.BackColor = Color.FromArgb(232, 207, 174);
             dataGridViewRooms.DefaultCellStyle.ForeColor = Color.Black;

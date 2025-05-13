@@ -112,6 +112,7 @@
             this.passwordtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordtextBox.Location = new System.Drawing.Point(41, 235);
             this.passwordtextBox.Name = "passwordtextBox";
+            this.passwordtextBox.PasswordChar = '*';
             this.passwordtextBox.Size = new System.Drawing.Size(357, 20);
             this.passwordtextBox.TabIndex = 7;
             // 
